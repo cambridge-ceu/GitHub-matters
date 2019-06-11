@@ -13,4 +13,4 @@ CAUTION -- there are issues under cardio on GitHub synchronisation so it is appr
 
 ## References
 
-Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control with Git and GitHub. *PLoS Comput Biol 2016, [https://doi.org/10.1371/journal.pcbi.1004668]( https://doi.org/10.1371/journal.pcbi.1004668).
+Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control with Git and GitHub. *PLoS Comput Biol* 2016, [https://doi.org/10.1371/journal.pcbi.1004668]( https://doi.org/10.1371/journal.pcbi.1004668).
