@@ -1,4 +1,4 @@
-<img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="150" height="150" align="right">
+<img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="250" height="150" align="right">
 
 ## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
 
