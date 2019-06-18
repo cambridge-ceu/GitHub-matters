@@ -11,9 +11,9 @@ This provides some technical aspects and/or perhaps logistics related to GitHub
 
 CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
-## How to contribute to [the repositories](https://github.com/cambridge-ceu) (adapted from [Apress](https://github.com/apress))
+## How to contribute to [the repositories](https://github.com/cambridge-ceu)
 
-Efforts are highly welcome as a long-term project, via the following steps:
+This is adapted from [Apress](https://github.com/apress), involving the following steps:
 
 1. Make sure you have a GitHub account.
 2. Fork a repository.
