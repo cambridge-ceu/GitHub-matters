@@ -9,7 +9,7 @@ This provides some technical aspects and/or perhaps logistics related to GitHub
 2. Elements to consider, (e.g., data security).
 3. Additional facilities, (e.g., aws, box).
 
-CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons.
+CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
 ## References
 
