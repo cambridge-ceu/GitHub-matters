@@ -1,8 +1,8 @@
-This repository provides some technical aspects and/or other logistics
+## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
 
-## How to contribute to [the existing repositories](https://github.com/cambridge-ceu)
+The easiest is to contact owner of a repository adding yourself as a contributor.
 
-As adapted from [Apress](https://github.com/apress), this involves the following steps:
+As adapted from [Apress](https://github.com/apress), a more general approach involves the following steps:
 
 1. Make sure you have a GitHub account.
 2. Fork a repository.
