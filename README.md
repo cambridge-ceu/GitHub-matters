@@ -13,7 +13,7 @@ CAUTION -- there are issues under cardio on GitHub synchronisation so it is appr
 
 ## How to contribute to [the repositories](https://github.com/cambridge-ceu)
 
-This is adapted from [Apress](https://github.com/apress), involving the following steps:
+As adapted from [Apress](https://github.com/apress), this involves the following steps:
 
 1. Make sure you have a GitHub account.
 2. Fork a repository.
