@@ -11,6 +11,16 @@ This provides some technical aspects and/or perhaps logistics related to GitHub
 
 CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
+## How to contribute to [the repositories](https://github.com/cambridge-ceu) (adapted from [Apress](https://github.com/apress))
+
+Efforts are highly welcome as a long-term project, via the following steps:
+
+1. Make sure you have a GitHub account.
+2. Fork a repository.
+3. Create a new branch on which to make your change, e.g. `git checkout -b my_code_contribution`
+4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
+5. Submit a pull request.
+
 ## References
 
 Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control with Git and GitHub. *PLoS Comput Biol* 2016, [https://doi.org/10.1371/journal.pcbi.1004668]( https://doi.org/10.1371/journal.pcbi.1004668).
