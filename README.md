@@ -11,7 +11,7 @@ This provides some technical aspects and/or perhaps logistics related to GitHub
 
 CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
-## How to contribute to [the repositories](https://github.com/cambridge-ceu)
+## How to contribute to [the existing repositories](https://github.com/cambridge-ceu)
 
 As adapted from [Apress](https://github.com/apress), this involves the following steps:
 
