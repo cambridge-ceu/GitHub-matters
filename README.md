@@ -1,3 +1,5 @@
+<img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="150" height="300" align="right">
+
 ## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
 
 Assuming you have registered a GitHub account, simply contact owner of a repository adding yourself as a contributor.
