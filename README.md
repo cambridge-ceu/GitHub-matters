@@ -1,8 +1,8 @@
 <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
 
----
-
 ## Table of contents
+
+---
 
 * [How to contribute to the listed repositories](https://github.com/cambridge-ceu/GitHub-matters#how-to-contribute-to-the-listed-repositories)
 * [Technical guides](https://github.com/cambridge-ceu/GitHub-matters#technical-guides)
