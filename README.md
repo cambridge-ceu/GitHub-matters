@@ -6,7 +6,8 @@
 * [Technical guides](https://github.com/cambridge-ceu/GitHub-matters#technical-guides)
 * [Policies](https://github.com/cambridge-ceu/GitHub-matters#policies)
 * [Additional facilities](https://github.com/cambridge-ceu/GitHub-matters#additional-facilities)
-* [ References](https://github.com/cambridge-ceu/GitHub-matters#references)
+* [References](https://github.com/cambridge-ceu/GitHub-matters#references)
+* [The web site](https://cambridge-ceu.github.io/GitHub-matters/)
 
 ## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
 
