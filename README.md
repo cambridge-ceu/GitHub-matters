@@ -11,7 +11,7 @@
 
 ## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
 
-Assuming you have registered a GitHub account, simply contact owner of a repository adding yourself as a contributor.
+Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.
 
 As adapted from [Apress](https://github.com/apress), a more general approach involves the following steps:
 
