@@ -32,7 +32,7 @@ CAUTION -- there are issues under cardio on GitHub synchronisation so it is appr
 
 ## Policies
 
-This could somewhat mirror [University's policies for HPC](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html).
+This is in line with or somewhat mirrors [University's policies for HPC](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html).
 
 ## Additional facilities
 
