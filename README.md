@@ -1,6 +1,6 @@
 ## Table of contents
 
-* [How to contribute to the listed repositories(https://github.com/cambridge-ceu/GitHub-matters#how-to-contribute-to-the-listed-repositories)
+* [How to contribute to the listed repositories](https://github.com/cambridge-ceu/GitHub-matters#how-to-contribute-to-the-listed-repositories)
 * [Technical guides](https://github.com/cambridge-ceu/GitHub-matters#technical-guides)
 * [Policies](https://github.com/cambridge-ceu/GitHub-matters#policies)
 * [Additional facilities](https://github.com/cambridge-ceu/GitHub-matters#additional-facilities)
