@@ -1,3 +1,7 @@
+<img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
+
+---
+
 ## Table of contents
 
 * [How to contribute to the listed repositories](https://github.com/cambridge-ceu/GitHub-matters#how-to-contribute-to-the-listed-repositories)
@@ -21,8 +25,6 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 5. Submit a pull request.
 
 ---
-
-<img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
 
 ## Technical guides
 
