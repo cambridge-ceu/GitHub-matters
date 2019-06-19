@@ -20,8 +20,6 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
 5. Submit a pull request.
 
----
-
 ## Technical guides
 
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/).
