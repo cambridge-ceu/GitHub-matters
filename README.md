@@ -30,6 +30,7 @@ More generally, it would be similar to [these instructions to GDAL](https://gith
    * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE.html).
    * [HelloGitHub](https://hellogithub.com/).
    * [awesome-GitHub](https://github.com/Kikobeats/awesome-github)
+   * [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
 
 CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
