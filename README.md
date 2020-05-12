@@ -29,6 +29,7 @@ More generally, it would be similar to [these instructions to GDAL](https://gith
    * [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
    * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE.html).
    * [git recall](git clone https://github.com/Fakerr/git-recall.git).
+   * [git-extras](https://github.com/tj/git-extras).
    * [HelloGitHub](https://hellogithub.com/).
    * [awesome-GitHub](https://github.com/Kikobeats/awesome-github).
    * [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
