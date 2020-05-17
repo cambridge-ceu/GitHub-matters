@@ -17,7 +17,7 @@ In case there is confusion between cambridge-ceu repositories and your own, try 
 ssh -vT git@github.com
 ssh -T GitHub-username@github.com
 git remote -v
-git remote set-url origin https://github.com/cambridge-ceu/csd3.git
+git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
 ...
 git push -f
 ```
