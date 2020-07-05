@@ -9,7 +9,7 @@
 * [References](https://github.com/cambridge-ceu/GitHub-matters#references)
 * [Web site](https://cambridge-ceu.github.io/GitHub-matters/)
 
-## How to contribute to [the listed repositories](https://github.com/cambridge-ceu)
+## How to contribute to [cambridge-ceu repositories](https://github.com/cambridge-ceu)
 
 Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.
 
