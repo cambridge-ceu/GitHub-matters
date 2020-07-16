@@ -28,6 +28,9 @@ More generally, it would be similar to [these instructions to GDAL](https://gith
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/).
    * [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
    * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE.html).
+   * [GitHub Dark Theme](https://github.com/poychang/github-dark-theme).
+   * [octotree](https://github.com/ovity/octotree).
+   * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [source graph](https://github.com/sourcegraph/sourcegraph) and [Widescree for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
    * [git recall](https://github.com/Fakerr/git-recall.git).
    * [git-extras](https://github.com/tj/git-extras).
    * [HelloGitHub](https://hellogithub.com/).
