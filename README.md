@@ -23,7 +23,7 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 
 More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
 
-## Technical guides
+## Technical guides and enhancements
 
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/).
    * [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
