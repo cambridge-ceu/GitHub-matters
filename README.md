@@ -26,8 +26,8 @@ More generally, it would be similar to [these instructions to GDAL](https://gith
 ## Technical guides and enhancements
 
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/).
+   * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
    * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE.html).
-   * [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Enhanced GitHub](https://github.com/softvar/enhanced-github), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
    * [HelloGitHub](https://hellogithub.com/).
    * [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
    * [awesome-GitHub](https://github.com/Kikobeats/awesome-github).
