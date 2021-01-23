@@ -1,3 +1,12 @@
+## Installation from source
+
+```bash
+wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
+cd git-2.30.0
+make NO_GETTEXT=YesPlease install
+```
+and the executables will be put to ~/bin.
+
 ## Pop-up windows
 
 A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
