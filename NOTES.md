@@ -11,7 +11,7 @@ and the executables will be put to ~/bin.
 
 ```bash
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
-tar xvfz
+tar xvfz -
 echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
