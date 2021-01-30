@@ -1,4 +1,4 @@
-## Installation from source
+## Git installation
 
 ```bash
 wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
@@ -6,6 +6,15 @@ cd git-2.30.0
 make NO_GETTEXT=YesPlease install
 ```
 and the executables will be put to ~/bin.
+
+## gitkraken
+
+```bash
+wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
+tar xvfz
+echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ > gitkraken
+chmod +x gitkraken
+```
 
 ## Pop-up windows
 
