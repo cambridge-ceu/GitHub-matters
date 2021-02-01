@@ -70,3 +70,7 @@ if ( log_pval )
        dat$pval <- 10^-dat[[pval]]
 }
 ```
+Note also that to build TwoSampleMR on csd3, the following is necessary,
+```
+module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
+```
