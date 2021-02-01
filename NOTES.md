@@ -51,7 +51,7 @@ As it uses roxygen, to export `get_se` add
 ```
 #' @export
 ```
-to `query.R` and do the following,
+ahead of `get_se` in `query.R` and do the following,
 ```r
 devtools::install_dev_deps()
 devtools::document()
