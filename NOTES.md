@@ -80,6 +80,8 @@ git add NAMESPACE
 git commit -m "export get_se"
 git push --set-upstream origin jhz
 ```
+making sure send a pull request from branch `jhz`.
+
 Note also that to build TwoSampleMR on csd3, the following is necessary,
 ```
 module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
