@@ -16,18 +16,6 @@ echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
 
-## Pop-up windows
-
-A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
-```bash
- unset SSH_ASKPASS
-```
-or `unset GIT_ASKPASS` which could be part of `.bashrc`. Alternatively, this could be achieved with disabling DISPLAY, i.e.,
-```bash
-DISPLAY=
-git push
-```
-
 ## Permission
 
 In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues
@@ -40,3 +28,45 @@ git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
 git push -f
 ```
 For more details, see [here](https://help.github.com/en/github/using-git/changing-a-remotes-url).
+
+## Pop-up windows
+
+A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
+```bash
+ unset SSH_ASKPASS
+```
+or `unset GIT_ASKPASS` which could be part of `.bashrc`. Alternatively, this could be achieved with disabling DISPLAY, i.e.,
+```bash
+DISPLAY=
+git push
+```
+
+## Pull request
+
+This is exemplified with TwoSampleMR. First create a branch with
+```bash
+git checkout -b jhz
+```
+As it uses roxygen, to export `get_se` add
+```
+#' @export
+```
+to `query.R` and do the following,
+```r
+devtools::install_dev_deps()
+devtools::document()
+```
+and commit the changes. A related change to `read_data.R` regards 
+```r
+if ( log_pval )
+{
+       dat$pval <- 10^-dat$pval
+}
+```
+which should have been
+```r
+if ( log_pval )
+{
+       dat$pval <- 10^-dat[[pval]]
+}
+```
