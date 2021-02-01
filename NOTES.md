@@ -71,7 +71,6 @@ if ( log_pval )
 }
 ```
 ```bash
-git checkout -b jhz
 git add R/query.R
 git commit -m "export get_se"
 git add R/read_data.R
