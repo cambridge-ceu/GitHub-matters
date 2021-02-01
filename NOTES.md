@@ -70,6 +70,16 @@ if ( log_pval )
        dat$pval <- 10^-dat[[pval]]
 }
 ```
+```bash
+git checkout -b jhz
+git add R/query.R
+git commit -m "export get_se"
+git add R/read_data.R
+git commit -m "dat$pval <- 10^-dat[[pval]]"
+git add NAMESPACE
+git commit -m "export get_se"
+git push --set-upstream origin jhz
+```
 Note also that to build TwoSampleMR on csd3, the following is necessary,
 ```
 module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
