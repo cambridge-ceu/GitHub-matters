@@ -19,7 +19,7 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 2. Fork a repository.
 3. Create a new branch on which to make your change, e.g. `git checkout -b your_initials_or_description`
 4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
-5. Submit a pull request from your_initials_or_descrition.
+5. Submit a pull request from your_initials_or_description.
 
 More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
 
