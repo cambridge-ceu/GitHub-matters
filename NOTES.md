@@ -7,6 +7,29 @@ make NO_GETTEXT=YesPlease install
 ```
 and the executables will be put to ~/bin.
 
+## GitHub pages
+
+This assumes use of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.
+```bash
+module load python/3.7
+source py37/bin/activate
+pip install sphinx
+pip install recommonmark
+npm install --save-dev --save-exact prettier
+npm install -g npm
+wget -qO- https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz | tar xvfz -
+cd ruby-3.0.0
+./configure --prefix=${HPC_WORK}
+make
+make install
+source ~/.bashrc
+gem install bundler
+bundle install
+# unzip rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip
+# mv rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694 docs
+# make dist
+```
+
 ## gitkraken
 
 ```bash
