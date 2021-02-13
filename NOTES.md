@@ -27,7 +27,7 @@ gem install bundler
 bundle install
 # unzip rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip
 # mv rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694 docs
-# make dist
+# make build
 ```
 
 ## gitkraken
