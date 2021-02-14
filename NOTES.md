@@ -29,6 +29,14 @@ bundle install
 # mv rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694 docs
 # make build
 ```
+Without the theme above, we could use
+```bash
+mkdir docs
+cd docs
+/rds/user/${USER}/hpc-work/bin/jekyll new .
+bundle update
+# update Gemfile/_config.yml
+```
 
 ## gitkraken
 
