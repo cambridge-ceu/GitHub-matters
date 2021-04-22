@@ -117,3 +117,21 @@ Note also that to build TwoSampleMR on csd3, the following is necessary,
 ```
 module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
 ```
+
+## certification authority (CA)
+
+An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
+is as follows,
+
+```bash
+mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo "$HOME/certs/cacert.pem"
+```
+
+or from R
+
+```r
+library(httr)
+set_config(config(ssl_verifypeer = 0L))
+```
