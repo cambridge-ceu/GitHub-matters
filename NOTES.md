@@ -17,6 +17,7 @@ pip install sphinx
 pip install recommonmark
 npm install --save-dev --save-exact prettier
 npm install -g npm
+npm install -D webpack-cli
 wget -qO- https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz | tar xvfz -
 cd ruby-3.0.0
 ./configure --prefix=${HPC_WORK}
