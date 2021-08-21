@@ -1,7 +1,7 @@
 site_name: GitHub-matters
 nav:
     - Home: README.md
-    - NOTES: NOTEs.md
+    - NOTES: NOTES.md
 theme:
     name: mkdocs
     nav_style: dark
