@@ -27,4 +27,6 @@ git add .gitignore
 git add docs
 git add mkdocs.yml
 git commit -m "backup"
+git add README.md
+git commit -m "README"
 git push
