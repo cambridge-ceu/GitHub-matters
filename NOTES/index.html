@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>NOTES - Computational Statistics</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/HTML.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/JavaScript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Perl.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/Python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Computational Statistics</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../NOTEs.md" class="nav-link">NOTES</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#git-installation" class="nav-link">Git installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#gitkraken" class="nav-link">gitkraken</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#permission" class="nav-link">Permission</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#pop-up-windows" class="nav-link">Pop-up windows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#pull-request" class="nav-link">Pull request</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#certification-authority-ca" class="nav-link">certification authority (CA)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#ssh" class="nav-link">ssh</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="git-installation">Git installation</h2>
+<pre><code class="language-bash">wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
+cd git-2.30.0
+make NO_GETTEXT=YesPlease install
+</code></pre>
+<p>and the executables will be put to ~/bin.</p>
+<h2 id="github-pages">GitHub pages</h2>
+<p>This assumes use of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
+<pre><code class="language-bash">module load python/3.7
+source py37/bin/activate
+pip install sphinx
+pip install recommonmark
+npm install --save-dev --save-exact prettier
+npm install -g npm
+npm install -g webpack
+wget -qO- https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz | tar xvfz -
+cd ruby-3.0.0
+./configure --prefix=${HPC_WORK}
+make
+make install
+source ~/.bashrc
+gem install bundler
+bundle install
+# unzip rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip
+# mv rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694 docs
+# cd docs
+# make build
+</code></pre>
+<p>Without the theme above, we could use</p>
+<pre><code class="language-bash">mkdir docs
+cd docs
+/rds/user/${USER}/hpc-work/bin/jekyll new .
+bundle update
+# update Gemfile/_config.yml
+</code></pre>
+<h2 id="gitkraken">gitkraken</h2>
+<pre><code class="language-bash">wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
+tar xvfz -
+echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
+chmod +x gitkraken
+</code></pre>
+<h2 id="permission">Permission</h2>
+<p>In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues</p>
+<pre><code class="language-bash">ssh -vT git@github.com
+ssh -T GitHub-username@github.com
+git remote -v
+git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
+...
+git push -f
+</code></pre>
+<p>For more details, see <a href="https://help.github.com/en/github/using-git/changing-a-remotes-url">here</a>.</p>
+<h2 id="pop-up-windows">Pop-up windows</h2>
+<p>A window may pop up for password, which could cause problems with command-line interface but this can be disabled with</p>
+<pre><code class="language-bash"> unset SSH_ASKPASS
+</code></pre>
+<p>or <code>unset GIT_ASKPASS</code> which could be part of <code>.bashrc</code>. Alternatively, this could be achieved with disabling DISPLAY, i.e.,</p>
+<pre><code class="language-bash">DISPLAY=
+git push
+</code></pre>
+<h2 id="pull-request">Pull request</h2>
+<p>This is exemplified with TwoSampleMR. First create a branch with</p>
+<pre><code class="language-bash">git checkout -b jhz
+</code></pre>
+<p>As it uses roxygen, to export <code>get_se</code> add</p>
+<pre><code>#' @export
+</code></pre>
+<p>ahead of <code>get_se</code> in <code>query.R</code> and do the following,</p>
+<pre><code class="language-r">devtools::install_dev_deps()
+devtools::document()
+</code></pre>
+<p>and commit the changes. A related change to <code>read_data.R</code> regards </p>
+<pre><code class="language-r">if ( log_pval )
+{
+       dat$pval &lt;- 10^-dat$pval
+}
+</code></pre>
+<p>which should have been</p>
+<pre><code class="language-r">if ( log_pval )
+{
+       dat$pval &lt;- 10^-dat[[pval]]
+}
+</code></pre>
+<pre><code class="language-bash">git add R/query.R
+git commit -m &quot;export get_se&quot;
+git add R/read_data.R
+git commit -m &quot;dat$pval &lt;- 10^-dat[[pval]]&quot;
+git add NAMESPACE
+git commit -m &quot;export get_se&quot;
+git push --set-upstream origin jhz
+</code></pre>
+<p>making sure send a pull request from branch <code>jhz</code>.</p>
+<p>Note also that to build TwoSampleMR on csd3, the following is necessary,</p>
+<pre><code>module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
+</code></pre>
+<h2 id="certification-authority-ca">certification authority (CA)</h2>
+<p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
+is as follows,</p>
+<pre><code class="language-bash">mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
+</code></pre>
+<p>or from R</p>
+<pre><code class="language-r">library(httr)
+set_config(config(ssl_verifypeer = 0L))
+</code></pre>
+<h2 id="ssh">ssh</h2>
+<p>The use of ssh involves several steps,</p>
+<ol>
+<li>Generate private and public keys via ssh-keygen.</li>
+<li>Paste the public key into your GitHub account profile.</li>
+<li>Copy the repository address from its Code section into .git/config locally.</li>
+</ol>
+<p>This should enable code updates without request for the access token.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
