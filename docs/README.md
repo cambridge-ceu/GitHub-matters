@@ -1,14 +1,5 @@
 <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
 
-## Table of contents
-
-* [How to contribute to the listed repositories](https://cambridge-ceu.github.io/GitHub-matters/#how-to-contribute-to-cambridge-ceu-repositories)
-* [Technical guides](https://cambridge-ceu.github.io/GitHub-matters/#technical-guides-and-enhancements)
-* [Policies](https://cambridge-ceu.github.io/GitHub-matters/#policies)
-* [Additional facilities](https://cambridge-ceu.github.io/GitHub-matters/#additional-facilities)
-* [References](https://cambridge-ceu.github.io/GitHub-matters/#references)
-* [Web site](https://cambridge-ceu.github.io/GitHub-matters/)
-
 ## How to contribute to [cambridge-ceu repositories](https://github.com/cambridge-ceu)
 
 Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.
