@@ -1,0 +1,18 @@
+site_name: Computational Statistics
+nav:
+    - Home: README.md
+    - NOTES: NOTEs.md
+theme:
+    name: mkdocs
+    nav_style: dark
+    highlightjs: true
+    hljs_languages:
+        - Bash
+        - HTML
+        - Java
+        - JavaScript
+        - Perl
+        - Python
+        - R
+        - rust
+        - yaml
