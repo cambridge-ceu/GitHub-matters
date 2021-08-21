@@ -136,3 +136,12 @@ or from R
 library(httr)
 set_config(config(ssl_verifypeer = 0L))
 ```
+
+## ssh
+
+The use of ssh involves several steps,
+
+1. Generate private and public keys via ssh-keygen.
+2. Paste the public key into your GitHub account profile.
+3. Copy the repository address from its Code section into .git/config locally.
+
