@@ -145,3 +145,4 @@ The use of ssh involves several steps,
 2. Paste the public key into your GitHub account profile.
 3. Copy the repository address from its Code section into .git/config locally.
 
+This should enable code updates without request for the access token.
