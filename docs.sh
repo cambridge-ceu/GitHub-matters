@@ -17,6 +17,10 @@ function github_pages()
 {
   module load python/3.7
   source ~/COVID-19/py37/bin/activate
+}
+
+function install()
+{
   pip install mkdocs-mermaid2-plugin
 }
 
