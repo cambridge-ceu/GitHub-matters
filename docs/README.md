@@ -41,4 +41,4 @@ To be added when appropriate, e.g., aws, box.
 
 Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control with Git and GitHub. *PLoS Comput Biol* 2016, [https://doi.org/10.1371/journal.pcbi.1004668](https://doi.org/10.1371/journal.pcbi.1004668).
 
-Chacon S, Straub B. Pro Git, 2e. Apress, 2014.
+Chacon S, Straub B. Pro Git, 2e. Apress, 2014, [https://link.springer.com/book/10.1007%2F978-1-4842-0076-6](https://link.springer.com/book/10.1007%2F978-1-4842-0076-6).
