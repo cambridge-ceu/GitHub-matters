@@ -163,6 +163,17 @@ cd docs
 bundle update
 # update Gemfile/_config.yml
 </code></pre>
+<p>To generate a site map, following these steps with jekyll/minima theme,</p>
+<ol>
+<li>Add gem "jekyll-sitemap" to the plugin_groups of <code>Gemfile</code>.</li>
+<li>Add <code>- jekyll-sitemap</code> to the plugins of <code>_config.yml</code>.</li>
+<li>Modify <code>assets/css/style.scss</code> -- uncomment the default such that</li>
+</ol>
+<pre><code>@import
+  &quot;minima/skins/{{ site.minima.skin | default: 'classic' }}&quot;,
+  &quot;minima/initialize&quot;;
+</code></pre>
+<p>One may attempt to enable Google search, e.g., <a href="https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html">the post here</a>.</p>
 <h2 id="gitkraken">gitkraken</h2>
 <pre><code class="language-bash">wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
 tar xvfz -
