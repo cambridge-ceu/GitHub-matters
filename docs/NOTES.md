@@ -51,7 +51,7 @@ To generate a site map, following these steps with jekyll/minima theme,
   "minima/initialize";
 ```
 
-and we have the file `sitemap.xml`.
+and `cp -r ../../_sass/minima .`, then we have the file `sitemap.xml`.
 
 One may attempt to enable Google search, e.g., [the post here](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html).
 
