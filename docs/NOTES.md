@@ -161,5 +161,3 @@ The use of ssh involves several steps,
 3. Replace the url address at the .git/config locally with the repository address from its Code section (i.e., `git@github.com:<username>`/`<repositoryname>.git`).
 
 This should enable code updates without request for the access token.
-
-With error message `X11 forwarding request failed on channel 0`, we can fix it by `alias ssh='ssh -X -v'`, e.g., to `.bashrc`.
