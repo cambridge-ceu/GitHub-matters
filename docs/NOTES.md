@@ -40,6 +40,19 @@ bundle update
 # update Gemfile/_config.yml
 ```
 
+To generate a site map, following these steps with jekyll/minima theme,
+
+1. Add gem "jekyll-sitemap" to the plugin_groups of `Gemfile`.
+2. Add `- jekyll-sitemap` to the plugins of `_config.yml`.
+3. Modify `assets/css/style.scss` -- uncomment the default such that
+```
+@import
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "minima/initialize";
+```
+
+One may attempt to enable Google search, e.g., [the post here](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html).
+
 ## gitkraken
 
 ```bash
