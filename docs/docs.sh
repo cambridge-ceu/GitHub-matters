@@ -24,6 +24,7 @@ function install()
   pip install mkdocs-mermaid2-plugin
 }
 
+github_pages
 mkdocs build
 mkdocs gh-deploy
 
