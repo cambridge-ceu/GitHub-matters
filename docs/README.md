@@ -19,7 +19,7 @@ An example is given in [NOTES.md](NOTES.md). More generally, it would be similar
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
    * [Git(Kraken) tutorials](https://www.gitkraken.com/learn/git/tutorials).
    * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
-   * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE.html), [HelloGitHub](https://hellogithub.com/), [awesome-GitHub](https://github.com/Kikobeats/awesome-github), [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
+   * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE/), [HelloGitHub](https://hellogithub.com/), [awesome-GitHub](https://github.com/Kikobeats/awesome-github), [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
    * [git-extras](https://github.com/tj/git-extras).
    * [github-mermaid-extension](https://github.com/BackMarket/github-mermaid-extension)
    * [git recall](https://github.com/Fakerr/git-recall.git).
