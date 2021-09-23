@@ -143,8 +143,8 @@ pip install recommonmark
 npm install --save-dev --save-exact prettier
 npm install -g npm
 npm install -g webpack
-wget -qO- https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz | tar xvfz -
-cd ruby-3.0.0
+wget -qO- https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.2.tar.gz | tar xvfz -
+cd ruby-3.0.2
 ./configure --prefix=${HPC_WORK}
 make
 make install
@@ -163,7 +163,8 @@ cd docs
 bundle update
 # update Gemfile/_config.yml
 </code></pre>
-<p>To generate a site map, following these steps with jekyll/minima theme,</p>
+<p>Consider <a href="https://codebeautify.org/yaml-validator">YAML Validator</a> and <a href="https://jekyllrb.com/docs/datafiles/">data files</a>.</p>
+<p>To generate a site map, follow these steps with jekyll/minima theme,</p>
 <ol>
 <li>Add gem "jekyll-sitemap" to the plugin_groups of <code>Gemfile</code>.</li>
 <li>Add <code>- jekyll-sitemap</code> to the plugins of <code>_config.yml</code>.</li>
