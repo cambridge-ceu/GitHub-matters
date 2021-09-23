@@ -31,7 +31,7 @@ bundle install
 # cd docs
 # make build
 ```
-Without the theme above, we could use
+When there is a conflict with `Gemfile`, we could use
 ```bash
 mkdir docs
 cd docs
