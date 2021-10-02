@@ -57,6 +57,12 @@ and `cp -r ../../_sass/minima .`, then we have the file `sitemap.xml`.
 
 One may attempt to enable Google search, e.g., [the post here](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html).
 
+The banner at cambridge-ceu.github.io is created as follows,
+
+- Visit [curtsy-alice-alice-in-wonderland-disney.gif](https://tenor.com/view/curtsy-alice-alice-in-wonderland-disney-gif-4946558).
+- Select **CAPTION** at the bottom of the image, enter text with a customised color, and **CREATE GIF**.
+- Crop the gif via [https://onlinegiftools.com/crop-gif](https://onlinegiftools.com/crop-gif) and embed it in the page.
+
 ## gitkraken
 
 ```bash
