@@ -1,6 +1,6 @@
 site_name: GitHub matters
 nav:
-    - Overview: README.md
+    - "   ": README.md
     - NOTES: NOTES.md
 theme:
     name: mkdocs
