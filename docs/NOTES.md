@@ -70,7 +70,7 @@ cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
 tar xvfz -
 cd bin
-echo ${HPC_WORK}/gitkraken --no-sandbox $@ > gitkraken
+echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
 
