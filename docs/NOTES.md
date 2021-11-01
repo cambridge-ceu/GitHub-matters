@@ -66,9 +66,11 @@ The banner at cambridge-ceu.github.io is created as follows,
 ## gitkraken
 
 ```bash
+cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
 tar xvfz -
-echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ > gitkraken
+cd bin
+echo ${HPC_WORK}/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
 
