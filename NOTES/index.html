@@ -183,9 +183,11 @@ bundle update
 <li>Crop the gif via <a href="https://onlinegiftools.com/crop-gif">https://onlinegiftools.com/crop-gif</a> and embed it in the page.</li>
 </ul>
 <h2 id="gitkraken">gitkraken</h2>
-<pre><code class="language-bash">wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
+<pre><code class="language-bash">cd ${HPC_WORK}
+wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
 tar xvfz -
-echo /rds-d4/user/jhz22/hpc-work/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
+cd bin
+echo ${HPC_WORK}/gitkraken --no-sandbox $@ &gt; gitkraken
 chmod +x gitkraken
 </code></pre>
 <h2 id="permission">Permission</h2>
