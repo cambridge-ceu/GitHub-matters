@@ -99,7 +99,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#permission" class="nav-link">Permission</a>
+            <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -190,7 +190,10 @@ cd bin
 echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
 chmod +x gitkraken
 </code></pre>
-<h2 id="permission">Permission</h2>
+<h2 id="permissions">Permissions</h2>
+<p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
+<pre><code class="language-bash">chmod u+rx,go-w v4
+</code></pre>
 <p>In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues</p>
 <pre><code class="language-bash">ssh -vT git@github.com
 ssh -T GitHub-username@github.com
