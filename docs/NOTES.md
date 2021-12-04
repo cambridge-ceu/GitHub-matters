@@ -74,7 +74,13 @@ echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
 
-## Permission
+## Permissions
+
+It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
+
+```bash
+chmod u+rx,go-w v4
+```
 
 In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues
 ```bash
