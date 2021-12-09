@@ -82,6 +82,8 @@ It may happen that you cannot enter your own directory: `cd: v4: Permission deni
 chmod u+rx,go-w v4
 ```
 
+Equally, there might be problem to remove your own file, e.g., `rm: cannot remove 'urls.txt': Permission denied`, which can be resolved with resetting parent directory, i.e., `chmod -R 777 v4`.
+
 In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues
 ```bash
 ssh -vT git@github.com
