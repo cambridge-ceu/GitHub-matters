@@ -194,6 +194,7 @@ chmod +x gitkraken
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
 <pre><code class="language-bash">chmod u+rx,go-w v4
 </code></pre>
+<p>Equally, there might be problem to remove your own file, e.g., <code>rm: cannot remove 'urls.txt': Permission denied</code>, which can be resolved with resetting parent directory, i.e., <code>chmod -R 777 v4</code>.</p>
 <p>In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues</p>
 <pre><code class="language-bash">ssh -vT git@github.com
 ssh -T GitHub-username@github.com
