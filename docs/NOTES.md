@@ -40,6 +40,14 @@ bundle update
 # update Gemfile/_config.yml
 ```
 
+A specific plugin may also be installed, e.g., 
+
+```bash
+gem install jekyll-paginate
+```
+
+through which an appropriate version can be added to `Gemfile` followed by `bundle` above.
+
 Consider [YAML Validator](https://codebeautify.org/yaml-validator) and [data files](https://jekyllrb.com/docs/datafiles/).
 
 To generate a site map, follow these steps with jekyll/minima theme,
