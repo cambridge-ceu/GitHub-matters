@@ -1,4 +1,5 @@
 site_name: GitHub matters
+repo_url: https://github.com/cambridge-ceu/GitHub-matters
 nav:
     - "   ": README.md
     - NOTES: NOTES.md
