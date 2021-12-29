@@ -1,5 +1,6 @@
 site_name: GitHub matters
 repo_url: https://github.com/cambridge-ceu/GitHub-matters
+edit_uri: ""
 nav:
     - "   ": README.md
     - NOTES: NOTES.md
