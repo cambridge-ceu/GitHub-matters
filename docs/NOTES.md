@@ -71,6 +71,33 @@ The banner at cambridge-ceu.github.io is created as follows,
 - Select **CAPTION** at the bottom of the image, enter text with a customised color, and **CREATE GIF**.
 - Crop the gif via [https://onlinegiftools.com/crop-gif](https://onlinegiftools.com/crop-gif) and embed it in the page.
 
+### ca certificate
+
+When using jekyll responsive theme such as `feel-responsive`, we run `bundle` and received the following error messages
+
+```
+Could not verify the SSL certificate for https://rubygems.org/quick/Marshal.4.8/github-pages-223.gemspec.rz.
+There is a chance you are experiencing a man-in-the-middle attack, but most likely your system doesn't have the CA certificates needed for
+verification. For information about OpenSSL certificates, see http://bit.ly/ruby-ssl. To connect without using SSL, edit your Gemfile sources
+and change 'https' to 'http'.
+```
+
+with which we issue
+
+```bash
+module load openssl-1.1.0e-gcc-5.4.0-a4xxzqm
+```
+
+with the following error,
+
+```
+Could not load OpenSSL.
+You must recompile Ruby with OpenSSL support or change the sources in your Gemfile from 'https' to 'http'. Instructions for compiling with
+OpenSSL using RVM are available at rvm.io/packages/openssl.
+```
+
+We then modify ruby via `configure --prefix=${HPC_WORK}; make; make install`.
+
 ## gitkraken
 
 ```bash
