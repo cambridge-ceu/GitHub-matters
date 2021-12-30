@@ -189,6 +189,22 @@ bundle update
 <li>Select <strong>CAPTION</strong> at the bottom of the image, enter text with a customised color, and <strong>CREATE GIF</strong>.</li>
 <li>Crop the gif via <a href="https://onlinegiftools.com/crop-gif">https://onlinegiftools.com/crop-gif</a> and embed it in the page.</li>
 </ul>
+<h3 id="ca-certificate">ca certificate</h3>
+<p>When using jekyll responsive theme such as <code>feel-responsive</code>, we run <code>bundle</code> and received the following error messages</p>
+<pre><code>Could not verify the SSL certificate for https://rubygems.org/quick/Marshal.4.8/github-pages-223.gemspec.rz.
+There is a chance you are experiencing a man-in-the-middle attack, but most likely your system doesn't have the CA certificates needed for
+verification. For information about OpenSSL certificates, see http://bit.ly/ruby-ssl. To connect without using SSL, edit your Gemfile sources
+and change 'https' to 'http'.
+</code></pre>
+<p>with which we issue</p>
+<pre><code class="language-bash">module load openssl-1.1.0e-gcc-5.4.0-a4xxzqm
+</code></pre>
+<p>with the following error,</p>
+<pre><code>Could not load OpenSSL.
+You must recompile Ruby with OpenSSL support or change the sources in your Gemfile from 'https' to 'http'. Instructions for compiling with
+OpenSSL using RVM are available at rvm.io/packages/openssl.
+</code></pre>
+<p>We then modify ruby via <code>configure --prefix=${HPC_WORK}; make; make install</code>.</p>
 <h2 id="gitkraken">gitkraken</h2>
 <pre><code class="language-bash">cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
