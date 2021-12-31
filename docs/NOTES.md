@@ -98,6 +98,16 @@ OpenSSL using RVM are available at rvm.io/packages/openssl.
 
 We then modify ruby via `configure --prefix=${HPC_WORK}; make; make install`.
 
+### rvm
+
+Web: [https://rvm.io/](https://rvm.io/).
+
+Ruby Version Manager (RVM) `is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems`.
+
+```bash
+curl -sSL https://get.rvm.io | bash -s stable --rails
+```
+
 ## gitkraken
 
 ```bash
