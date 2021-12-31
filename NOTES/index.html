@@ -205,6 +205,11 @@ You must recompile Ruby with OpenSSL support or change the sources in your Gemfi
 OpenSSL using RVM are available at rvm.io/packages/openssl.
 </code></pre>
 <p>We then modify ruby via <code>configure --prefix=${HPC_WORK}; make; make install</code>.</p>
+<h3 id="rvm">rvm</h3>
+<p>Web: <a href="https://rvm.io/">https://rvm.io/</a>.</p>
+<p>Ruby Version Manager (RVM) <code>is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems</code>.</p>
+<pre><code class="language-bash">curl -sSL https://get.rvm.io | bash -s stable --rails
+</code></pre>
 <h2 id="gitkraken">gitkraken</h2>
 <pre><code class="language-bash">cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
