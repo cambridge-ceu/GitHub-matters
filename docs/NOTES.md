@@ -81,9 +81,8 @@ cd $HOME/src
 wget -qO- ruby-install-0.8.3.tar.gz https://github.com/postmodern/ruby-install/archive/v0.8.3.tar.gz | \
 tar -xzvf -
 cd ruby-install-0.8.3/
-PREFIX=$HOME/.ruby-install make install
-
-$HOME/.ruby-install/bin/ruby-install --latest --no-install-deps ruby
+PREFIX=${HPC_WORK} make install
+ruby-install --latest --no-install-deps ruby
 ```
 
 ### rvm
