@@ -95,6 +95,133 @@ Ruby Version Manager (RVM) `is a command-line tool which allows you to easily in
 curl -sSL https://get.rvm.io | bash -s stable --rails
 ```
 
+Note that for various ways of ruby installations, one may encounter problems with `dtrace` 
+
+```
+linking miniruby
+array.o: In function `empty_ary_alloc':
+/home/jhz22/ruby-3.1.0/array.c:713: undefined reference to `ruby_array__create_semaphore'
+array.o: In function `ary_new':
+/home/jhz22/ruby-3.1.0/array.c:729: undefined reference to `ruby_array__create_semaphore'
+/home/jhz22/ruby-3.1.0/array.c:729: undefined reference to `ruby_array__create_semaphore'
+/home/jhz22/ruby-3.1.0/array.c:729: undefined reference to `ruby_array__create_semaphore'
+array.o: In function `ec_ary_new':
+/home/jhz22/ruby-3.1.0/array.c:817: undefined reference to `ruby_array__create_semaphore'
+array.o:/home/jhz22/ruby-3.1.0/array.c:729: more undefined references to `ruby_array__create_semaphore' follow
+eval.o: In function `setup_exception':
+/home/jhz22/ruby-3.1.0/eval.c:618: undefined reference to `ruby_raise_semaphore'
+eval.o:(.note.stapsdt+0x24): undefined reference to `ruby_raise_semaphore'
+gc.o: In function `gc_prof_sweep_timer_start':
+/home/jhz22/ruby-3.1.0/gc.c:12537: undefined reference to `ruby_gc__sweep__begin_semaphore'
+gc.o: In function `gc_prof_sweep_timer_stop':
+/home/jhz22/ruby-3.1.0/gc.c:12550: undefined reference to `ruby_gc__sweep__end_semaphore'
+/home/jhz22/ruby-3.1.0/gc.c:12550: undefined reference to `ruby_gc__sweep__end_semaphore'
+gc.o: In function `gc_prof_mark_timer_start':
+/home/jhz22/ruby-3.1.0/gc.c:12514: undefined reference to `ruby_gc__mark__begin_semaphore'
+gc.o: In function `gc_prof_mark_timer_stop':
+/home/jhz22/ruby-3.1.0/gc.c:12525: undefined reference to `ruby_gc__mark__end_semaphore'
+gc.o:(.note.stapsdt+0x24): undefined reference to `ruby_gc__sweep__end_semaphore'
+gc.o:(.note.stapsdt+0x68): undefined reference to `ruby_gc__sweep__begin_semaphore'
+gc.o:(.note.stapsdt+0xac): undefined reference to `ruby_gc__mark__end_semaphore'
+gc.o:(.note.stapsdt+0xec): undefined reference to `ruby_gc__mark__begin_semaphore'
+hash.o: In function `empty_hash_alloc':
+/home/jhz22/ruby-3.1.0/hash.c:1542: undefined reference to `ruby_hash__create_semaphore'
+hash.o:(.note.stapsdt+0x24): undefined reference to `ruby_hash__create_semaphore'
+load.o: In function `rb_f_load':
+/home/jhz22/ruby-3.1.0/load.c:784: undefined reference to `ruby_load__entry_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:794: undefined reference to `ruby_load__return_semaphore'
+load.o: In function `require_internal':
+/home/jhz22/ruby-3.1.0/load.c:1103: undefined reference to `ruby_require__entry_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:1113: undefined reference to `ruby_find__require__entry_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:1115: undefined reference to `ruby_find__require__return_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:1115: undefined reference to `ruby_find__require__return_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:1189: undefined reference to `ruby_require__return_semaphore'
+/home/jhz22/ruby-3.1.0/load.c:1115: undefined reference to `ruby_find__require__return_semaphore'
+load.o:(.note.stapsdt+0x24): undefined reference to `ruby_load__entry_semaphore'
+load.o:(.note.stapsdt+0x7c): undefined reference to `ruby_load__return_semaphore'
+load.o:(.note.stapsdt+0xd4): undefined reference to `ruby_require__entry_semaphore'
+load.o:(.note.stapsdt+0x138): undefined reference to `ruby_find__require__entry_semaphore'
+load.o:(.note.stapsdt+0x1a4): undefined reference to `ruby_find__require__return_semaphore'
+load.o:(.note.stapsdt+0x210): undefined reference to `ruby_require__return_semaphore'
+object.o: In function `class_call_alloc_func':
+/home/jhz22/ruby-3.1.0/object.c:1958: undefined reference to `ruby_object__create_semaphore'
+object.o:(.note.stapsdt+0x24): undefined reference to `ruby_object__create_semaphore'
+parse.o: In function `yycompile0':
+/home/jhz22/ruby-3.1.0/parse.y:6348: undefined reference to `ruby_parse__begin_semaphore'
+/home/jhz22/ruby-3.1.0/parse.y:6350: undefined reference to `ruby_parse__end_semaphore'
+parse.o:(.note.stapsdt+0x24): undefined reference to `ruby_parse__end_semaphore'
+parse.o:(.note.stapsdt+0x7c): undefined reference to `ruby_parse__begin_semaphore'
+string.o: In function `empty_str_alloc':
+/home/jhz22/ruby-3.1.0/string.c:870: undefined reference to `ruby_string__create_semaphore'
+string.o: In function `str_new0':
+/home/jhz22/ruby-3.1.0/string.c:885: undefined reference to `ruby_string__create_semaphore'
+/home/jhz22/ruby-3.1.0/string.c:885: undefined reference to `ruby_string__create_semaphore'
+string.o: In function `str_new_static':
+/home/jhz22/ruby-3.1.0/string.c:1003: undefined reference to `ruby_string__create_semaphore'
+string.o: In function `rb_str_resurrect':
+/home/jhz22/ruby-3.1.0/string.c:1816: undefined reference to `ruby_string__create_semaphore'
+string.o:/home/jhz22/ruby-3.1.0/string.c:1823: more undefined references to `ruby_string__create_semaphore' follow
+symbol.o: In function `dsymbol_alloc':
+/home/jhz22/ruby-3.1.0/symbol.c:622: undefined reference to `ruby_symbol__create_semaphore'
+symbol.o: In function `register_static_symid_str':
+/home/jhz22/ruby-3.1.0/symbol.c:550: undefined reference to `ruby_symbol__create_semaphore'
+symbol.o:(.note.stapsdt+0x24): undefined reference to `ruby_symbol__create_semaphore'
+symbol.o:(.note.stapsdt+0x80): undefined reference to `ruby_symbol__create_semaphore'
+vm.o: In function `vm_call_cfunc_with_frame':
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:3027: undefined reference to `ruby_cmethod__entry_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:3044: undefined reference to `ruby_cmethod__return_semaphore'
+vm.o: In function `vm_dtrace':
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4432: undefined reference to `ruby_method__entry_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4432: undefined reference to `ruby_method__return_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4433: undefined reference to `ruby_cmethod__entry_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4434: undefined reference to `ruby_cmethod__return_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4448: undefined reference to `ruby_cmethod__return_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4445: undefined reference to `ruby_method__return_semaphore'
+/home/jhz22/ruby-3.1.0/vm_insnhelper.c:4442: undefined reference to `ruby_cmethod__entry_semaphore'
+vm.o: In function `rb_vm_pop_cfunc_frame':
+/home/jhz22/ruby-3.1.0/vm.c:667: undefined reference to `ruby_cmethod__return_semaphore'
+/home/jhz22/ruby-3.1.0/vm.c:667: undefined reference to `ruby_cmethod__return_semaphore'
+vm.o: In function `hook_before_rewind':
+/home/jhz22/ruby-3.1.0/vm.c:2051: undefined reference to `ruby_method__return_semaphore'
+vm.o: In function `vm_exec_handle_exception':
+/home/jhz22/ruby-3.1.0/vm.c:2257: undefined reference to `ruby_cmethod__return_semaphore'
+vm.o: In function `vm_call0_cfunc_with_frame':
+/home/jhz22/ruby-3.1.0/vm_eval.c:138: undefined reference to `ruby_cmethod__entry_semaphore'
+/home/jhz22/ruby-3.1.0/vm_eval.c:155: undefined reference to `ruby_cmethod__return_semaphore'
+vm.o: In function `vm_exec_core':
+/home/jhz22/ruby-3.1.0/insns.def:462: undefined reference to `ruby_array__create_semaphore'
+/home/jhz22/ruby-3.1.0/insns.def:473: undefined reference to `ruby_hash__create_semaphore'
+/home/jhz22/ruby-3.1.0/insns.def:528: undefined reference to `ruby_hash__create_semaphore'
+vm.o:(.note.stapsdt+0x24): undefined reference to `ruby_cmethod__entry_semaphore'
+vm.o:(.note.stapsdt+0x94): undefined reference to `ruby_cmethod__return_semaphore'
+vm.o:(.note.stapsdt+0x104): undefined reference to `ruby_cmethod__return_semaphore'
+vm.o:(.note.stapsdt+0x174): undefined reference to `ruby_method__entry_semaphore'
+vm.o:(.note.stapsdt+0x1e0): undefined reference to `ruby_method__return_semaphore'
+vm.o:(.note.stapsdt+0x250): undefined reference to `ruby_cmethod__entry_semaphore'
+vm.o:(.note.stapsdt+0x2c0): undefined reference to `ruby_cmethod__return_semaphore'
+vm.o:(.note.stapsdt+0x330): undefined reference to `ruby_method__return_semaphore'
+vm.o:(.note.stapsdt+0x3a0): undefined reference to `ruby_cmethod__return_semaphore'
+vm.o:(.note.stapsdt+0x418): undefined reference to `ruby_cmethod__return_semaphore'
+vm.o:(.note.stapsdt+0x48c): undefined reference to `ruby_cmethod__entry_semaphore'
+vm.o:(.note.stapsdt+0x4fc): undefined reference to `ruby_array__create_semaphore'
+vm.o:(.note.stapsdt+0x558): undefined reference to `ruby_hash__create_semaphore'
+vm.o:(.note.stapsdt+0x5b0): undefined reference to `ruby_hash__create_semaphore'
+yjit.o: In function `full_cfunc_return':
+/home/jhz22/ruby-3.1.0/yjit_codegen.c:504: undefined reference to `ruby_cmethod__return_semaphore'
+yjit.o:(.note.stapsdt+0x24): undefined reference to `ruby_cmethod__return_semaphore'
+collect2: error: ld returned 1 exit status
+make: *** [miniruby] Error 1
+```
+
+To get around one can use
+
+```bash
+configure --disable-dtrace --prefix=${HPC_WORK}
+make
+```
+
+Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234).
+
 ## gitkraken
 
 ```bash
