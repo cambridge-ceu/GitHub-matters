@@ -220,7 +220,7 @@ configure --disable-dtrace --prefix=${HPC_WORK}
 make
 ```
 
-Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234).
+Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234). Moreover, one can modify ext/Setup for various options.
 
 ## gitkraken
 
