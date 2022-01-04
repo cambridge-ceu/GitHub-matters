@@ -216,11 +216,13 @@ make: *** [miniruby] Error 1
 To get around one can use
 
 ```bash
-configure --disable-dtrace --prefix=${HPC_WORK}
+configure --disable-dtrace --enable-shared --prefix=${HPC_WORK}
 make
 ```
 
-Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234). Moreover, one can modify ext/Setup for various options.
+Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234).
+
+Finally, one can modify ext/Setup by uncommenting various options such as `openssl`, `readline`, `zlib` there.
 
 ## gitkraken
 
