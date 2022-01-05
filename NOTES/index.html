@@ -322,9 +322,14 @@ make: *** [miniruby] Error 1
 <p>To get around one can use</p>
 <pre><code class="language-bash">configure --disable-dtrace --enable-shared --prefix=${HPC_WORK}
 make
+make install
 </code></pre>
 <p>Some details are described at <a href="https://udzura.hatenablog.jp/entry/2021/03/02/180234">here</a>.</p>
-<p>Finally, one can modify ext/Setup by uncommenting various options such as <code>openssl</code>, <code>readline</code>, <code>zlib</code> there.</p>
+<p>Finally, one can modify ext/Setup by uncommenting various options such as <code>openssl</code>, <code>readline</code>, <code>zlib</code> there, and also</p>
+<pre><code class="language-bash">configure --disable-dtrace --enable-shared --with-openssl --with-openssl-dir=${HPC_WORK}/openssl-1.1.1h --prefix=${HPC_WORK}
+make
+make install
+</code></pre>
 <h2 id="gitkraken">gitkraken</h2>
 <pre><code class="language-bash">cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
