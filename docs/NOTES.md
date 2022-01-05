@@ -218,11 +218,18 @@ To get around one can use
 ```bash
 configure --disable-dtrace --enable-shared --prefix=${HPC_WORK}
 make
+make install
 ```
 
 Some details are described at [here](https://udzura.hatenablog.jp/entry/2021/03/02/180234).
 
-Finally, one can modify ext/Setup by uncommenting various options such as `openssl`, `readline`, `zlib` there.
+Finally, one can modify ext/Setup by uncommenting various options such as `openssl`, `readline`, `zlib` there, and also
+
+```bash
+configure --disable-dtrace --enable-shared --with-openssl --with-openssl-dir=${HPC_WORK}/openssl-1.1.1h --prefix=${HPC_WORK}
+make
+make install
+```
 
 ## gitkraken
 
