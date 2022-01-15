@@ -427,8 +427,12 @@ curl https://api.github.com/
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
-curl -X POST https://api.github.com/user/repos
-curl -H &quot;Content-Type: application/json&quot; https://api.github.com -v
+curl -X POST https://api.github.com/user/repos -i
+</code></pre>
+<p>Some more useful examples are as follows,</p>
+<pre><code class="language-bash">curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&amp;study=Alasoo
 </code></pre></div>
             </div>
         </div>
