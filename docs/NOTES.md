@@ -347,3 +347,19 @@ The use of ssh involves several steps,
 3. Replace the url address at the .git/config locally with the repository address from its Code section (i.e., `git@github.com:<username>`/`<repositoryname>.git`).
 
 This should enable code updates without request for the access token.
+
+## REST API
+
+Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
+
+Example uses involve the cambridge-ceu site information with curl, [https://curl.se/](https://curl.se/):
+
+```bash
+curl --version
+curl https://api.github.com/
+curl https://api.github.com/users/cambridge-ceu
+curl https://api.github.com/users/cambridge-ceu/repos
+curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
+curl -X POST https://api.github.com/user/repos
+curl -H "Content-Type: application/json" https://api.github.com -v
+```
