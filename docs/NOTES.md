@@ -360,6 +360,13 @@ curl https://api.github.com/
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
-curl -X POST https://api.github.com/user/repos
-curl -H "Content-Type: application/json" https://api.github.com -v
+curl -X POST https://api.github.com/user/repos -i
+```
+
+Some more useful examples are as follows,
+
+```bash
+curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&study=Alasoo
 ```
