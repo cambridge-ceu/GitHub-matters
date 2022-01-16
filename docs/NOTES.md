@@ -366,10 +366,12 @@ qtl.subset1 <- fetch_restAPI(unique_id=meta$unique_id[1], gwas_data=BST1)
 qtl.subset2 <- fetch_tabix(unique_id=meta$unique_id[2], gwas_data=BST1)
 ```
 
-where the last two lines wrap up the command,
+where the last two statements wrap up the following lines,
 
-> http://www.ebi.ac.uk/eqtl/api/chromosomes/4/associations?paginate=False&study=Alasoo_2018&qtl_group=macrophage_naive&quant_method=ge&bp_lower=14737349&bp_upper=16737284
-> tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Alasoo_2018/ge/Alasoo_2018_ge_macrophage_naive.all.tsv.gz 4:14737349-16737284
+```
+http://www.ebi.ac.uk/eqtl/api/chromosomes/4/associations?paginate=False&study=Alasoo_2018&qtl_group=macrophage_naive&quant_method=ge&bp_lower=14737349&bp_upper=16737284
+tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Alasoo_2018/ge/Alasoo_2018_ge_macrophage_naive.all.tsv.gz 4:14737349-16737284
+```
 
 respectively.
 
