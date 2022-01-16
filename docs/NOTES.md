@@ -351,7 +351,7 @@ curl -X 'POST' \
   "uniprot_id_list": [
     "O14625", "P13500"
   ]
-}'
+}' | jq
 ```
 
 Other examples relate to an implementation in [epigraphdb](https://api.epigraphdb.org/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
