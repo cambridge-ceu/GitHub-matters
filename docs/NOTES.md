@@ -341,7 +341,7 @@ Some more useful examples are as follows,
 
 ```bash
 curl -X GET https://www.ebi.ac.uk/eqtl/api/studies | jq
-curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075 | jq
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075 > rs12075.json
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&study=Alasoo
 curl -X 'POST' \
   'https://api.epigraphdb.org/protein/ppi' \
@@ -352,6 +352,80 @@ curl -X 'POST' \
     "O14625", "P13500"
   ]
 }'
+```
+
+Another examples relate to an implementation in `epigraphdb` and `catalogueR`, e.g.,
+
+```r
+options(width=150)
+data.frame(epigraphdb::mr(outcome_trait = "Multiple sclerosis", pval_threshold = 1e-8))
+library(catalogueR)
+data("meta")
+data("BST1");
+qtl.subset <- fetch_restAPI(unique_id=meta$unique_id[1], gwas_data=BST1)
+```
+
+where the last line wraps up the command,
+
+> http://www.ebi.ac.uk/eqtl/api/chromosomes/4/associations?paginate=False&study=Alasoo_2018&qtl_group=macrophage_naive&quant_method=ge&bp_lower=14737349&bp_upper=16737284
+
+We carry on to postprocess the output above,
+
+```r
+rs12075 <- jsonlite::fromJSON("rs12075.json")
+link <- rs12075$`_links`$`next`$href
+result <- do.call(rbind, lapply(rs12075$`_embedded`$associations, rbind))
+```
+
+and the results are as follows,
+
+```
+> link
+[1] "http://www.ebi.ac.uk/eqtl/api/associations?size=20&start=20&links=False&variant_id=rs12075"
+> result
+      beta        maf      type  neg_log10_pvalue median_tpm pvalue   ref rsid      chromosome position  alt se        r2      ac
+ [1,] 0.0103601   0.458333 "SNP" 0.1120341        0.6        0.77262  "G" "rs12075" "1"        159205564 "A" 0.0357159 0.99927 91
+ [2,] 0.10655     0.458333 "SNP" 0.5001521        1.513      0.316117 "G" "rs12075" "1"        159205564 "A" 0.105527  0.99927 91
+ [3,] 0.00471216  0.458333 "SNP" 0.02100965       5.229      0.952775 "G" "rs12075" "1"        159205564 "A" 0.0792819 0.99927 91
+ [4,] 0.103534    0.458333 "SNP" 0.4388091        2.34       0.364075 "G" "rs12075" "1"        159205564 "A" 0.113328  0.99927 91
+ [5,] 0.0322011   0.458333 "SNP" 0.1128161        0.827      0.77123  "G" "rs12075" "1"        159205564 "A" 0.110317  0.99927 91
+ [6,] 0.0434981   0.458333 "SNP" 0.7434626        288.439    0.180525 "G" "rs12075" "1"        159205564 "A" 0.032158  0.99927 91
+ [7,] -0.0241876  0.458333 "SNP" 0.5827094        195.988    0.261391 "G" "rs12075" "1"        159205564 "A" 0.0213623 0.99927 91
+ [8,] -0.141131   0.458333 "SNP" 0.5962517        16.849     0.253366 "G" "rs12075" "1"        159205564 "A" 0.122543  0.99927 91
+ [9,] 0.245207    0.458333 "SNP" 0.7806198        0.345      0.165722 "G" "rs12075" "1"        159205564 "A" 0.175061  0.99927 91
+[10,] -0.0559002  0.458333 "SNP" 0.7160569        79.94      0.192284 "G" "rs12075" "1"        159205564 "A" 0.0424596 0.99927 91
+[11,] -0.00890871 0.458333 "SNP" 0.0812611        991.08     0.829352 "G" "rs12075" "1"        159205564 "A" 0.0411791 0.99927 91
+[12,] 0.0319441   0.458333 "SNP" 0.07365961       30.138     0.843996 "G" "rs12075" "1"        159205564 "A" 0.161729  0.99927 91
+[13,] 0.0572641   0.458333 "SNP" 0.1638298        0.176      0.685757 "G" "rs12075" "1"        159205564 "A" 0.140938  0.99927 91
+[14,] -0.00221514 0.458333 "SNP" 0.02556661       105.229    0.94283  "G" "rs12075" "1"        159205564 "A" 0.030778  0.99927 91
+[15,] 0.148251    0.458333 "SNP" 0.85642          165.336    0.139181 "G" "rs12075" "1"        159205564 "A" 0.0991063 0.99927 91
+[16,] -0.0631594  0.458333 "SNP" 0.1534025        0.089      0.702421 "G" "rs12075" "1"        159205564 "A" 0.16464   0.99927 91
+[17,] 0.0820197   0.458333 "SNP" 0.4129235        0.048      0.386435 "G" "rs12075" "1"        159205564 "A" 0.0941081 0.99927 91
+[18,] 0.130461    0.458333 "SNP" 0.7431741        0.559      0.180645 "G" "rs12075" "1"        159205564 "A" 0.0964765 0.99927 91
+[19,] 0.0136613   0.458333 "SNP" 0.06425197       0.122      0.862478 "G" "rs12075" "1"        159205564 "A" 0.0785769 0.99927 91
+[20,] -0.0935604  0.458333 "SNP" 0.6328566        0.6        0.232886 "G" "rs12075" "1"        159205564 "A" 0.0777485 0.99927 91
+      variant              an  study_id      qtl_group         molecular_trait_id gene_id           tissue
+ [1,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000143315"  "ENSG00000143315" "CL_0000235"
+ [2,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158477"  "ENSG00000158477" "CL_0000235"
+ [3,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158481"  "ENSG00000158481" "CL_0000235"
+ [4,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158485"  "ENSG00000158485" "CL_0000235"
+ [5,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158488"  "ENSG00000158488" "CL_0000235"
+ [6,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158710"  "ENSG00000158710" "CL_0000235"
+ [7,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158714"  "ENSG00000158714" "CL_0000235"
+ [8,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000158716"  "ENSG00000158716" "CL_0000235"
+ [9,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000162706"  "ENSG00000162706" "CL_0000235"
+[10,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000162729"  "ENSG00000162729" "CL_0000235"
+[11,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000162734"  "ENSG00000162734" "CL_0000235"
+[12,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000163563"  "ENSG00000163563" "CL_0000235"
+[13,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000163564"  "ENSG00000163564" "CL_0000235"
+[14,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000163565"  "ENSG00000163565" "CL_0000235"
+[15,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000163568"  "ENSG00000163568" "CL_0000235"
+[16,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000177807"  "ENSG00000177807" "CL_0000235"
+[17,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000181036"  "ENSG00000181036" "CL_0000235"
+[18,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000213085"  "ENSG00000213085" "CL_0000235"
+[19,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000256029"  "ENSG00000256029" "CL_0000235"
+[20,] "chr1_159205564_G_A" 168 "Alasoo_2018" "macrophage_IFNg" "ENSG00000143315"  "ENSG00000143315" "CL_0000235"
+>
 ```
 
 ## certification authority (CA)
