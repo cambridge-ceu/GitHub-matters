@@ -354,7 +354,7 @@ curl -X 'POST' \
 }'
 ```
 
-Another examples relate to an implementation in `epigraphdb` and `catalogueR`, e.g.,
+Another examples relate to an implementation in [epigraphdb](https://api.epigraphdb.org/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
 
 ```r
 options(width=150)
