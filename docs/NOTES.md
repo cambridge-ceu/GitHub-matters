@@ -356,18 +356,20 @@ Example uses involve the cambridge-ceu site information with curl, [https://curl
 
 ```bash
 curl --version
-curl https://api.github.com/
+curl https://api.github.com/ | jq
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
 curl -X POST https://api.github.com/user/repos -i
 ```
 
+Where `jq` is the command-line JavaScript Object Notation (JSON) processor.
+
 Some more useful examples are as follows,
 
 ```bash
-curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
-curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
+curl -X GET https://www.ebi.ac.uk/eqtl/api/studies | jq
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075 | jq
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&study=Alasoo
 curl -X 'POST' \
   'https://api.epigraphdb.org/protein/ppi' \
