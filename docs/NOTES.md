@@ -320,34 +320,6 @@ Note also that to build TwoSampleMR on csd3, the following is necessary,
 module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
 ```
 
-## certification authority (CA)
-
-An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
-is as follows,
-
-```bash
-mkdir ~/certs
-curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
-git config --global http.sslCAinfo "$HOME/certs/cacert.pem"
-```
-
-or from R
-
-```r
-library(httr)
-set_config(config(ssl_verifypeer = 0L))
-```
-
-## ssh
-
-The use of ssh involves several steps,
-
-1. Generate private and public keys via ssh-keygen.
-2. Paste the public key into your GitHub account profile.
-3. Replace the url address at the .git/config locally with the repository address from its Code section (i.e., `git@github.com:<username>`/`<repositoryname>.git`).
-
-This should enable code updates without request for the access token.
-
 ## REST API
 
 Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
@@ -381,3 +353,31 @@ curl -X 'POST' \
   ]
 }'
 ```
+
+## certification authority (CA)
+
+An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
+is as follows,
+
+```bash
+mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo "$HOME/certs/cacert.pem"
+```
+
+or from R
+
+```r
+library(httr)
+set_config(config(ssl_verifypeer = 0L))
+```
+
+## ssh
+
+The use of ssh involves several steps,
+
+1. Generate private and public keys via ssh-keygen.
+2. Paste the public key into your GitHub account profile.
+3. Replace the url address at the .git/config locally with the repository address from its Code section (i.e., `git@github.com:<username>`/`<repositoryname>.git`).
+
+This should enable code updates without request for the access token.
