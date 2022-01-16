@@ -423,15 +423,16 @@ set_config(config(ssl_verifypeer = 0L))
 <p>Representational State Transfer (REST) allows for various operations on repositories, see <a href="https://docs.github.com/en/rest">https://docs.github.com/en/rest</a>.</p>
 <p>Example uses involve the cambridge-ceu site information with curl, <a href="https://curl.se/">https://curl.se/</a>:</p>
 <pre><code class="language-bash">curl --version
-curl https://api.github.com/
+curl https://api.github.com/ | jq
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
 curl -X POST https://api.github.com/user/repos -i
 </code></pre>
+<p>Where <code>jq</code> is the command-line JavaScript Object Notation (JSON) processor.</p>
 <p>Some more useful examples are as follows,</p>
-<pre><code class="language-bash">curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
-curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
+<pre><code class="language-bash">curl -X GET https://www.ebi.ac.uk/eqtl/api/studies | jq
+curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075 | jq
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&amp;study=Alasoo
 curl -X 'POST' \
   'https://api.epigraphdb.org/protein/ppi' \
