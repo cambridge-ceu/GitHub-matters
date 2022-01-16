@@ -352,7 +352,7 @@ This should enable code updates without request for the access token.
 
 Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
 
-Example uses involve the cambridge-ceu site information with curl, [https://curl.se/](https://curl.se/):
+Example uses involve the [cambridge-ceu](https://cambridge-ceu.github.io/) site information with curl, [https://curl.se/](https://curl.se/):
 
 ```bash
 curl --version
