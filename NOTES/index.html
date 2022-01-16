@@ -433,6 +433,15 @@ curl -X POST https://api.github.com/user/repos -i
 <pre><code class="language-bash">curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&amp;study=Alasoo
+curl -X 'POST' \
+  'https://api.epigraphdb.org/protein/ppi' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  &quot;uniprot_id_list&quot;: [
+    &quot;O14625&quot;, &quot;P13500&quot;
+  ]
+}'
 </code></pre></div>
             </div>
         </div>
