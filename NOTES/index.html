@@ -117,17 +117,17 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#rest-api" class="nav-link">REST API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#certification-authority-ca" class="nav-link">certification authority (CA)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
             <li class="nav-item" data-level="2"><a href="#ssh" class="nav-link">ssh</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#rest-api" class="nav-link">REST API</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -400,25 +400,6 @@ git push --set-upstream origin jhz
 <p>Note also that to build TwoSampleMR on csd3, the following is necessary,</p>
 <pre><code>module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
 </code></pre>
-<h2 id="certification-authority-ca">certification authority (CA)</h2>
-<p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
-is as follows,</p>
-<pre><code class="language-bash">mkdir ~/certs
-curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
-git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
-</code></pre>
-<p>or from R</p>
-<pre><code class="language-r">library(httr)
-set_config(config(ssl_verifypeer = 0L))
-</code></pre>
-<h2 id="ssh">ssh</h2>
-<p>The use of ssh involves several steps,</p>
-<ol>
-<li>Generate private and public keys via ssh-keygen.</li>
-<li>Paste the public key into your GitHub account profile.</li>
-<li>Replace the url address at the .git/config locally with the repository address from its Code section (i.e., <code>git@github.com:&lt;username&gt;</code>/<code>&lt;repositoryname&gt;.git</code>).</li>
-</ol>
-<p>This should enable code updates without request for the access token.</p>
 <h2 id="rest-api">REST API</h2>
 <p>Representational State Transfer (REST) allows for various operations on repositories, see <a href="https://docs.github.com/en/rest">https://docs.github.com/en/rest</a>.</p>
 <p>Example uses involve the <a href="https://cambridge-ceu.github.io/">cambridge-ceu</a> site information with curl, <a href="https://curl.se/">https://curl.se/</a>:</p>
@@ -443,7 +424,26 @@ curl -X 'POST' \
     &quot;O14625&quot;, &quot;P13500&quot;
   ]
 }'
-</code></pre></div>
+</code></pre>
+<h2 id="certification-authority-ca">certification authority (CA)</h2>
+<p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
+is as follows,</p>
+<pre><code class="language-bash">mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
+</code></pre>
+<p>or from R</p>
+<pre><code class="language-r">library(httr)
+set_config(config(ssl_verifypeer = 0L))
+</code></pre>
+<h2 id="ssh">ssh</h2>
+<p>The use of ssh involves several steps,</p>
+<ol>
+<li>Generate private and public keys via ssh-keygen.</li>
+<li>Paste the public key into your GitHub account profile.</li>
+<li>Replace the url address at the .git/config locally with the repository address from its Code section (i.e., <code>git@github.com:&lt;username&gt;</code>/<code>&lt;repositoryname&gt;.git</code>).</li>
+</ol>
+<p>This should enable code updates without request for the access token.</p></div>
             </div>
         </div>
 
