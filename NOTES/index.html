@@ -434,11 +434,10 @@ data(&quot;BST1&quot;);
 qtl.subset1 &lt;- fetch_restAPI(unique_id=meta$unique_id[1], gwas_data=BST1)
 qtl.subset2 &lt;- fetch_tabix(unique_id=meta$unique_id[2], gwas_data=BST1)
 </code></pre>
-<p>where the last two lines wrap up the command,</p>
-<blockquote>
-<p>http://www.ebi.ac.uk/eqtl/api/chromosomes/4/associations?paginate=False&amp;study=Alasoo_2018&amp;qtl_group=macrophage_naive&amp;quant_method=ge&amp;bp_lower=14737349&amp;bp_upper=16737284
-tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Alasoo_2018/ge/Alasoo_2018_ge_macrophage_naive.all.tsv.gz 4:14737349-16737284</p>
-</blockquote>
+<p>where the last two statements wrap up the following lines,</p>
+<pre><code>http://www.ebi.ac.uk/eqtl/api/chromosomes/4/associations?paginate=False&amp;study=Alasoo_2018&amp;qtl_group=macrophage_naive&amp;quant_method=ge&amp;bp_lower=14737349&amp;bp_upper=16737284
+tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Alasoo_2018/ge/Alasoo_2018_ge_macrophage_naive.all.tsv.gz 4:14737349-16737284
+</code></pre>
 <p>respectively.</p>
 <p>We carry on to postprocess the output above,</p>
 <pre><code class="language-r">rs12075 &lt;- jsonlite::fromJSON(&quot;rs12075.json&quot;)
