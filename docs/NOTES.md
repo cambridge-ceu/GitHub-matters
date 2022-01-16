@@ -360,8 +360,6 @@ Other examples relate to an implementation in [epigraphdb](https://api.epigraphd
 options(width=150)
 data.frame(epigraphdb::mr(outcome_trait = "Multiple sclerosis", pval_threshold = 1e-8))
 library(catalogueR)
-data("meta")
-data("BST1");
 qtl.subset1 <- fetch_restAPI(unique_id=meta$unique_id[1], gwas_data=BST1)
 qtl.subset2 <- fetch_tabix(unique_id=meta$unique_id[2], gwas_data=BST1)
 ```
