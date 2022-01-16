@@ -369,4 +369,13 @@ Some more useful examples are as follows,
 curl -X GET https://www.ebi.ac.uk/eqtl/api/studies
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&study=Alasoo
+curl -X 'POST' \
+  'https://api.epigraphdb.org/protein/ppi' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "uniprot_id_list": [
+    "O14625", "P13500"
+  ]
+}'
 ```
