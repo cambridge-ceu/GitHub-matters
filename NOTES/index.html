@@ -429,8 +429,6 @@ curl -X 'POST' \
 <pre><code class="language-r">options(width=150)
 data.frame(epigraphdb::mr(outcome_trait = &quot;Multiple sclerosis&quot;, pval_threshold = 1e-8))
 library(catalogueR)
-data(&quot;meta&quot;)
-data(&quot;BST1&quot;);
 qtl.subset1 &lt;- fetch_restAPI(unique_id=meta$unique_id[1], gwas_data=BST1)
 qtl.subset2 &lt;- fetch_tabix(unique_id=meta$unique_id[2], gwas_data=BST1)
 </code></pre>
