@@ -417,7 +417,7 @@ curl -X 'POST' \
   ]
 }' | jq
 </code></pre>
-<p>Other examples relate to an implementation in <a href="https://api.epigraphdb.org/">epigraphdb</a> and <a href="https://rajlabmssm.github.io/catalogueR/">catalogueR</a>, e.g.,</p>
+<p>Other examples relate to an implementation in <a href="https://api.epigraphdb.org/">epigraphdb</a>, <a href="https://www.ebi.ac.uk/eqtl/api-docs/">eQTL Catalogue</a> and <a href="https://rajlabmssm.github.io/catalogueR/">catalogueR</a>, e.g.,</p>
 <pre><code class="language-r">options(width=150)
 data.frame(epigraphdb::mr(outcome_trait = &quot;Multiple sclerosis&quot;, pval_threshold = 1e-8))
 library(catalogueR)
