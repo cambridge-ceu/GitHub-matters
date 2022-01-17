@@ -231,17 +231,6 @@ make
 make install
 ```
 
-## gitkraken
-
-```bash
-cd ${HPC_WORK}
-wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
-tar xvfz -
-cd bin
-echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ > gitkraken
-chmod +x gitkraken
-```
-
 ## Permissions
 
 It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
@@ -448,6 +437,17 @@ or from R
 ```r
 library(httr)
 set_config(config(ssl_verifypeer = 0L))
+```
+
+## gitkraken
+
+```bash
+cd ${HPC_WORK}
+wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
+tar xvfz -
+cd bin
+echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ > gitkraken
+chmod +x gitkraken
 ```
 
 ## ssh
