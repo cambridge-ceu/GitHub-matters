@@ -97,11 +97,6 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#gitkraken" class="nav-link">gitkraken</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
               <ul class="nav flex-column">
               </ul>
@@ -123,6 +118,11 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#certification-authority-ca" class="nav-link">certification authority (CA)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#gitkraken" class="nav-link">gitkraken</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -335,14 +335,6 @@ make install
 make
 make install
 </code></pre>
-<h2 id="gitkraken">gitkraken</h2>
-<pre><code class="language-bash">cd ${HPC_WORK}
-wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
-tar xvfz -
-cd bin
-echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
-chmod +x gitkraken
-</code></pre>
 <h2 id="permissions">Permissions</h2>
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
 <pre><code class="language-bash">chmod u+rx,go-w v4
@@ -500,6 +492,14 @@ git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
 <p>or from R</p>
 <pre><code class="language-r">library(httr)
 set_config(config(ssl_verifypeer = 0L))
+</code></pre>
+<h2 id="gitkraken">gitkraken</h2>
+<pre><code class="language-bash">cd ${HPC_WORK}
+wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
+tar xvfz -
+cd bin
+echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
+chmod +x gitkraken
 </code></pre>
 <h2 id="ssh">ssh</h2>
 <p>The use of ssh involves several steps,</p>
