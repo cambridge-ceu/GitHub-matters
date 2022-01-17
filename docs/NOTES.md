@@ -343,7 +343,7 @@ curl -X 'POST' \
 }' | jq
 ```
 
-Other examples relate to an implementation in [epigraphdb](https://api.epigraphdb.org/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
+Other examples relate to an implementation in [epigraphdb](https://api.epigraphdb.org/), [eQTL Catalogue](https://www.ebi.ac.uk/eqtl/api-docs/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
 
 ```r
 options(width=150)
