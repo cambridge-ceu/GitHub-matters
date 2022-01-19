@@ -421,6 +421,16 @@ and the results are as follows,
 >
 ```
 
+Lastly, this is another use for requesting data from the GREAT server as in the GitHub `frea-pipeline` repository,
+
+```bash
+curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
+     -d requestURL="http://web.mit.edu/aksarkar/great/$<" \
+     -d bgURL="http://web.mit.edu/aksarkar/EnhClusters/$*.bed.gz" \
+     -d requestSpecies=hg19 \
+     -d outputType=batch -o $@
+```
+
 ## certification authority (CA)
 
 An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
