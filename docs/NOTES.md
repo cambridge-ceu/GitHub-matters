@@ -309,6 +309,8 @@ Note also that to build TwoSampleMR on csd3, the following is necessary,
 module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
 ```
 
+One additional note concerns about automatic generation of documentation for R functions, through packages `sinew` and `Roxygen2`, respectively from CRAN.
+
 ## REST API
 
 Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
