@@ -231,13 +231,6 @@ make
 make install
 ```
 
-## Request updates for a forked repository
-
-Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,
-
-- **Contribute**. To send a pull request to the upstream repository.
-- **Fetch upstream**. To `git pull` from the upstream repository.
-
 ## Permissions
 
 It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
@@ -439,6 +432,13 @@ curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
      -d requestSpecies=hg19 \
      -d outputType=batch -o $@
 ```
+
+## Updates on a forked repository
+
+Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,
+
+- **Contribute**. To send a pull request to the upstream repository.
+- **Fetch upstream**. To `git pull` from the upstream repository.
 
 ## certification authority (CA)
 
