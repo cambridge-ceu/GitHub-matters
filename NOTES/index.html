@@ -97,11 +97,6 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#request-updates-for-a-forked-repository" class="nav-link">Request updates for a forked repository</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
               <ul class="nav flex-column">
               </ul>
@@ -118,6 +113,11 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#rest-api" class="nav-link">REST API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#updates-on-a-forked-repository" class="nav-link">Updates on a forked repository</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -340,12 +340,6 @@ make install
 make
 make install
 </code></pre>
-<h2 id="request-updates-for-a-forked-repository">Request updates for a forked repository</h2>
-<p>Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,</p>
-<ul>
-<li><strong>Contribute</strong>. To send a pull request to the upstream repository.</li>
-<li><strong>Fetch upstream</strong>. To <code>git pull</code> from the upstream repository.</li>
-</ul>
 <h2 id="permissions">Permissions</h2>
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
 <pre><code class="language-bash">chmod u+rx,go-w v4
@@ -501,6 +495,12 @@ result &lt;- do.call(rbind, lapply(rs12075$`_embedded`$associations, rbind))
      -d requestSpecies=hg19 \
      -d outputType=batch -o $@
 </code></pre>
+<h2 id="updates-on-a-forked-repository">Updates on a forked repository</h2>
+<p>Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,</p>
+<ul>
+<li><strong>Contribute</strong>. To send a pull request to the upstream repository.</li>
+<li><strong>Fetch upstream</strong>. To <code>git pull</code> from the upstream repository.</li>
+</ul>
 <h2 id="certification-authority-ca">certification authority (CA)</h2>
 <p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
 is as follows,</p>
