@@ -433,7 +433,7 @@ curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
 </code></pre>
 <p>Where <code>jq</code> is the command-line JavaScript Object Notation (JSON) processor.</p>
-<p>Some more useful examples are as follows,</p>
+<p>Some more useful examples are related to <a href="https://api.epigraphdb.org/">epigraphdb</a>, <a href="https://www.ebi.ac.uk/eqtl/api-docs/">eQTL Catalogue</a>,</p>
 <pre><code class="language-bash">curl -X GET https://www.ebi.ac.uk/eqtl/api/studies | jq
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075 &gt; rs12075.json
 curl -X GET https://www.ebi.ac.uk/eqtl/api/associations?variant_id=rs12075&amp;study=Alasoo
@@ -448,7 +448,7 @@ curl -X 'POST' \
 }' | jq
 curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/traits?size=1000 | jq &gt; gwas1000.json
 </code></pre>
-<p>Also related are implementations in <a href="https://api.epigraphdb.org/">epigraphdb</a>, <a href="https://www.ebi.ac.uk/eqtl/api-docs/">eQTL Catalogue</a> and <a href="https://rajlabmssm.github.io/catalogueR/">catalogueR</a>, e.g.,</p>
+<p>and <a href="https://rajlabmssm.github.io/catalogueR/">catalogueR</a>,</p>
 <pre><code class="language-r">options(width=150)
 data.frame(epigraphdb::mr(outcome_trait = &quot;Multiple sclerosis&quot;, pval_threshold = 1e-8))
 library(catalogueR)
