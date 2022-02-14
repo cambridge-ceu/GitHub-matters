@@ -315,7 +315,37 @@ One additional note concerns about automatic generation of documentation for R f
 
 Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
 
-Example uses involve the [cambridge-ceu](https://cambridge-ceu.github.io/) site information with curl, [https://curl.se/](https://curl.se/):
+A shell application, curl, [https://curl.se/](https://curl.se/) is used here.
+
+```bash
+curl https://api.github.com/zen
+```
+
+> Keep it logically awesome.(base)
+
+To simplify authentication we define two environmental variables at the beginning, create a reposity called `blog` and then delete it.
+
+```bash
+export user=
+export token=
+
+# create a repository
+curl -X POST -u $user:$token -H "Accept: application/vnd.github.v3+json" \
+    -d '{"name": "blog"}' \
+    https://api.github.com/user/repos
+
+# delete a repository
+curl -X DELETE -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
+
+# list repositories
+curl -i https://api.github.com/orgs/cambridge-ceu/repos
+
+curl -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/user/repos
+curl -i https://api.github.com/users/$user/repos
+curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/INF
+```
+
+Miscellaneous uses involve the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
 
 ```bash
 curl --version
@@ -346,7 +376,7 @@ curl -X 'POST' \
 curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/traits?size=1000 | jq > gwas1000.json
 ```
 
-Other examples relate to implementationa in [epigraphdb](https://api.epigraphdb.org/), [eQTL Catalogue](https://www.ebi.ac.uk/eqtl/api-docs/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
+Also related are implementations in [epigraphdb](https://api.epigraphdb.org/), [eQTL Catalogue](https://www.ebi.ac.uk/eqtl/api-docs/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
 
 ```r
 options(width=150)
