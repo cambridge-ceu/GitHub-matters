@@ -357,7 +357,7 @@ curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
 
 Where `jq` is the command-line JavaScript Object Notation (JSON) processor.
 
-Some more useful examples are as follows,
+Some more useful examples are related to [epigraphdb](https://api.epigraphdb.org/), [eQTL Catalogue](https://www.ebi.ac.uk/eqtl/api-docs/),
 
 ```bash
 curl -X GET https://www.ebi.ac.uk/eqtl/api/studies | jq
@@ -374,8 +374,7 @@ curl -X 'POST' \
 }' | jq
 curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/traits?size=1000 | jq > gwas1000.json
 ```
-
-Also related are implementations in [epigraphdb](https://api.epigraphdb.org/), [eQTL Catalogue](https://www.ebi.ac.uk/eqtl/api-docs/) and [catalogueR](https://rajlabmssm.github.io/catalogueR/), e.g.,
+and [catalogueR](https://rajlabmssm.github.io/catalogueR/),
 
 ```r
 options(width=150)
