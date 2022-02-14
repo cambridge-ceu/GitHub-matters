@@ -353,7 +353,6 @@ curl https://api.github.com/ | jq
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
-curl -X POST https://api.github.com/user/repos -i
 ```
 
 Where `jq` is the command-line JavaScript Object Notation (JSON) processor.
