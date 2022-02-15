@@ -345,7 +345,7 @@ curl -i https://api.github.com/users/$user/repos
 curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/INF
 ```
 
-Miscellaneous uses involve the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
+Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
 
 ```bash
 curl --version
