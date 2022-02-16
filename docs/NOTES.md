@@ -323,22 +323,21 @@ curl https://api.github.com/zen
 
 > Keep it logically awesome.(base)
 
-To simplify authentication we define two environmental variables at the beginning, create a reposity called `blog`, check its availability and then delete it.
+To simplify authentication we define environmental variables at the beginning, create a reposity called `blog`, check its availability and then delete it.
 
 ```bash
 export user=<your-GitHub-username>
 export token=<your-GitHub-token>
+export header="Accept: application/vnd.github.v3+json"
 
 # create repository called blog
-curl -X POST -u $user:$token -H "Accept: application/vnd.github.v3+json" \
-    -d '{"name": "blog"}' \
-    https://api.github.com/user/repos
+curl -X POST -u $user:$token -H "$header" -d '{"name": "blog"}' https://api.github.com/user/repos
 
 # list repositories
-curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
+curl -H "$header" https://api.github.com/repos/$user/blog
 
 # delete repository called blog
-curl -X DELETE -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
+curl -X DELETE -u $user:$token -H "$header" https://api.github.com/repos/$user/blog
 ```
 
 Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
