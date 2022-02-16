@@ -407,8 +407,8 @@ git push --set-upstream origin jhz
 <p>Keep it logically awesome.(base)</p>
 </blockquote>
 <p>To simplify authentication we define two environmental variables at the beginning, create a reposity called <code>blog</code> and then delete it.</p>
-<pre><code class="language-bash">export user=
-export token=
+<pre><code class="language-bash">export user=&lt;your-GitHub-username&gt;
+export token=&lt;your-GitHub-token&gt;
 
 # create a repository
 curl -X POST -u $user:$token -H &quot;Accept: application/vnd.github.v3+json&quot; \
