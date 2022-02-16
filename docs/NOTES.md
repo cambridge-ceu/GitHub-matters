@@ -329,20 +329,18 @@ To simplify authentication we define two environmental variables at the beginnin
 export user=<your-GitHub-username>
 export token=<your-GitHub-token>
 
-# create a repository
+# create repository called blog
 curl -X POST -u $user:$token -H "Accept: application/vnd.github.v3+json" \
     -d '{"name": "blog"}' \
     https://api.github.com/user/repos
 
-# delete a repository
-curl -X DELETE -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
-
 # list repositories
-curl -i https://api.github.com/orgs/cambridge-ceu/repos
-
 curl -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/user/repos
 curl -i https://api.github.com/users/$user/repos
-curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/INF
+curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
+
+# delete repository called blog
+curl -X DELETE -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
 ```
 
 Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
@@ -350,6 +348,7 @@ Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io
 ```bash
 curl --version
 curl https://api.github.com/ | jq
+curl https://api.github.com/orgs/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu
 curl https://api.github.com/users/cambridge-ceu/repos
 curl https://api.github.com/users/cambridge-ceu/repos\?sort\=pushed
