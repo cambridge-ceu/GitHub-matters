@@ -326,8 +326,8 @@ curl https://api.github.com/zen
 To simplify authentication we define two environmental variables at the beginning, create a reposity called `blog` and then delete it.
 
 ```bash
-export user=
-export token=
+export user=<your-GitHub-username>
+export token=<your-GitHub-token>
 
 # create a repository
 curl -X POST -u $user:$token -H "Accept: application/vnd.github.v3+json" \
