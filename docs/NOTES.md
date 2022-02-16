@@ -335,8 +335,6 @@ curl -X POST -u $user:$token -H "Accept: application/vnd.github.v3+json" \
     https://api.github.com/user/repos
 
 # list repositories
-curl -u $user:$token -H "Accept: application/vnd.github.v3+json" https://api.github.com/user/repos
-curl -i https://api.github.com/users/$user/repos
 curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$user/blog
 
 # delete repository called blog
