@@ -341,7 +341,7 @@ curl -H "$header" $API/repos/$user/blog
 curl -X DELETE -u $user:$token -H "$header" $API/repos/$user/blog
 ```
 
-Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications such as /user/repos, repos/$user/.
+Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications such as /user/repos, repos/$user/blog.
 
 Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
 
