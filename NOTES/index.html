@@ -413,13 +413,13 @@ export API=https://api.github.com
 export header=&quot;Accept: application/vnd.github.v3+json&quot;
 export name=blog
 
-# create repository called blog
+# 1. create the repository
 curl -X POST -u $user:$token -H &quot;$header&quot; -d '{&quot;name&quot;: &quot;'&quot;$name&quot;'&quot;}' $API/user/repos
 
-# list repositories
+# 2. list the repository
 curl -H &quot;$header&quot; $API/repos/$user/$name
 
-# delete repository called blog
+# 3. delete the repository
 curl -X DELETE -u $user:$token -H &quot;$header&quot; $API/repos/$user/$name
 </code></pre>
 <p>Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications /user/repos and repos/$user/blog.</p>
