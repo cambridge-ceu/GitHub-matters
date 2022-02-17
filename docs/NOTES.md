@@ -323,7 +323,7 @@ curl https://api.github.com/zen
 
 > Keep it logically awesome.(base)
 
-To simplify authentication we define environmental variables at the beginning, then create a reposity called `blog`, check its availability and then delete it.
+To simplify authentication and specifications we define environmental variables at the beginning, then create a reposity called `blog`, check its availability and then delete it.
 
 ```bash
 export user=<your-GitHub-username>
