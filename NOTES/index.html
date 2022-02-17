@@ -421,7 +421,7 @@ curl -H &quot;$header&quot; $API/repos/$user/blog
 # delete repository called blog
 curl -X DELETE -u $user:$token -H &quot;$header&quot; $API/repos/$user/blog
 </code></pre>
-<p>Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications such as /user/repos, repos/$user/.</p>
+<p>Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications such as /user/repos, repos/$user/blog.</p>
 <p>Miscellaneous uses involving the <a href="https://cambridge-ceu.github.io/">cambridge-ceu</a> site are as follows,</p>
 <pre><code class="language-bash">curl --version
 curl https://api.github.com/ | jq
