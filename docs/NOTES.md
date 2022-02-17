@@ -323,22 +323,23 @@ curl https://api.github.com/zen
 
 > Keep it logically awesome.(base)
 
-To simplify authentication we define environmental variables at the beginning, create a reposity called `blog`, check its availability and then delete it.
+To simplify authentication we define environmental variables at the beginning, then create a reposity called `blog`, check its availability and then delete it.
 
 ```bash
 export user=<your-GitHub-username>
 export token=<your-GitHub-token>
 export API=https://api.github.com
 export header="Accept: application/vnd.github.v3+json"
+export name=blog
 
 # create repository called blog
-curl -X POST -u $user:$token -H "$header" -d '{"name": "blog"}' $API/user/repos
+curl -X POST -u $user:$token -H "$header" -d '{"name": "'"$name"'"}' $API/user/repos
 
 # list repositories
-curl -H "$header" $API/repos/$user/blog
+curl -H "$header" $API/repos/$user/$name
 
 # delete repository called blog
-curl -X DELETE -u $user:$token -H "$header" $API/repos/$user/blog
+curl -X DELETE -u $user:$token -H "$header" $API/repos/$user/$name
 ```
 
 Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications /user/repos and repos/$user/blog.
