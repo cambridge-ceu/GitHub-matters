@@ -406,20 +406,21 @@ git push --set-upstream origin jhz
 <blockquote>
 <p>Keep it logically awesome.(base)</p>
 </blockquote>
-<p>To simplify authentication we define environmental variables at the beginning, create a reposity called <code>blog</code>, check its availability and then delete it.</p>
+<p>To simplify authentication we define environmental variables at the beginning, then create a reposity called <code>blog</code>, check its availability and then delete it.</p>
 <pre><code class="language-bash">export user=&lt;your-GitHub-username&gt;
 export token=&lt;your-GitHub-token&gt;
 export API=https://api.github.com
 export header=&quot;Accept: application/vnd.github.v3+json&quot;
+export name=blog
 
 # create repository called blog
-curl -X POST -u $user:$token -H &quot;$header&quot; -d '{&quot;name&quot;: &quot;blog&quot;}' $API/user/repos
+curl -X POST -u $user:$token -H &quot;$header&quot; -d '{&quot;name&quot;: &quot;'&quot;$name&quot;'&quot;}' $API/user/repos
 
 # list repositories
-curl -H &quot;$header&quot; $API/repos/$user/blog
+curl -H &quot;$header&quot; $API/repos/$user/$name
 
 # delete repository called blog
-curl -X DELETE -u $user:$token -H &quot;$header&quot; $API/repos/$user/blog
+curl -X DELETE -u $user:$token -H &quot;$header&quot; $API/repos/$user/$name
 </code></pre>
 <p>Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications /user/repos and repos/$user/blog.</p>
 <p>Miscellaneous uses involving the <a href="https://cambridge-ceu.github.io/">cambridge-ceu</a> site are as follows,</p>
