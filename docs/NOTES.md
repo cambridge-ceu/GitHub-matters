@@ -328,17 +328,20 @@ To simplify authentication we define environmental variables at the beginning, c
 ```bash
 export user=<your-GitHub-username>
 export token=<your-GitHub-token>
+export API=https://api.github.com
 export header="Accept: application/vnd.github.v3+json"
 
 # create repository called blog
-curl -X POST -u $user:$token -H "$header" -d '{"name": "blog"}' https://api.github.com/user/repos
+curl -X POST -u $user:$token -H "$header" -d '{"name": "blog"}' $API/user/repos
 
 # list repositories
-curl -H "$header" https://api.github.com/repos/$user/blog
+curl -H "$header" $API/repos/$user/blog
 
 # delete repository called blog
-curl -X DELETE -u $user:$token -H "$header" https://api.github.com/repos/$user/blog
+curl -X DELETE -u $user:$token -H "$header" $API/repos/$user/blog
 ```
+
+Note that we also use the recommended header and mask the root URL (as API) to highlight the specifications such as /user/repos, repos/$user/.
 
 Miscellaneous uses involving the [cambridge-ceu](https://cambridge-ceu.github.io/) site are as follows,
 
