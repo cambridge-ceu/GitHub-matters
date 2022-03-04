@@ -460,6 +460,8 @@ and the results are as follows,
 >
 ```
 
+Another useful REST API is [LDlink](https://ldlink.nci.nih.gov/?tab=apiaccess).
+
 Lastly, this is another use for requesting data from the GREAT server as in the GitHub `frea-pipeline` repository,
 
 ```bash
