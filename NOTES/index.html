@@ -518,6 +518,7 @@ result &lt;- do.call(rbind, lapply(rs12075$`_embedded`$associations, rbind))
 [20,] &quot;chr1_159205564_G_A&quot; 168 &quot;Alasoo_2018&quot; &quot;macrophage_IFNg&quot; &quot;ENSG00000143315&quot;  &quot;ENSG00000143315&quot; &quot;CL_0000235&quot;
 &gt;
 </code></pre>
+<p>Another useful REST API is <a href="https://ldlink.nci.nih.gov/?tab=apiaccess">LDlink</a>.</p>
 <p>Lastly, this is another use for requesting data from the GREAT server as in the GitHub <code>frea-pipeline</code> repository,</p>
 <pre><code class="language-bash">curl -fsSG &quot;http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php&quot; \
      -d requestURL=&quot;http://web.mit.edu/aksarkar/great/$&lt;&quot; \
