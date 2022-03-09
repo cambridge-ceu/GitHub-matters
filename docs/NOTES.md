@@ -321,7 +321,7 @@ One additional note concerns about automatic generation of documentation for R f
 
 ## REST API
 
-Representational State Transfer (REST) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
+Representational State Transfer (REST) ([https://restfulapi.net/](https://restfulapi.net/)) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
 
 A shell application, curl, [https://curl.se/](https://curl.se/) is used here.
 
