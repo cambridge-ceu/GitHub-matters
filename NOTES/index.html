@@ -97,6 +97,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#npm" class="nav-link">npm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
               <ul class="nav flex-column">
               </ul>
@@ -148,7 +153,8 @@ make NO_GETTEXT=YesPlease install
 </code></pre>
 <p>and the executables will be put to ~/bin.</p>
 <h2 id="github-pages">GitHub pages</h2>
-<p>This assumes use of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
+<p>This section involves <code>npm</code> which is described below.</p>
+<p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
 <pre><code class="language-bash">module load python/3.7
 source py37/bin/activate
 pip install sphinx
@@ -345,6 +351,15 @@ make install
 <pre><code class="language-bash">configure --disable-dtrace --enable-shared --with-openssl --with-openssl-dir=${HPC_WORK}/openssl-1.1.1h --prefix=${HPC_WORK}
 make
 make install
+</code></pre>
+<h2 id="npm">npm</h2>
+<p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
+<pre><code class="language-bash">cd ${HPC_WORK}
+wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
+tar xJf -
+cd node-v16.14.0-linux-x64/
+npm
+npm install
 </code></pre>
 <h2 id="permissions">Permissions</h2>
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
