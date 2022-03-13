@@ -42,11 +42,9 @@ bundle update
 # update Gemfile/_config.yml
 ```
 
-When there is a conflict, 
+One may prefix `bundle exec` to `jekyll`, e.g., `bundle exec jekyll build`.
 
 > ... /ruby/3.1.0/bundler/runtime.rb:309:in `check_for_activated_spec!': You have already activated i18n 1.9.1, but your Gemfile requires i18n 0.9.5. Prepending `bundle exec` to your command may solve this. 
-
-One may prefix `bundle exec` to `jekyll`, e.g., `bundle exec jekyll build`.
 
 It may also be simpler to remove system gem not used in a bundle `bundle clean --force`.
 
