@@ -254,7 +254,7 @@ npm
 npm install
 ```
 
-For intance, with `make build` for the rtd-theme above we got error message,
+For intance, with `make build` for the jekyll-rtd-theme above we got error message,
 
 > node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference
 
