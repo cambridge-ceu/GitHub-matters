@@ -9,7 +9,9 @@ and the executables will be put to ~/bin.
 
 ## GitHub pages
 
-This assumes use of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.
+This section involves `npm` which is described below.
+
+Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.
 ```bash
 module load python/3.7
 source py37/bin/activate
@@ -237,6 +239,19 @@ Finally, one can modify ext/Setup by uncommenting various options such as `opens
 configure --disable-dtrace --enable-shared --with-openssl --with-openssl-dir=${HPC_WORK}/openssl-1.1.1h --prefix=${HPC_WORK}
 make
 make install
+```
+
+## npm
+
+Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+
+```bash
+cd ${HPC_WORK}
+wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
+tar xJf -
+cd node-v16.14.0-linux-x64/
+npm
+npm install
 ```
 
 ## Permissions
