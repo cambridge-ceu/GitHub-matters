@@ -182,11 +182,10 @@ cd docs
 bundle update
 # update Gemfile/_config.yml
 </code></pre>
-<p>When there is a conflict, </p>
+<p>One may prefix <code>bundle exec</code> to <code>jekyll</code>, e.g., <code>bundle exec jekyll build</code>.</p>
 <blockquote>
 <p>... /ruby/3.1.0/bundler/runtime.rb:309:in <code>check_for_activated_spec!': You have already activated i18n 1.9.1, but your Gemfile requires i18n 0.9.5. Prepending</code>bundle exec` to your command may solve this. </p>
 </blockquote>
-<p>One may prefix <code>bundle exec</code> to <code>jekyll</code>, e.g., <code>bundle exec jekyll build</code>.</p>
 <p>It may also be simpler to remove system gem not used in a bundle <code>bundle clean --force</code>.</p>
 <p>A specific plugin may also be installed, e.g., </p>
 <pre><code class="language-bash">gem install jekyll-paginate
