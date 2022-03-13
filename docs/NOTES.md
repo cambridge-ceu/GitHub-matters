@@ -254,6 +254,12 @@ npm
 npm install
 ```
 
+For intance, with `make build` for the rtd-theme above we got error message,
+
+> node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference
+
+we can issue `npm rebuild` to fix.
+
 ## Permissions
 
 It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
