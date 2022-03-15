@@ -365,6 +365,12 @@ npm install
 <p>node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference</p>
 </blockquote>
 <p>we can issue <code>npm rebuild</code> to fix.</p>
+<p>When the $HOME/node_modules/ was removed, we have an error message</p>
+<blockquote>
+<p>npm ERR! could not determine executable to run</p>
+</blockquote>
+<p>we do <code>npm uninstall husky &amp;&amp; npm install --save-dev husky@4</code> and also add <code>--no-verify</code> to <code>git commit -m</code>. As for missing <code>package.json</code>, we use <code>npm init</code> followed by <code>npm install</code>.</p>
+<p>Note we have set <code>prefix=${HOME}/.npm</code> in <code>${HOME}/.npmrc</code>.</p>
 <h2 id="permissions">Permissions</h2>
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
 <pre><code class="language-bash">chmod u+rx,go-w v4
