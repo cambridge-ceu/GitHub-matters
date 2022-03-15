@@ -258,6 +258,14 @@ For intance, with `make build` for the jekyll-rtd-theme above we got error messa
 
 we can issue `npm rebuild` to fix.
 
+When the $HOME/node_modules/ was removed, we have an error message
+
+> npm ERR! could not determine executable to run
+
+we do `npm uninstall husky && npm install --save-dev husky@4` and also add `--no-verify` to `git commit -m`. As for missing `package.json`, we use `npm init` followed by `npm install`.
+
+Note we have set `prefix=${HOME}/.npm` in `${HOME}/.npmrc`.
+
 ## Permissions
 
 It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
