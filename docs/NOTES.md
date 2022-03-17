@@ -250,6 +250,8 @@ tar xJf -
 cd node-v16.14.0-linux-x64/
 npm
 npm install
+npm install npm
+npm install corepack
 ```
 
 For intance, with `make build` for the jekyll-rtd-theme above we got error message,
