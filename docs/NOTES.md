@@ -33,6 +33,8 @@ bundle install
 # cd docs
 # make build
 ```
+For update to 4.x, run `gem update jekyll` and specify `gem "jekyll", "~> 4.0"` in Gemfile. Some useful modules include kramdown-parser-gfm, github-pages.
+
 When there is a conflict with `Gemfile`, we could use
 ```bash
 mkdir docs
@@ -54,7 +56,7 @@ A specific plugin may also be installed, e.g.,
 gem install jekyll-paginate
 ```
 
-through which an appropriate version can be added to `Gemfile` followed by `bundle` above.
+through which an appropriate version can be added to `Gemfile` followed by `bundle` commands above.
 
 Consider [YAML Validator](https://codebeautify.org/yaml-validator) and [data files](https://jekyllrb.com/docs/datafiles/).
 
