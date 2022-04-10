@@ -175,6 +175,7 @@ bundle install
 # cd docs
 # make build
 </code></pre>
+<p>For update to 4.x, run <code>gem update jekyll</code> and specify <code>gem "jekyll", "~&gt; 4.0"</code> in Gemfile. Some useful modules include kramdown-parser-gfm, github-pages.</p>
 <p>When there is a conflict with <code>Gemfile</code>, we could use</p>
 <pre><code class="language-bash">mkdir docs
 cd docs
@@ -190,7 +191,7 @@ bundle update
 <p>A specific plugin may also be installed, e.g., </p>
 <pre><code class="language-bash">gem install jekyll-paginate
 </code></pre>
-<p>through which an appropriate version can be added to <code>Gemfile</code> followed by <code>bundle</code> above.</p>
+<p>through which an appropriate version can be added to <code>Gemfile</code> followed by <code>bundle</code> commands above.</p>
 <p>Consider <a href="https://codebeautify.org/yaml-validator">YAML Validator</a> and <a href="https://jekyllrb.com/docs/datafiles/">data files</a>.</p>
 <p>To generate a site map, follow these steps with jekyll/minima theme,</p>
 <ol>
