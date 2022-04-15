@@ -175,6 +175,11 @@ bundle install
 # cd docs
 # make build
 </code></pre>
+<p>Specific version can be attached, e.g., bundler:2.3.3. Relevant information can then be obtained, e.g.,</p>
+<pre><code class="language-bash">ruby -v
+gem env
+gem list
+</code></pre>
 <p>For update to 4.x, run <code>gem update jekyll</code> and specify <code>gem "jekyll", "~&gt; 4.0"</code> in Gemfile. Some useful modules include kramdown-parser-gfm, github-pages.</p>
 <p>When there is a conflict with <code>Gemfile</code>, we could use</p>
 <pre><code class="language-bash">mkdir docs
