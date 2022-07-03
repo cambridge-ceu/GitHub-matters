@@ -1,6 +1,6 @@
 <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
 
-## How to contribute to [cambridge-ceu repositories](https://github.com/cambridge-ceu)
+## How to contribute to [cambridge-ceu](https://github.com/cambridge-ceu)
 
 Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.
 
