@@ -379,7 +379,7 @@ npm install corepack
 </blockquote>
 <p>we do <code>npm uninstall husky &amp;&amp; npm install --save-dev husky@4</code> and also add <code>--no-verify</code> to <code>git commit -m</code>. As for missing <code>package.json</code>, we use <code>npm init</code> followed by <code>npm install</code>.</p>
 <p>Note we have set <code>prefix=${HOME}/.npm</code> in <code>${HOME}/.npmrc</code>.</p>
-<p>When we received message <code>Error: could not determine executable to run</code>, the following can be done.</p>
+<p>When we receive message <code>Error: could not determine executable to run</code>, the following can be done.</p>
 <pre><code class="language-bash">rm -rf .git/hooks
 npm install
 </code></pre>
