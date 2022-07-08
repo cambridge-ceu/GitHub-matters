@@ -97,7 +97,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#npm_1" class="nav-link">npm</a>
+            <li class="nav-item" data-level="2"><a href="#npm" class="nav-link">npm</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -216,11 +216,6 @@ bundle update
 <li>Select <strong>CAPTION</strong> at the bottom of the image, enter text with a customised color, and <strong>CREATE GIF</strong>.</li>
 <li>Crop the gif via <a href="https://onlinegiftools.com/crop-gif">https://onlinegiftools.com/crop-gif</a> and embed it in the page.</li>
 </ul>
-<h3 id="npm">npm</h3>
-<p>When we received message <code>Error: could not determine executable to run</code>, the following can be done.</p>
-<pre><code class="language-bash">rm -rf .git/hooks
-npm install
-</code></pre>
 <h3 id="ruby-install">ruby-install</h3>
 <p>By default, it is for root user and it is possible to do this locally,</p>
 <pre><code class="language-bash">mkdir -p $HOME/src
@@ -362,7 +357,7 @@ make install
 make
 make install
 </code></pre>
-<h2 id="npm_1">npm</h2>
+<h2 id="npm">npm</h2>
 <p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
 <pre><code class="language-bash">cd ${HPC_WORK}
 wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
@@ -384,6 +379,10 @@ npm install corepack
 </blockquote>
 <p>we do <code>npm uninstall husky &amp;&amp; npm install --save-dev husky@4</code> and also add <code>--no-verify</code> to <code>git commit -m</code>. As for missing <code>package.json</code>, we use <code>npm init</code> followed by <code>npm install</code>.</p>
 <p>Note we have set <code>prefix=${HOME}/.npm</code> in <code>${HOME}/.npmrc</code>.</p>
+<p>When we received message <code>Error: could not determine executable to run</code>, the following can be done.</p>
+<pre><code class="language-bash">rm -rf .git/hooks
+npm install
+</code></pre>
 <h2 id="permissions">Permissions</h2>
 <p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
 <pre><code class="language-bash">chmod u+rx,go-w v4
