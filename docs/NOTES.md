@@ -90,15 +90,6 @@ The banner at cambridge-ceu.github.io is created as follows,
 - Select **CAPTION** at the bottom of the image, enter text with a customised color, and **CREATE GIF**.
 - Crop the gif via [https://onlinegiftools.com/crop-gif](https://onlinegiftools.com/crop-gif) and embed it in the page.
 
-### npm
-
-When we received message `Error: could not determine executable to run`, the following can be done.
-
-```bash
-rm -rf .git/hooks
-npm install
-```
-
 ### ruby-install
 
 By default, it is for root user and it is possible to do this locally,
@@ -287,6 +278,13 @@ When the $HOME/node_modules/ was removed, we have an error message
 we do `npm uninstall husky && npm install --save-dev husky@4` and also add `--no-verify` to `git commit -m`. As for missing `package.json`, we use `npm init` followed by `npm install`.
 
 Note we have set `prefix=${HOME}/.npm` in `${HOME}/.npmrc`.
+
+When we received message `Error: could not determine executable to run`, the following can be done.
+
+```bash
+rm -rf .git/hooks
+npm install
+```
 
 ## Permissions
 
