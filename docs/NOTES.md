@@ -279,7 +279,7 @@ we do `npm uninstall husky && npm install --save-dev husky@4` and also add `--no
 
 Note we have set `prefix=${HOME}/.npm` in `${HOME}/.npmrc`.
 
-When we received message `Error: could not determine executable to run`, the following can be done.
+When we receive message `Error: could not determine executable to run`, the following can be done.
 
 ```bash
 rm -rf .git/hooks
