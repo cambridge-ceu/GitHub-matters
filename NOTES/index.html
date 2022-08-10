@@ -92,6 +92,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#a-landing-page" class="nav-link">A landing page</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
@@ -152,6 +157,13 @@ cd git-2.30.0
 make NO_GETTEXT=YesPlease install
 </code></pre>
 <p>and the executables will be put to ~/bin.</p>
+<h2 id="a-landing-page">A landing page</h2>
+<p>This is possible for two cases:</p>
+<ul>
+<li><strong>User</strong>. Create a repository named as <GitHub-user-name> with a README.md.</li>
+<li><strong>Organisation</strong>. Create a repositoriy named as .github with a profile/README.md.</li>
+</ul>
+<p>In both cases, public access should be allowed.</p>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
