@@ -7,6 +7,15 @@ make NO_GETTEXT=YesPlease install
 ```
 and the executables will be put to ~/bin.
 
+## A landing page
+
+This is possible for two cases:
+
+- **User**. Create a repository named as <GitHub-user-name> with a README.md.
+- **Organisation**. Create a repositoriy named as .github with a profile/README.md.
+
+In both cases, public access should be allowed.
+
 ## GitHub pages
 
 This section involves `npm` which is described below.
