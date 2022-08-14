@@ -7,7 +7,7 @@ make NO_GETTEXT=YesPlease install
 ```
 and the executables will be put to ~/bin.
 
-## A landing page
+## Landing pages
 
 This is possible for two cases:
 
