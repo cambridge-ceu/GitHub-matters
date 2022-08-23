@@ -12,7 +12,8 @@ and the executables will be put to ~/bin.
 This is possible for two cases:
 
 - **User**. Create a repository named as <GitHub-user-name> with a README.md.
-- **Organisation**. Create a repositoriy named as .github with a profile/README.md.
+- **Organisation**. Create a repository named as .github with a profile/README.md.
+- **Organisation members**. Create a repository named as .github-private with a profile/README.md
 
 In both cases, public access should be allowed. To make sure image to be shown the syntax would be `![caption](absolute addres)`, e.g.,
 `https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png)`.
