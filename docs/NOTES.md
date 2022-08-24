@@ -11,7 +11,7 @@ and the executables will be put to ~/bin.
 
 This is possible for two cases:
 
-- **User**. Create a repository named as \<GitHub-user-name\> with a README.md.
+- **User**. Create a repository named as GitHub-user-name with a README.md.
 - **Organisation**. Create a repository named as .github with a profile/README.md.
 - **Organisation members**. Create a repository named as .github-private with a profile/README.md
 
