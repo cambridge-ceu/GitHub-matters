@@ -20,6 +20,8 @@ would be `![caption](absolute address)`, e.g., `https://github.com/cambridge-ceu
 
 ## GitHub actions
 
+Suppose our R packages are inside `R` folder, where we start the following script,
+
 ```bash
 Rscript -e '
   library(usethis)
