@@ -97,6 +97,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#github-actions" class="nav-link">GitHub actions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
@@ -166,6 +171,23 @@ make NO_GETTEXT=YesPlease install
 </ul>
 <p>For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
 would be <code>![caption](absolute address)</code>, e.g., <code>https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png)</code>.</p>
+<h2 id="github-actions">GitHub actions</h2>
+<pre><code class="language-bash">Rscript -e '
+  library(usethis)
+  use_github_actions()
+  use_github_actions_badge(name = &quot;R-CMD-check.yaml&quot;, repo_spec = NULL)
+  use_github_action_check_release(save_as = &quot;R-CMD-check.yaml&quot;, ref = NULL, ignore = TRUE, open = FALSE)
+'
+</code></pre>
+<p>We carry on adding a few other facilities.</p>
+<!-- badges: start -->
+<p><a href="https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml"><img alt="R-CMD-check" src="https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml/badge.svg" /></a>
+<a href="https://cran.r-project.org/package=gap"><img alt="CRAN Version" src="http://www.r-pkg.org/badges/version/gap" /></a>
+<a href="http://cranlogs.r-pkg.org/badges/gap"><img alt="Monthly Downloads" src="http://cranlogs.r-pkg.org/badges/gap" /></a>
+<a href="http://cranlogs.r-pkg.org/badges/grand-total/gap"><img alt="Total Downloads" src="http://cranlogs.r-pkg.org/badges/grand-total/gap" /></a></p>
+<!-- badges: end -->
+
+<p>Nevertheless, the canonical actions are inappropriate for a collection of R packages here. When <code>pkgdown</code> is used it also creates its own actions.</p>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
