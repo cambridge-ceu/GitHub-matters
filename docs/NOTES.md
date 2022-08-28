@@ -18,6 +18,28 @@ This is possible for two cases:
 For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
 would be `![caption](absolute address)`, e.g., `https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png)`.
 
+## GitHub actions
+
+```bash
+Rscript -e '
+  library(usethis)
+  use_github_actions()
+  use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
+  use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
+'
+```
+
+We carry on adding a few other facilities.
+
+ <!-- badges: start -->
+[![R-CMD-check](https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml)
+[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
+[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
+<!-- badges: end -->
+
+Nevertheless, the canonical actions are inappropriate for a collection of R packages here. When `pkgdown` is used it also creates its own actions.
+
 ## GitHub pages
 
 This section involves `npm` which is described below.
