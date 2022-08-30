@@ -33,6 +33,17 @@ Rscript -e '
 
 We carry on adding a few other facilities.
 
+```
+ <!-- badges: start -->
+[![R-CMD-check](https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jinghuazhao/R/actions/>
+[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
+[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
+<!-- badges: end -->
+```
+
+which gives,
+
  <!-- badges: start -->
 [![R-CMD-check](https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/R-CMD-check.yaml)
 [![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
@@ -40,7 +51,7 @@ We carry on adding a few other facilities.
 [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
 <!-- badges: end -->
 
-Nevertheless, the canonical actions are inappropriate for a collection of R packages here. When `pkgdown` is used it also creates its own actions.
+Note the canonical actions are inappropriate for a collection of R packages here. When `pkgdown` is used it also creates its own actions.
 
 ## GitHub pages
 
