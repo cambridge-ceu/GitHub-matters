@@ -565,6 +565,8 @@ curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
      -d outputType=batch -o $@
 ```
 
+GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statistics/docs/](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
+
 ## Updates on a forked repository
 
 Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,
