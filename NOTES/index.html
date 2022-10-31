@@ -160,8 +160,14 @@
 <pre><code class="language-bash">wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
 cd git-2.30.0
 make NO_GETTEXT=YesPlease install
+# 2.38.1
+wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
+cd git-2.38.1
+module load zlib/1.2.11
+export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+make
 </code></pre>
-<p>and the executables will be put to ~/bin.</p>
+<p>and by default the executables will be put to ~/bin.</p>
 <h2 id="landing-pages">Landing pages</h2>
 <p>This is possible for two cases:</p>
 <ul>
