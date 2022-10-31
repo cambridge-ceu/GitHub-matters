@@ -4,8 +4,14 @@
 wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
 cd git-2.30.0
 make NO_GETTEXT=YesPlease install
+# 2.38.1
+wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
+cd git-2.38.1
+module load zlib/1.2.11
+export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+make
 ```
-and the executables will be put to ~/bin.
+and by default the executables will be put to ~/bin.
 
 ## Landing pages
 
