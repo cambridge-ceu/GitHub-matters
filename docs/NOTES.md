@@ -1,5 +1,7 @@
 ## Git installation
 
+Two instances are given below,
+
 ```bash
 wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
 cd git-2.30.0
