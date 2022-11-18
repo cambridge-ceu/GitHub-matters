@@ -13,6 +13,17 @@ make
 ```
 and by default the executables will be put to ~/bin.
 
+## Git clone
+
+Perhaps it is the most common use, e.g.,
+
+```bash
+git clone https://github.com/gkichaev/PAINTOR_V3.0.git
+git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
+```
+
+which download a repository and its wiki pages.
+
 ## Landing pages
 
 This is possible for two cases:
@@ -24,7 +35,7 @@ This is possible for two cases:
 For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
 would be `![caption](absolute address)`, e.g., [`https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png`](https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png).
 
-## GitHub actions
+## Git actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
 
