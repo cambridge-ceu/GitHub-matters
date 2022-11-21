@@ -24,7 +24,7 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.git
 git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 ```
 
-which download a repository and its wiki pages.
+which download a repository and its wiki pages, respectively.
 
 ## Landing pages
 
