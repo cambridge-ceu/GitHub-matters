@@ -102,12 +102,12 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#github-landing-pages" class="nav-link">GitHub landing pages</a>
+            <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
+            <li class="nav-item" data-level="2"><a href="#github-landing-pages" class="nav-link">GitHub landing pages</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -206,15 +206,6 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 <!-- badges: end -->
 
 <p>Note the canonical actions are inappropriate for a collection of R packages here. When <code>pkgdown</code> is used it also creates its own actions.</p>
-<h2 id="github-landing-pages">GitHub landing pages</h2>
-<p>This is possible for two cases:</p>
-<ul>
-<li><strong>User</strong>. Create a repository named as <code>GitHub-username</code> with a README.md.</li>
-<li><strong>Organisation</strong>. Create a repository named as .github with a profile/README.md.</li>
-<li><strong>Organisation members</strong>. Create a repository named as .github-private with a profile/README.md</li>
-</ul>
-<p>For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
-would be <code>![caption](absolute address)</code>, e.g., <a href="https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png"><code>https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png</code></a>.</p>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
@@ -420,6 +411,15 @@ make install
 make
 make install
 </code></pre>
+<h2 id="github-landing-pages">GitHub landing pages</h2>
+<p>This is possible for two cases:</p>
+<ul>
+<li><strong>User</strong>. Create a repository named as <code>GitHub-username</code> with a README.md.</li>
+<li><strong>Organisation</strong>. Create a repository named as .github with a profile/README.md.</li>
+<li><strong>Organisation members</strong>. Create a repository named as .github-private with a profile/README.md</li>
+</ul>
+<p>For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
+would be <code>![caption](absolute address)</code>, e.g., <a href="https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png"><code>https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png</code></a>.</p>
 <h2 id="npm">npm</h2>
 <p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
 <pre><code class="language-bash">cd ${HPC_WORK}
