@@ -26,17 +26,6 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 
 which download a repository and its wiki pages, respectively.
 
-## Landing pages
-
-This is possible for two cases:
-
-- **User**. Create a repository named as `GitHub-username` with a README.md.
-- **Organisation**. Create a repository named as .github with a profile/README.md.
-- **Organisation members**. Create a repository named as .github-private with a profile/README.md
-
-For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
-would be `![caption](absolute address)`, e.g., [`https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png`](https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png).
-
 ## Git actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
@@ -71,6 +60,17 @@ which gives,
 <!-- badges: end -->
 
 Note the canonical actions are inappropriate for a collection of R packages here. When `pkgdown` is used it also creates its own actions.
+
+## GitHub landing pages
+
+This is possible for two cases:
+
+- **User**. Create a repository named as `GitHub-username` with a README.md.
+- **Organisation**. Create a repository named as .github with a profile/README.md.
+- **Organisation members**. Create a repository named as .github-private with a profile/README.md
+
+For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax 
+would be `![caption](absolute address)`, e.g., [`https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png`](https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png).
 
 ## GitHub pages
 
