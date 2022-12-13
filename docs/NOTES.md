@@ -59,7 +59,7 @@ which gives,
 [![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
 <!-- badges: end -->
 
-Note the canonical actions are inappropriate for a collection of R packages here. When `pkgdown` is used it also creates its own actions.
+Note .github/workflows would contains actions which can be removed manually.
 
 ## GitHub pages
 
