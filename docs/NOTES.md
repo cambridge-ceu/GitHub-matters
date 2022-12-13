@@ -39,7 +39,7 @@ Rscript -e '
 '
 ```
 
-We carry on adding a few other facilities.
+We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.
 
 ```
  <!-- badges: start -->
