@@ -185,8 +185,11 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 <pre><code class="language-bash">Rscript -e '
   library(usethis)
   use_github_actions()
+  use_github_action(&quot;pkgdown&quot;)
+  use_github_action(&quot;bookdown&quot;)
   use_github_actions_badge(name = &quot;R-CMD-check.yaml&quot;, repo_spec = NULL)
   use_github_action_check_release(save_as = &quot;R-CMD-check.yaml&quot;, ref = NULL, ignore = TRUE, open = FALSE)
+# https://github.com/r-lib/actions/tree/v2/examples
 '
 </code></pre>
 <p>We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.</p>
@@ -206,7 +209,6 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 <!-- badges: end -->
 
 <p>Note .github/workflows would contains actions which can be removed manually.</p>
-<p>See <a href="https://github.com/r-lib/actions/">https://github.com/r-lib/actions/</a>.</p>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
