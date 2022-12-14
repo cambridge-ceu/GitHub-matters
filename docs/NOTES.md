@@ -26,7 +26,7 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 
 which download a repository and its wiki pages, respectively.
 
-## Git actions
+## GitHub actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
 
@@ -60,6 +60,8 @@ which gives,
 <!-- badges: end -->
 
 Note .github/workflows would contains actions which can be removed manually.
+
+See [https://github.com/r-lib/actions/](https://github.com/r-lib/actions/).
 
 ## GitHub pages
 
