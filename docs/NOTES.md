@@ -34,8 +34,11 @@ Suppose our R packages are inside `R` folder, where we start some of the followi
 Rscript -e '
   library(usethis)
   use_github_actions()
+  use_github_action("pkgdown")
+  use_github_action("bookdown")
   use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
   use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
+# https://github.com/r-lib/actions/tree/v2/examples
 '
 ```
 
@@ -60,8 +63,6 @@ which gives,
 <!-- badges: end -->
 
 Note .github/workflows would contains actions which can be removed manually.
-
-See [https://github.com/r-lib/actions/](https://github.com/r-lib/actions/).
 
 ## GitHub pages
 
