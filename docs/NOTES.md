@@ -42,6 +42,7 @@ Rscript -e '
   use_github_actions()
   use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
   use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
+# https://remotes.r-lib.org/articles/dependencies.html
 '
 ```
 
