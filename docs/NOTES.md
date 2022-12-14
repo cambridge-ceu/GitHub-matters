@@ -33,16 +33,19 @@ Suppose our R packages are inside `R` folder, where we start some of the followi
 ```bash
 Rscript -e '
   library(usethis)
-  use_github_actions()
+# https://github.com/r-lib/actions/tree/v2/examples
+# https://www.tidyverse.org/blog/2022/06/actions-2-0-0/
+  use_github_action("check-standard")
+  use_github_action("test-coverage")
   use_github_action("pkgdown")
   use_github_action("bookdown")
+  use_github_actions()
   use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
   use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
-# https://github.com/r-lib/actions/tree/v2/examples
 '
 ```
 
-We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.
+The last line creates `.github/workflows/R-CMD-check.yaml`. We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.
 
 ```
  <!-- badges: start -->
