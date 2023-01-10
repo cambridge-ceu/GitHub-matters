@@ -1,7 +1,3 @@
-## Bioconductor contribution
-
-[https://contributions.bioconductor.org/index.html](https://contributions.bioconductor.org/index.html)
-
 ## Git installation
 
 Two instances are given below,
