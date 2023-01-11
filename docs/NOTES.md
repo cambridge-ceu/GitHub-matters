@@ -379,6 +379,18 @@ git push -f
 ```
 For more details, see [here](https://help.github.com/en/github/using-git/changing-a-remotes-url).
 
+Closely related are web pages such as SRCF, <https://www.srcf.net/>
+
+```bash
+find /public/home/$USER/public_html -type f -exec unix2dos +x {} \;
+
+chmod -R +r /public/home/$USER/public_html
+find /public/home/$USER/public_html -type d -exec chmod +r-w+x {} \;
+
+chmod -R u+w /public/home/$USER/public_html
+find /public/home/$USER/public_html -type d -exec chmod u+w {} \;
+```
+
 ## Pop-up windows
 
 A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
