@@ -591,6 +591,20 @@ and the results are as follows,
 >
 ```
 
+Here are additional examples from GWAS Catalog, <https://www.ebi.ac.uk/gwas/>:
+
+```bash
+# GCST001729 requires API, https://www.ebi.ac.uk/gwas/summary-statistics/docs/
+curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/associations?variant_id=rs601338
+curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/studies/GCST001729/associations
+```
+
+In fact, in this case it might be handy to use gwasrapidd, <https://cran.r-project.org/package=gwasrapidd>, as follows,
+
+```r
+rs601338 <- gwasrapidd::get_associations(variant_id = "rs601338")
+```
+
 Another useful REST API is [LDlink](https://ldlink.nci.nih.gov/?tab=apiaccess).
 
 Lastly, this is another use for requesting data from the GREAT server as in the GitHub `frea-pipeline` repository,
