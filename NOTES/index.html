@@ -634,6 +634,14 @@ result &lt;- do.call(rbind, lapply(rs12075$`_embedded`$associations, rbind))
 [20,] &quot;chr1_159205564_G_A&quot; 168 &quot;Alasoo_2018&quot; &quot;macrophage_IFNg&quot; &quot;ENSG00000143315&quot;  &quot;ENSG00000143315&quot; &quot;CL_0000235&quot;
 &gt;
 </code></pre>
+<p>Here are additional examples from GWAS Catalog, <a href="https://www.ebi.ac.uk/gwas/">https://www.ebi.ac.uk/gwas/</a>:</p>
+<pre><code class="language-bash"># GCST001729 requires API, https://www.ebi.ac.uk/gwas/summary-statistics/docs/
+curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/associations?variant_id=rs601338
+curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/studies/GCST001729/associations
+</code></pre>
+<p>In fact, in this case it might be handy to use gwasrapidd, <a href="https://cran.r-project.org/package=gwasrapidd">https://cran.r-project.org/package=gwasrapidd</a>, as follows,</p>
+<pre><code class="language-r">rs601338 &lt;- gwasrapidd::get_associations(variant_id = &quot;rs601338&quot;)
+</code></pre>
 <p>Another useful REST API is <a href="https://ldlink.nci.nih.gov/?tab=apiaccess">LDlink</a>.</p>
 <p>Lastly, this is another use for requesting data from the GREAT server as in the GitHub <code>frea-pipeline</code> repository,</p>
 <pre><code class="language-bash">curl -fsSG &quot;http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php&quot; \
