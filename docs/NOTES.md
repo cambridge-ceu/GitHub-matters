@@ -382,14 +382,14 @@ For more details, see [here](https://help.github.com/en/github/using-git/changin
 Closely related are web pages such as SRCF, <https://www.srcf.net/>
 
 ```bash
-find /public/home/$USER/public_html -type f -exec unix2dos +x {} \;
-
-chmod -R +r /public/home/$USER/public_html
-find /public/home/$USER/public_html -type d -exec chmod +r-w+x {} \;
-
-chmod -R u+w /public/home/$USER/public_html
-find /public/home/$USER/public_html -type d -exec chmod u+w {} \;
+chmod -R u+w,go-w,+rX /public/home/$USER/public_html
 ```
+
+Which applies four permissions changes:
+* u+w (apply user-writable to all files)
+* go-w (remove group/world-writable from all files)
+* +r (make everything readable by everyone)
+* +X (make directories executable i.e. openable)
 
 ## Pop-up windows
 
