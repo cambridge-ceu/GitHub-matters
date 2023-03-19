@@ -468,14 +468,13 @@ git push -f
 </code></pre>
 <p>For more details, see <a href="https://help.github.com/en/github/using-git/changing-a-remotes-url">here</a>.</p>
 <p>Closely related are web pages such as SRCF, <a href="https://www.srcf.net/">https://www.srcf.net/</a></p>
-<pre><code class="language-bash">find /public/home/$USER/public_html -type f -exec unix2dos +x {} \;
-
-chmod -R +r /public/home/$USER/public_html
-find /public/home/$USER/public_html -type d -exec chmod +r-w+x {} \;
-
-chmod -R u+w /public/home/$USER/public_html
-find /public/home/$USER/public_html -type d -exec chmod u+w {} \;
+<pre><code class="language-bash">chmod -R u+w,go-w,+rX /public/home/$USER/public_html
 </code></pre>
+<p>Which applies four permissions changes:
+* u+w (apply user-writable to all files)
+* go-w (remove group/world-writable from all files)
+* +r (make everything readable by everyone)
+* +X (make directories executable i.e. openable)</p>
 <h2 id="pop-up-windows">Pop-up windows</h2>
 <p>A window may pop up for password, which could cause problems with command-line interface but this can be disabled with</p>
 <pre><code class="language-bash"> unset SSH_ASKPASS
