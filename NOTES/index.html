@@ -470,11 +470,13 @@ git push -f
 <p>Closely related are web pages such as SRCF, <a href="https://www.srcf.net/">https://www.srcf.net/</a></p>
 <pre><code class="language-bash">chmod -R u+w,go-w,+rX /public/home/$USER/public_html
 </code></pre>
-<p>Which applies four permissions changes:
-* u+w (apply user-writable to all files)
-* go-w (remove group/world-writable from all files)
-* +r (make everything readable by everyone)
-* +X (make directories executable i.e. openable)</p>
+<p>Which applies four permissions changes:</p>
+<ul>
+<li>u+w (apply user-writable to all files)</li>
+<li>go-w (remove group/world-writable from all files)</li>
+<li>+r (make everything readable by everyone)</li>
+<li>+X (make directories executable i.e. openable)</li>
+</ul>
 <h2 id="pop-up-windows">Pop-up windows</h2>
 <p>A window may pop up for password, which could cause problems with command-line interface but this can be disabled with</p>
 <pre><code class="language-bash"> unset SSH_ASKPASS
