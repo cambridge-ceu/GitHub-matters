@@ -386,6 +386,7 @@ chmod -R u+w,go-w,+rX /public/home/$USER/public_html
 ```
 
 Which applies four permissions changes:
+
 * u+w (apply user-writable to all files)
 * go-w (remove group/world-writable from all files)
 * +r (make everything readable by everyone)
