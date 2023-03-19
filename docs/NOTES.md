@@ -385,7 +385,7 @@ Closely related are web pages such as SRCF, <https://www.srcf.net/>
 chmod -R u+w,go-w,+rX /public/home/$USER/public_html
 ```
 
-Which applies four permissions changes:
+which applies four permissions changes:
 
 * u+w (apply user-writable to all files)
 * go-w (remove group/world-writable from all files)
