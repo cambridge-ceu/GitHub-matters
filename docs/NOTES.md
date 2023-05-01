@@ -665,3 +665,15 @@ The use of ssh involves several steps,
 3. Replace the url address at the .git/config locally with the repository address from its Code section (i.e., `git@github.com:<username>`/`<repositoryname>.git`).
 
 This should enable code updates without request for the access token.
+
+One see error
+
+```
+Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.121.3'
+```
+
+then issue
+
+```bash
+ssh-keygen -R 140.82.121.3
+```
