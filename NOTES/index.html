@@ -684,7 +684,13 @@ chmod +x gitkraken
 <li>Paste the public key into your GitHub account profile.</li>
 <li>Replace the url address at the .git/config locally with the repository address from its Code section (i.e., <code>git@github.com:&lt;username&gt;</code>/<code>&lt;repositoryname&gt;.git</code>).</li>
 </ol>
-<p>This should enable code updates without request for the access token.</p></div>
+<p>This should enable code updates without request for the access token.</p>
+<p>One see error</p>
+<pre><code>Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.121.3'
+</code></pre>
+<p>then issue</p>
+<pre><code class="language-bash">ssh-keygen -R 140.82.121.3
+</code></pre></div>
             </div>
         </div>
 
