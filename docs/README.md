@@ -16,7 +16,7 @@ An example is given in [NOTES.md](NOTES.md). More generally, it would be similar
 
 ## Technical guides and enhancements
 
-   * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
+   * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [learning branching](https://learngitbranching.js.org/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
    * [Git(Kraken) tutorials](https://www.gitkraken.com/learn/git/tutorials).
    * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
    * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE/), [HelloGitHub](https://hellogithub.com/), [awesome-GitHub](https://github.com/Kikobeats/awesome-github), [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
@@ -27,7 +27,7 @@ An example is given in [NOTES.md](NOTES.md). More generally, it would be similar
    * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/). 
    * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
 
-CAUTION -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
+CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
 
 ## Policies
 
@@ -39,4 +39,4 @@ Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control wit
 
 Chacon S, Straub B. Pro Git, 2e. Apress, 2014, [https://link.springer.com/book/10.1007%2F978-1-4842-0076-6](https://link.springer.com/book/10.1007%2F978-1-4842-0076-6).
 
-GitHub education at the university [https://help.uis.cam.ac.uk/news/github-education](https://help.uis.cam.ac.uk/news/github-education).
+GitHub education at the university [https://help.uis.cam.ac.uk/news/github-education](https://help.uis.cam.ac.uk/news/github-education), [courses](https://www.training.cam.ac.uk/event/4423832).
