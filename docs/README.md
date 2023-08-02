@@ -39,4 +39,4 @@ Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control wit
 
 Chacon S, Straub B. Pro Git, 2e. Apress, 2014, [https://link.springer.com/book/10.1007%2F978-1-4842-0076-6](https://link.springer.com/book/10.1007%2F978-1-4842-0076-6).
 
-GitHub education at the university [https://help.uis.cam.ac.uk/news/github-education](https://help.uis.cam.ac.uk/news/github-education), [courses](https://www.training.cam.ac.uk/event/4423832).
+GitHub education and AWS Educate at the university <https://help.uis.cam.ac.uk/resources/comms/archived-campaigns/github-aws>, [courses](https://www.training.cam.ac.uk/event/4423832).
