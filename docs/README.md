@@ -43,4 +43,4 @@ GitHub education and AWS Educate at the university <https://help.uis.cam.ac.uk/r
 
 ## Acknowledgment
 
-Thanks to Amy Mason for links on [`learning brachnes`](https://learngitbranching.js.org/) and [`courses`](https://www.training.cam.ac.uk/event/4423832).
+Thanks to Amy Mason for links on [`learning brachnes`](https://learngitbranching.js.org/) and University training [`courses`](https://www.training.cam.ac.uk/event/4423832).
