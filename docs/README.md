@@ -25,6 +25,7 @@ An example is given in [NOTES.md](NOTES.md). More generally, it would be similar
    * [git recall](https://github.com/Fakerr/git-recall.git).
    * [GitHub token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and [Connection with ssh](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
    * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/). 
+   * quarto documentation, <https://quarto.org/docs/guide/>
    * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
 
 CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
