@@ -328,6 +328,16 @@ Web: <https://quarto.org/>
 
 This provides a way to publish GitHub pages, see <https://quarto.org/docs/publishing/github-pages>.
 
+On CSD3, one can invoke the quarto module,
+
+```bash
+# icelake
+ssh login-q-1
+module load ceuadmin/quarto
+```
+
+Technical information for the setup is described here, <https://cambridge-ceu.github.io/csd3/applications/quarto.html>.
+
 ## npm
 
 Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
