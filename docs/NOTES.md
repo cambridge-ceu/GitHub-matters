@@ -311,7 +311,7 @@ make
 make install
 ```
 
-## GitHub landing pages
+### GitHub landing pages
 
 This is possible for two cases:
 
@@ -321,6 +321,12 @@ This is possible for two cases:
 
 For both user and organisation public access should be allowed, but organisation member would be private. To make sure image to be shown the syntax
 would be `![caption](absolute address)`, e.g., [`https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png`](https://github.com/cambridge-ceu/.github/blob/master/profile/logo.png).
+
+### quarto
+
+Web: <https://quarto.org/>
+
+This provides a way to publish GitHub pages, see <https://quarto.org/docs/publishing/github-pages>.
 
 ## npm
 
