@@ -30,6 +30,8 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
 
 CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
 
+<a href="https://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="860" height="350" align="center"></a>
+
 ## Policies
 
 This is in line with or somewhat mirrors [University's policies for HPC](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html).
