@@ -3,7 +3,7 @@ repo_url: https://github.com/cambridge-ceu/GitHub-matters
 edit_uri: ""
 nav:
     - "   ": README.md
-    - NOTES: NOTES.md
+    - Notes: Notes.md
 theme:
     name: mkdocs
     nav_style: dark
