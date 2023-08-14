@@ -12,7 +12,7 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
 5. Submit a pull request from your_initials_or_description.
 
-An example is given in [NOTES.md](NOTES.md). More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
+An example is given in [Notes.md](Notes.md). More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
 
 ## Technical guides and enhancements
 
@@ -28,7 +28,7 @@ An example is given in [NOTES.md](NOTES.md). More generally, it would be similar
    * quarto Guide, <https://quarto.org/docs/guide/>
    * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
 
-CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [NOTES.md](NOTES.md).
+CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
 
 ## Policies
 
