@@ -338,6 +338,13 @@ module load ceuadmin/quarto
 
 Technical information for the setup is described here, <https://cambridge-ceu.github.io/csd3/applications/quarto.html>.
 
+### GitHub themes
+
+Two popular themes are as follows,
+
+1. MkDocs, <https://www.mkdocs.org/>
+2. Read the Docs, <https://docs.readthedocs.io/en/stable/>
+
 ## npm
 
 Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
