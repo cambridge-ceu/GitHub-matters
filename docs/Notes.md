@@ -1,8 +1,12 @@
-## 2-factor Authenticator (2FA)
+## 2-factor Authentication (2FA)
 
-This will start from 12 October 2023, for which MicroSoft authenticator app is required.
+This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.
 
-See also <https://github.com/settings/security>
+See also <https://github.com/settings/security> and <https://docs.github.com/articles/about-two-factor-authentication> for more information.
+
+To save recovery code, visit <https://github.com/settings/auth/recovery-codes>.
+
+For questions, visit <https://support.github.com>; for support, contact support via visiting [The GitHub support page](https://github.com/contact).
 
 ## Git installation
 
