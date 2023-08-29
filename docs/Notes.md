@@ -1,4 +1,4 @@
-## 2-factor Authentication (2FA)
+## 2-factor authentication (2FA)
 
 This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.
 
