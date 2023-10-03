@@ -34,7 +34,14 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.git
 git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 ```
 
-which download a repository and its wiki pages, respectively.
+which download a repository and its wiki pages, respectively. Use `git pull` to pull updates, which can be checked with `git diff`. When it shows following message
+
+```
+old mode 100644
+new mode 100755
+```
+
+One can turn if off with `git config core.filemode false`.
 
 ## GitHub actions
 
