@@ -24,7 +24,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
    * [github-mermaid-extension](https://github.com/BackMarket/github-mermaid-extension)
    * [git recall](https://github.com/Fakerr/git-recall.git).
    * [GitHub token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and [Connection with ssh](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
-   * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/). 
+   * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/) ([A hooking example for NodeInject](https://github.com/DiamondHunters/NodeInject_Hook_example)).
    * quarto Guide, <https://quarto.org/docs/guide/>
    * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
 
