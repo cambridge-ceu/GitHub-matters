@@ -660,7 +660,9 @@ curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
 
 GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statistics/docs/](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
 
-OpenTarget REST API, <https://platform.opentargets.org/api> ([Download datasets](https://platform-docs.opentargets.org/data-access/datasets)).
+## GraphQL API
+
+Open Targets Platform: <https://platform.opentargets.org/api> ([Download datasets](https://platform-docs.opentargets.org/data-access/datasets)).
 
 ## Updates on a forked repository
 
