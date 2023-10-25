@@ -648,7 +648,7 @@ rs601338 <- gwasrapidd::get_associations(variant_id = "rs601338")
 
 Another useful REST API is [LDlink](https://ldlink.nci.nih.gov/?tab=apiaccess).
 
-Lastly, this is another use for requesting data from the GREAT server as in the GitHub `frea-pipeline` repository,
+Here this is another use for requesting data from the GREAT server as in the GitHub `frea-pipeline` repository,
 
 ```bash
 curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
@@ -659,6 +659,8 @@ curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
 ```
 
 GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statistics/docs/](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
+
+OpenTarget REST API, <https://platform.opentargets.org/api> ([Download datasets](https://platform-docs.opentargets.org/data-access/datasets)).
 
 ## Updates on a forked repository
 
