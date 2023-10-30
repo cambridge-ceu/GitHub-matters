@@ -14,6 +14,19 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 
 An example is given in [Notes.md](Notes.md). More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
 
+## Corporate/organisational contributors
+
+  * Alibaba, <https://github.com/alibaba>
+  * Apple, <https://github.com/apple>
+  * Facebook, <https://github.com/facebook>
+  * Google, <https://github.com/google>
+  * HDR UK, <https://github.com/hdruk>
+  * Huawei, <https://github.com/huawei>
+  * MicroSoft, <https://github.com/microsoft>
+  * Oracle, <https://github.com/oracle>
+  * Sanger, <https://github.com/sanger>
+  * Wiley, <https://github.com/wiley>
+
 ## Technical guides and enhancements
 
    * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [learning branching](https://learngitbranching.js.org/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
