@@ -18,6 +18,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
 
   * Alibaba, <https://github.com/alibaba>
   * Apple, <https://github.com/apple>
+  * Baidu, <https://github.com/baidu>
   * Facebook, <https://github.com/facebook>
   * Google, <https://github.com/google>
   * HDR UK, <https://github.com/hdruk>
