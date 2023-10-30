@@ -23,6 +23,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * HDR UK, <https://github.com/hdruk>
   * Huawei, <https://github.com/huawei>
   * MicroSoft, <https://github.com/microsoft>
+  * Mozilla, <https://github.com/mozilla>
   * Oracle, <https://github.com/oracle>
   * Sanger, <https://github.com/sanger>
   * Wiley, <https://github.com/wiley>
