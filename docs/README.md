@@ -27,6 +27,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * Mozilla, <https://github.com/mozilla>
   * Oracle, <https://github.com/oracle>
   * Sanger, <https://github.com/sanger>
+  * Tencent, <https://github.com/tencent>
   * Wiley, <https://github.com/wiley>
 
 ## Technical guides and enhancements
