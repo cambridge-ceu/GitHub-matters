@@ -43,6 +43,8 @@ new mode 100755
 
 One can turn if off with `git config core.filemode false`.
 
+It could be the appropriate way to download directory from a GitHub repository, e.g., `git clone https://github.com/statgen/locuszoom.git` for `https://github.com/statgen/locuszoom/tree/develop/examples/data`.
+
 ## GitHub actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
