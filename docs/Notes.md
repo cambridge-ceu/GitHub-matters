@@ -364,6 +364,8 @@ Two popular themes are as follows,
 1. MkDocs, <https://www.mkdocs.org/>
 2. Read the Docs, <https://docs.readthedocs.io/en/stable/>
 
+Note that there is a specific MkDocs-mermaid2, <https://pypi.org/project/mkdocs-mermaid2-plugin/#files>, to be installed with `python setup.py install`.
+
 ## npm
 
 Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
