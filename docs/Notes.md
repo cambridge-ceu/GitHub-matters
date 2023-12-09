@@ -170,6 +170,9 @@ The banner at cambridge-ceu.github.io is created as follows,
 - Select **CAPTION** at the bottom of the image, enter text with a customised color, and **CREATE GIF**.
 - Crop the gif via [https://onlinegiftools.com/crop-gif](https://onlinegiftools.com/crop-gif) and embed it in the page.
 
+
+Information regarding sass can be found here, <https://sass-lang.com/>.
+
 ### ruby-install
 
 By default, it is for root user and it is possible to do this locally,
