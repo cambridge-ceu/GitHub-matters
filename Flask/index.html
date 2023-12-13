@@ -118,6 +118,38 @@ if __name__ == '__main__':
 </code></pre>
 <h3 id="api-documentation">API documentation</h3>
 <p>Web: <a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
+<h3 id="github_apipy">github_api.py</h3>
+<pre><code class="language-python">import requests
+
+def get_github_user(username):
+    api_url = f'https://api.github.com/users/{username}'
+
+    # Make a GET request to the GitHub REST API
+    response = requests.get(api_url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the JSON response
+        user_data = response.json()
+        return user_data
+    else:
+        # Print an error message if the request was not successful
+        print(f&quot;Error: Unable to fetch data. Status code: {response.status_code}&quot;)
+        return None
+
+# Replace 'your_username' with the GitHub username you want to fetch
+github_username = 'jinghuazhao'
+user_data = get_github_user(github_username)
+
+# Print the retrieved user data
+if user_data:
+    print(f&quot;GitHub User Data for {github_username}:&quot;)
+    print(f&quot;Name: {user_data['name']}&quot;)
+    print(f&quot;Location: {user_data['location']}&quot;)
+    print(f&quot;Public Repositories: {user_data['public_repos']}&quot;)
+    # Add more fields as needed
+</code></pre>
+<p>which is called with <code>python github_api.py</code>.</p>
 <h3 id="python-workflow">Python workflow</h3>
 <p>.github/workflows/python-workflow.yml,</p>
 <pre><code>name: CI/CD
@@ -173,38 +205,6 @@ jobs:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
 </code></pre>
-<h3 id="github_apipy">github_api.py</h3>
-<pre><code class="language-python">import requests
-
-def get_github_user(username):
-    api_url = f'https://api.github.com/users/{username}'
-
-    # Make a GET request to the GitHub REST API
-    response = requests.get(api_url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the JSON response
-        user_data = response.json()
-        return user_data
-    else:
-        # Print an error message if the request was not successful
-        print(f&quot;Error: Unable to fetch data. Status code: {response.status_code}&quot;)
-        return None
-
-# Replace 'your_username' with the GitHub username you want to fetch
-github_username = 'jinghuazhao'
-user_data = get_github_user(github_username)
-
-# Print the retrieved user data
-if user_data:
-    print(f&quot;GitHub User Data for {github_username}:&quot;)
-    print(f&quot;Name: {user_data['name']}&quot;)
-    print(f&quot;Location: {user_data['location']}&quot;)
-    print(f&quot;Public Repositories: {user_data['public_repos']}&quot;)
-    # Add more fields as needed
-</code></pre>
-<p>which is called with <code>python github_api.py</code>.</p>
 <div class="footnote">
 <hr />
 <ol>
