@@ -25,3 +25,8 @@ jobs:
 
           # Store the API response as an output variable
           echo "::set-output name=response::$RESPONSE"
+
+     - name: Print GitHub Data
+       run: |
+         echo "Repository Name: ${{ steps.github-data.outputs.response | fromJSON | jq -r '.name' }}"
+         echo "Repository Owner: ${{ steps.github-data.outputs.response | fromJSON | jq -r '.owner.login' }}"
