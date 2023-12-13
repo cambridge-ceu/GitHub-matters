@@ -33,6 +33,8 @@ Web: <https://editor.swagger.io/>
 
 ### Python workflow
 
+.github/workflows/python-workflow.yml,
+
 ```
 name: CI/CD
 
@@ -64,7 +66,7 @@ jobs:
 
 ### Swagger action
 
- .github/workflows/swagger.yml,
+.github/workflows/swagger.yml,
 
 ```
 name: Swagger Documentation
