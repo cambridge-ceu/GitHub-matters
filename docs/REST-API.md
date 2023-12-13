@@ -1,4 +1,4 @@
-## REST API via Node.js
+## via Node.js
 
 (Based on ChatGPT, *to be fully tested*)
 
