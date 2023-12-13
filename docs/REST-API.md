@@ -92,6 +92,8 @@ This is handy using GitHub API.
 
 ## via Flask
 
+We exemplify with `app.py`,
+
 ```python
 from flask import Flask, jsonify
 
@@ -103,6 +105,14 @@ def hello():
 
 if __name__ == '__main__':
     app.run(debug=True)
+```
+
+so we start with `python app.py`[^venv] and test with `curl -G http://127.0.0.1:5000/api/hello` showing,
+
+```
+{
+  "message": "Hello, World!"
+}
 ```
 
 API documentation, <https://editor.swagger.io/>
@@ -169,3 +179,14 @@ jobs:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
 ```
+
+---
+
+[^venv]: This is achieved with
+
+    ```bash
+    module load python/3.8
+    python -m venv venv
+    source venv/bin/activate
+    pip install Flask
+    ```
