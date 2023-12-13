@@ -15,7 +15,7 @@ github_pages
 mkdocs build
 mkdocs gh-deploy
 
-git add .gitignore
+git add .gitignore my_api
 git add docs
 git add mkdocs.yml
 git commit -m "backup"

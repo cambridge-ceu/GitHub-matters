@@ -173,6 +173,7 @@ firefox http://localhost:3030
 <li>Check additional information, https://devcenter.heroku.com/</li>
 </ul>
 <h2 id="via-flask">via Flask</h2>
+<p>We exemplify with <code>app.py</code>,</p>
 <pre><code class="language-python">from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -183,6 +184,11 @@ def hello():
 
 if __name__ == '__main__':
     app.run(debug=True)
+</code></pre>
+<p>so we start with <code>python app.py</code>[^venv] and test with <code>curl -G http://127.0.0.1:5000/api/hello</code> showing,</p>
+<pre><code>{
+  &quot;message&quot;: &quot;Hello, World!&quot;
+}
 </code></pre>
 <p>API documentation, <a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
 <p>Swagger action .github/workflows/swagger.yml,</p>
@@ -241,6 +247,15 @@ jobs:
       with:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
+</code></pre>
+<hr />
+<p>[^venv]: This is achieved with</p>
+<pre><code>```bash
+module load python/3.8
+python -m venv venv
+source venv/bin/activate
+pip install Flask
+```
 </code></pre></div>
             </div>
         </div>
