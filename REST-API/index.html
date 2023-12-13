@@ -87,7 +87,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#rest-api-via-github" class="nav-link">REST API via GitHub</a>
+            <li class="nav-item" data-level="2"><a href="#rest-api-via-nodejs" class="nav-link">REST API via Node.js</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#via-flask" class="nav-link">via Flask</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -96,7 +101,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="rest-api-via-github">REST API via GitHub</h2>
+<h2 id="rest-api-via-nodejs">REST API via Node.js</h2>
 <p>(Based on ChatGPT, <em>to be fully tested</em>)</p>
 <h3 id="step-1-set-up-your-project-locally">Step 1: Set Up Your Project Locally</h3>
 <h4 id="initialize-a-new-nodejs-project">Initialize a new Node.js project:</h4>
@@ -166,7 +171,77 @@ firefox http://localhost:3030
 <li>Deploy Application, 'git push heroku master'</li>
 <li>Open Application, <code>heroku open</code></li>
 <li>Check additional information, https://devcenter.heroku.com/</li>
-</ul></div>
+</ul>
+<h2 id="via-flask">via Flask</h2>
+<pre><code class="language-python">from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    return jsonify(message='Hello, World!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+<p>API documentation, <a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
+<p>Swagger action .github/workflows/swagger.yml,</p>
+<pre><code>name: Swagger Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Generate Swagger Documentation
+      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+</code></pre>
+<p>Action workflow,</p>
+<pre><code>name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        pytest
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+</code></pre></div>
             </div>
         </div>
 
