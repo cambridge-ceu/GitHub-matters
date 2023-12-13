@@ -55,7 +55,7 @@ found 0 vulnerabilities
 ```js
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 
 app.get('/', (req, res) => {
     res.send('Hello, World!');
@@ -70,7 +70,7 @@ app.listen(PORT, () => {
 
 ```bash
 node index.js
-firefox http://localhost:3000
+firefox http://localhost:3030
 ```
 
 ## Step 3: Set Up a GitHub Repository
@@ -79,13 +79,13 @@ This is handy using GitHub API.
 
 ## Step 4: Deploy to Heroku (Optional)
 
-### Sign up from https://www.heroku.com/
-### Install Heroku CLI, https://devcenter.heroku.com/articles/heroku-cli
-### Login to Heroku, `heroku login`
-### Prepare Your Application, having a package.json for Node.js
-### Create a Procfile: `web: node index.js`
-### Initialize a Git Repository, `git init;git add .;git commit -m "Initial commit"`
-### Create a Heroku App, `heroku create`
-### Deploy Application, 'git push heroku master'
-### Open Application, `heroku open`
-### Check additional information, https://devcenter.heroku.com/
+#### Sign up from https://www.heroku.com/
+#### Install Heroku CLI, https://devcenter.heroku.com/articles/heroku-cli
+#### Login to Heroku, `heroku login`
+#### Prepare Your Application, having a package.json for Node.js
+#### Create a Procfile: `web: node index.js`
+#### Initialize a Git Repository, `git init;git add .;git commit -m "Initial commit"`
+#### Create a Heroku App, `heroku create`
+#### Deploy Application, 'git push heroku master'
+#### Open Application, `heroku open`
+#### Check additional information, https://devcenter.heroku.com/
