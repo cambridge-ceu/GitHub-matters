@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>REST-API - GitHub matters</title>
+        <title>Flask - GitHub matters</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -46,7 +46,7 @@
                                 <a href="../Notes/" class="nav-link">Notes</a>
                             </li>
                             <li class="navitem active">
-                                <a href="./" class="nav-link">REST-API</a>
+                                <a href="./" class="nav-link">Flask</a>
                             </li>
                         </ul>
 
@@ -87,7 +87,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#via-flask" class="nav-link">via Flask</a>
+            <li class="nav-item" data-level="2"><a href="#flask" class="nav-link">Flask</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -96,7 +96,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="via-flask">via Flask</h2>
+<h2 id="flask">Flask</h2>
 <h3 id="apppy">app.py</h3>
 <pre><code class="language-python">from flask import Flask, jsonify
 
@@ -109,7 +109,7 @@ def hello():
 if __name__ == '__main__':
     app.run(debug=True)
 </code></pre>
-<p>so we start[^venv] with <code>python app.py</code>.</p>
+<p>so we start[^1] with <code>python app.py</code>.</p>
 <h3 id="test">Test</h3>
 <p><code>curl -G http://127.0.0.1:5000/api/hello</code> showing,</p>
 <pre><code>{
@@ -209,7 +209,7 @@ if user_data:
 </code></pre>
 <p>which is called with <code>python github_api.py</code>.</p>
 <hr />
-<p>[^venv]: This is achieved with</p>
+<p>[^1]: This is achieved with</p>
 <pre><code>```bash
 module load python/3.8
 python -m venv venv
