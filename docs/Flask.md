@@ -132,8 +132,6 @@ if user_data:
 
 which is called with `python github_api.py`.
 
----
-
 [^1]: This is achieved with
 
     ```bash
