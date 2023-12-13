@@ -15,7 +15,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-so we start[^1] with `python app.py`.
+so we start with `python app.py`[^1].
 
 ### Test
 
