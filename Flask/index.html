@@ -118,6 +118,22 @@ if __name__ == '__main__':
 </code></pre>
 <h3 id="api-documentation">API documentation</h3>
 <p>Web: <a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
+<pre><code class="language-yml">openapi: 3.0.0
+info:
+  title: My REST API
+  version: 1.0.0
+paths:
+  /api/hello:
+    get:
+      summary: Get a greeting message
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example: {&quot;message&quot;: &quot;Hello, World!&quot;}
+
+</code></pre>
 <h3 id="github_apipy">github_api.py</h3>
 <pre><code class="language-python">import requests
 
@@ -152,7 +168,7 @@ if user_data:
 <p>which is called with <code>python github_api.py</code>.</p>
 <h3 id="python-workflow">Python workflow</h3>
 <p>.github/workflows/python-workflow.yml,</p>
-<pre><code>name: CI/CD
+<pre><code class="language-yml">name: CI/CD
 
 on:
   push:
@@ -181,7 +197,7 @@ jobs:
 </code></pre>
 <h3 id="swagger-action">Swagger action</h3>
 <p>.github/workflows/swagger.yml,</p>
-<pre><code>name: Swagger Documentation
+<pre><code class="language-yml">name: Swagger Documentation
 
 on:
   push:
