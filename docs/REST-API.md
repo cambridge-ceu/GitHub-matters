@@ -1,4 +1,4 @@
-## REST API via GitHub
+## REST API via Node.js
 
 (Based on ChatGPT, *to be fully tested*)
 
@@ -89,3 +89,83 @@ This is handy using GitHub API.
 * Deploy Application, 'git push heroku master'
 * Open Application, `heroku open`
 * Check additional information, https://devcenter.heroku.com/
+
+## via Flask
+
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    return jsonify(message='Hello, World!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+API documentation, <https://editor.swagger.io/>
+
+Swagger action .github/workflows/swagger.yml,
+
+```
+name: Swagger Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Generate Swagger Documentation
+      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+```
+
+Action workflow,
+
+```
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        pytest
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+```
