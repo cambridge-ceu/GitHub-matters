@@ -1,7 +1,5 @@
 ## via Node.js
 
-(Based on ChatGPT, *to be fully tested*)
-
 ### Step 1: Set Up Your Project Locally
 
 #### Initialize a new Node.js project:
@@ -92,7 +90,7 @@ This is handy using GitHub API.
 
 ## via Flask
 
-We exemplify with `app.py`,
+### app.py,
 
 ```python
 from flask import Flask, jsonify
@@ -107,7 +105,11 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-so we start with `python app.py`[^venv] and test with `curl -G http://127.0.0.1:5000/api/hello` showing,
+so we start[^venv] with `python app.py`.
+
+### Test
+
+`curl -G http://127.0.0.1:5000/api/hello` showing,
 
 ```
 {
@@ -115,9 +117,13 @@ so we start with `python app.py`[^venv] and test with `curl -G http://127.0.0.1:
 }
 ```
 
-API documentation, <https://editor.swagger.io/>
+### API documentation
 
-Swagger action .github/workflows/swagger.yml,
+<https://editor.swagger.io/>
+
+### Swagger action
+
+ .github/workflows/swagger.yml,
 
 ```
 name: Swagger Documentation
@@ -145,7 +151,7 @@ jobs:
         publish_dir: ./docs
 ```
 
-Action workflow,
+### Action workflow
 
 ```
 name: CI/CD
@@ -180,6 +186,42 @@ jobs:
         publish_dir: ./docs
 ```
 
+### github_api.py
+
+```python
+import requests
+
+def get_github_user(username):
+    api_url = f'https://api.github.com/users/{username}'
+    
+    # Make a GET request to the GitHub REST API
+    response = requests.get(api_url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the JSON response
+        user_data = response.json()
+        return user_data
+    else:
+        # Print an error message if the request was not successful
+        print(f"Error: Unable to fetch data. Status code: {response.status_code}")
+        return None
+
+# Replace 'your_username' with the GitHub username you want to fetch
+github_username = 'jinghuazhao'
+user_data = get_github_user(github_username)
+
+# Print the retrieved user data
+if user_data:
+    print(f"GitHub User Data for {github_username}:")
+    print(f"Name: {user_data['name']}")
+    print(f"Location: {user_data['location']}")
+    print(f"Public Repositories: {user_data['public_repos']}")
+    # Add more fields as needed
+```
+
+which is called with `python github_api.py`.
+
 ---
 
 [^venv]: This is achieved with
@@ -189,4 +231,5 @@ jobs:
     python -m venv venv
     source venv/bin/activate
     pip install Flask
+    pip install requests
     ```
