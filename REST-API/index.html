@@ -87,11 +87,6 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#via-nodejs" class="nav-link">via Node.js</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#via-flask" class="nav-link">via Flask</a>
               <ul class="nav flex-column">
               </ul>
@@ -101,76 +96,6 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="via-nodejs">via Node.js</h2>
-<h3 id="step-1-set-up-your-project-locally">Step 1: Set Up Your Project Locally</h3>
-<h4 id="initialize-a-new-nodejs-project">Initialize a new Node.js project:</h4>
-<pre><code class="language-bash">npm init -y
-</code></pre>
-<pre><code>Wrote to /home/jhz22/package.json:
-
-{
-  &quot;name&quot;: &quot;jhz22&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;directories&quot;: {
-    &quot;doc&quot;: &quot;doc&quot;
-  },
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-  },
-  &quot;keywords&quot;: [],
-  &quot;author&quot;: &quot;&quot;,
-  &quot;license&quot;: &quot;ISC&quot;
-}
-</code></pre>
-<h4 id="install-express">Install Express:</h4>
-<pre><code class="language-bash">npm install express
-</code></pre>
-<pre><code>npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN jhz22@1.0.0 No description
-npm WARN jhz22@1.0.0 No repository field.
-
-+ express@4.18.2
-added 62 packages from 41 contributors and audited 62 packages in 2.929s
-
-11 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-</code></pre>
-<h4 id="create-an-indexjs-file">Create an index.js file:</h4>
-<pre><code class="language-js">const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3030;
-
-app.get('/', (req, res) =&gt; {
-    res.send('Hello, World!');
-});
-
-app.listen(PORT, () =&gt; {
-    console.log(`Server is running on port ${PORT}`);
-});
-</code></pre>
-<h3 id="step-2-test-locally">Step 2: Test Locally</h3>
-<pre><code class="language-bash">node index.js
-firefox http://localhost:3030
-</code></pre>
-<h3 id="step-3-set-up-a-github-repository">Step 3: Set Up a GitHub Repository</h3>
-<p>This is handy using GitHub API.</p>
-<h3 id="step-4-deploy-to-heroku-optional">Step 4: Deploy to Heroku (Optional)</h3>
-<ul>
-<li>Sign up from https://www.heroku.com/</li>
-<li>Install Heroku CLI, https://devcenter.heroku.com/articles/heroku-cli</li>
-<li>Login to Heroku, <code>heroku login</code></li>
-<li>Prepare Your Application, having a package.json for Node.js</li>
-<li>Create a Procfile: <code>web: node index.js</code></li>
-<li>Initialize a Git Repository, <code>git init;git add .;git commit -m "Initial commit"</code></li>
-<li>Create a Heroku App, <code>heroku create</code></li>
-<li>Deploy Application, 'git push heroku master'</li>
-<li>Open Application, <code>heroku open</code></li>
-<li>Check additional information, https://devcenter.heroku.com/</li>
-</ul>
 <h2 id="via-flask">via Flask</h2>
 <h3 id="apppy">app.py,</h3>
 <pre><code class="language-python">from flask import Flask, jsonify
