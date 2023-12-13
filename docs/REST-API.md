@@ -1,6 +1,6 @@
 ## via Flask
 
-### app.py,
+### app.py
 
 ```python
 from flask import Flask, jsonify
@@ -29,39 +29,9 @@ so we start[^venv] with `python app.py`.
 
 ### API documentation
 
-<https://editor.swagger.io/>
+Web: <https://editor.swagger.io/>
 
-### Swagger action
-
- .github/workflows/swagger.yml,
-
-```
-name: Swagger Documentation
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Generate Swagger Documentation
-      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
-```
-
-### Action workflow
+### Python workflow
 
 ```
 name: CI/CD
@@ -88,6 +58,36 @@ jobs:
     - name: Run tests
       run: |
         pytest
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+```
+
+### Swagger action
+
+ .github/workflows/swagger.yml,
+
+```
+name: Swagger Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Generate Swagger Documentation
+      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
