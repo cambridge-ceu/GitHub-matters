@@ -166,7 +166,7 @@ if user_data:
     # Add more fields as needed
 </code></pre>
 <p>which is called with <code>python github_api.py</code>.</p>
-<h3 id="python-workflow">Python workflow</h3>
+<h3 id="python-action-workflow">Python action workflow</h3>
 <p>.github/workflows/python-workflow.yml,</p>
 <pre><code class="language-yml">name: CI/CD
 
@@ -195,9 +195,10 @@ jobs:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
 </code></pre>
-<h3 id="swagger-action">Swagger action</h3>
+<p>A link can be made as <code>[![CI/CD](https://github.com/cambridge-ceu/GitHub-matters/workflows/CI/CD/badge.svg)](https://github.com/cambridge-ceu/GitHub-matters/actions/workflows/python-workflow.yml)</code></p>
+<h3 id="swagger-action-workflow">Swagger action workflow</h3>
 <p>.github/workflows/swagger.yml,</p>
-<pre><code class="language-yml">name: Swagger Documentation
+<pre><code class="language-yml">name: Python CI
 
 on:
   push:
@@ -209,27 +210,65 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Generate Swagger Documentation
-      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
       with:
-        deploy_key: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        python -m pytest tests/
+
+    - name: Generate Swagger documentation
+      run: |
+        pip install flasgger
+        python generate_swagger.py
+
+    - name: Deploy Swagger documentation
+      run: |
+        # Add commands to deploy Swagger documentation to a server or platform
+</code></pre>
+<h3 id="generate_swaggerpy">generate_swagger.py</h3>
+<pre><code class="language-python">from flask import Flask, jsonify
+from flasgger import Swagger
+
+app = Flask(__name__)
+swagger = Swagger(app)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    &quot;&quot;&quot;
+    A sample endpoint that returns a hello message.
+    ---
+    responses:
+      200:
+        description: 'Successful response'
+        content:
+          application/json:
+            example:
+              message: Hello, World!
+    &quot;&quot;&quot;
+    return jsonify(message='Hello, World!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
 </code></pre>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>This is achieved with</p>
-<p><code>module load python/3.8
+<p><code>bash
+module load python/3.8
 python -m venv venv
 source venv/bin/activate
 pip install Flask
+pip install flasgger
 pip install requests</code>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
