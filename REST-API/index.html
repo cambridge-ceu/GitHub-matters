@@ -102,7 +102,6 @@
                     <div class="col-md-9" role="main">
 
 <h2 id="via-nodejs">via Node.js</h2>
-<p>(Based on ChatGPT, <em>to be fully tested</em>)</p>
 <h3 id="step-1-set-up-your-project-locally">Step 1: Set Up Your Project Locally</h3>
 <h4 id="initialize-a-new-nodejs-project">Initialize a new Node.js project:</h4>
 <pre><code class="language-bash">npm init -y
@@ -173,7 +172,7 @@ firefox http://localhost:3030
 <li>Check additional information, https://devcenter.heroku.com/</li>
 </ul>
 <h2 id="via-flask">via Flask</h2>
-<p>We exemplify with <code>app.py</code>,</p>
+<h3 id="apppy">app.py,</h3>
 <pre><code class="language-python">from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -185,13 +184,17 @@ def hello():
 if __name__ == '__main__':
     app.run(debug=True)
 </code></pre>
-<p>so we start with <code>python app.py</code>[^venv] and test with <code>curl -G http://127.0.0.1:5000/api/hello</code> showing,</p>
+<p>so we start[^venv] with <code>python app.py</code>.</p>
+<h3 id="test">Test</h3>
+<p><code>curl -G http://127.0.0.1:5000/api/hello</code> showing,</p>
 <pre><code>{
   &quot;message&quot;: &quot;Hello, World!&quot;
 }
 </code></pre>
-<p>API documentation, <a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
-<p>Swagger action .github/workflows/swagger.yml,</p>
+<h3 id="api-documentation">API documentation</h3>
+<p><a href="https://editor.swagger.io/">https://editor.swagger.io/</a></p>
+<h3 id="swagger-action">Swagger action</h3>
+<p>.github/workflows/swagger.yml,</p>
 <pre><code>name: Swagger Documentation
 
 on:
@@ -216,7 +219,7 @@ jobs:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
 </code></pre>
-<p>Action workflow,</p>
+<h3 id="action-workflow">Action workflow</h3>
 <pre><code>name: CI/CD
 
 on:
@@ -248,6 +251,38 @@ jobs:
         deploy_key: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
 </code></pre>
+<h3 id="github_apipy">github_api.py</h3>
+<pre><code class="language-python">import requests
+
+def get_github_user(username):
+    api_url = f'https://api.github.com/users/{username}'
+
+    # Make a GET request to the GitHub REST API
+    response = requests.get(api_url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the JSON response
+        user_data = response.json()
+        return user_data
+    else:
+        # Print an error message if the request was not successful
+        print(f&quot;Error: Unable to fetch data. Status code: {response.status_code}&quot;)
+        return None
+
+# Replace 'your_username' with the GitHub username you want to fetch
+github_username = 'jinghuazhao'
+user_data = get_github_user(github_username)
+
+# Print the retrieved user data
+if user_data:
+    print(f&quot;GitHub User Data for {github_username}:&quot;)
+    print(f&quot;Name: {user_data['name']}&quot;)
+    print(f&quot;Location: {user_data['location']}&quot;)
+    print(f&quot;Public Repositories: {user_data['public_repos']}&quot;)
+    # Add more fields as needed
+</code></pre>
+<p>which is called with <code>python github_api.py</code>.</p>
 <hr />
 <p>[^venv]: This is achieved with</p>
 <pre><code>```bash
@@ -255,6 +290,7 @@ module load python/3.8
 python -m venv venv
 source venv/bin/activate
 pip install Flask
+pip install requests
 ```
 </code></pre></div>
             </div>
