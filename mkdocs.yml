@@ -19,3 +19,6 @@ theme:
         - R
         - rust
         - yaml
+
+markdown_extensions:
+  - footnotes
