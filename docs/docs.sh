@@ -17,7 +17,7 @@ mkdocs build
 mkdocs gh-deploy
 
 git add .gitignore
-# git rm --cached my_api
+git rm --cached my_api
 git submodule add my_api
 git add docs
 git add mkdocs.yml
