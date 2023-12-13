@@ -85,7 +85,7 @@ if user_data:
 
 which is called with `python github_api.py`.
 
-### Python workflow
+### Python action workflow
 
 .github/workflows/python-workflow.yml,
 
@@ -118,12 +118,14 @@ jobs:
         publish_dir: ./docs
 ```
 
-### Swagger action
+A link can be made as `[![CI/CD](https://github.com/cambridge-ceu/GitHub-matters/workflows/CI/CD/badge.svg)](https://github.com/cambridge-ceu/GitHub-matters/actions/workflows/python-workflow.yml)`
+
+### Swagger action workflow
 
 .github/workflows/swagger.yml,
 
 ```yml
-name: Swagger Documentation
+name: Python CI
 
 on:
   push:
@@ -135,25 +137,66 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Generate Swagger Documentation
-      run: docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/docs/openapi.yml -l html2 -o /local/docs
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
       with:
-        deploy_key: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests
+      run: |
+        python -m pytest tests/
+
+    - name: Generate Swagger documentation
+      run: |
+        pip install flasgger
+        python generate_swagger.py
+
+    - name: Deploy Swagger documentation
+      run: |
+        # Add commands to deploy Swagger documentation to a server or platform
 ```
+
+### generate_swagger.py
+
+```python
+from flask import Flask, jsonify
+from flasgger import Swagger
+
+app = Flask(__name__)
+swagger = Swagger(app)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    """
+    A sample endpoint that returns a hello message.
+    ---
+    responses:
+      200:
+        description: 'Successful response'
+        content:
+          application/json:
+            example:
+              message: Hello, World!
+    """
+    return jsonify(message='Hello, World!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
 
 [^1]: This is achieved with
     
-    ```
+    ```bash
     module load python/3.8
     python -m venv venv
     source venv/bin/activate
     pip install Flask
+    pip install flasgger
     pip install requests
     ```
