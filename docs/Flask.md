@@ -200,3 +200,7 @@ if __name__ == '__main__':
     pip install flasgger
     pip install requests
     ```
+
+    > Flasgger is a Python package that integrates with Flask, a popular web framework, to automatically generate Swagger documentation for your API. Swagger is a tool that helps design, build, document, and consume RESTful web services. It provides a standard way to describe RESTful APIs, making it easier for developers to understand and interact with the API.
+
+    > Flasgger simplifies the process of documenting your API by automatically generating Swagger documentation based on your Flask application's routes, request parameters, and responses. With Flasgger, you can annotate your Flask routes with Swagger specifications using comments, and the package will take care of creating the Swagger UI for you.
