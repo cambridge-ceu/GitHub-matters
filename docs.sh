@@ -4,6 +4,7 @@ function github_pages()
 {
   module load python/3.8
   source ~/rds/public_databases/software/py38/bin/activate
+# pip install pymdown-extensions
 }
 
 function install()

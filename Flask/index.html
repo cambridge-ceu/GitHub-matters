@@ -109,7 +109,7 @@ def hello():
 if __name__ == '__main__':
     app.run(debug=True)
 </code></pre>
-<p>so we start[^1] with <code>python app.py</code>.</p>
+<p>so we start<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> with <code>python app.py</code>.</p>
 <h3 id="test">Test</h3>
 <p><code>curl -G http://127.0.0.1:5000/api/hello</code> showing,</p>
 <pre><code>{
@@ -209,15 +209,20 @@ if user_data:
 </code></pre>
 <p>which is called with <code>python github_api.py</code>.</p>
 <hr />
-<p>[^1]: This is achieved with</p>
-<pre><code>```bash
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is achieved with</p>
+<p><code>bash
 module load python/3.8
 python -m venv venv
 source venv/bin/activate
 pip install Flask
-pip install requests
-```
-</code></pre></div>
+pip install requests</code>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
             </div>
         </div>
 
