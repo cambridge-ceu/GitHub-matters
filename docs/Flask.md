@@ -131,7 +131,7 @@ jobs:
 ```
 
 [^1]: This is achieved with
-
+    
     ```bash
     module load python/3.8
     python -m venv venv
