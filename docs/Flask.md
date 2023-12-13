@@ -31,6 +31,24 @@ so we start with `python app.py`[^1].
 
 Web: <https://editor.swagger.io/>
 
+```yml
+openapi: 3.0.0
+info:
+  title: My REST API
+  version: 1.0.0
+paths:
+  /api/hello:
+    get:
+      summary: Get a greeting message
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example: {"message": "Hello, World!"}
+
+```
+
 ### github_api.py
 
 ```python
@@ -71,7 +89,7 @@ which is called with `python github_api.py`.
 
 .github/workflows/python-workflow.yml,
 
-```
+```yml
 name: CI/CD
 
 on:
@@ -104,7 +122,7 @@ jobs:
 
 .github/workflows/swagger.yml,
 
-```
+```yml
 name: Swagger Documentation
 
 on:
