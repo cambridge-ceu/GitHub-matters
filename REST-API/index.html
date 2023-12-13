@@ -87,24 +87,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#rest-api-via-github" class="nav-link">REST API via GitHub</a>
+            <li class="nav-item" data-level="2"><a href="#rest-api-via-github" class="nav-link">REST API via GitHub</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#step-1-set-up-your-project-locally" class="nav-link">Step 1: Set Up Your Project Locally</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-2-test-locally" class="nav-link">Step 2: Test Locally</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-3-set-up-a-github-repository" class="nav-link">Step 3: Set Up a GitHub Repository</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#step-4-deploy-to-heroku-optional" class="nav-link">Step 4: Deploy to Heroku (Optional)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -112,10 +96,10 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="rest-api-via-github">REST API via GitHub</h1>
-<p>(From ChatGPT, <em>To be fully tested</em>)</p>
-<h2 id="step-1-set-up-your-project-locally">Step 1: Set Up Your Project Locally</h2>
-<h3 id="initialize-a-new-nodejs-project">Initialize a new Node.js project:</h3>
+<h2 id="rest-api-via-github">REST API via GitHub</h2>
+<p>(Based on ChatGPT, <em>to be fully tested</em>)</p>
+<h3 id="step-1-set-up-your-project-locally">Step 1: Set Up Your Project Locally</h3>
+<h4 id="initialize-a-new-nodejs-project">Initialize a new Node.js project:</h4>
 <pre><code class="language-bash">npm init -y
 </code></pre>
 <pre><code>Wrote to /home/jhz22/package.json:
@@ -136,7 +120,7 @@
   &quot;license&quot;: &quot;ISC&quot;
 }
 </code></pre>
-<h3 id="install-express">Install Express:</h3>
+<h4 id="install-express">Install Express:</h4>
 <pre><code class="language-bash">npm install express
 </code></pre>
 <pre><code>npm notice created a lockfile as package-lock.json. You should commit this file.
@@ -151,7 +135,7 @@ added 62 packages from 41 contributors and audited 62 packages in 2.929s
 
 found 0 vulnerabilities
 </code></pre>
-<h3 id="create-an-indexjs-file">Create an index.js file:</h3>
+<h4 id="create-an-indexjs-file">Create an index.js file:</h4>
 <pre><code class="language-js">const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -164,23 +148,25 @@ app.listen(PORT, () =&gt; {
     console.log(`Server is running on port ${PORT}`);
 });
 </code></pre>
-<h2 id="step-2-test-locally">Step 2: Test Locally</h2>
+<h3 id="step-2-test-locally">Step 2: Test Locally</h3>
 <pre><code class="language-bash">node index.js
 firefox http://localhost:3030
 </code></pre>
-<h2 id="step-3-set-up-a-github-repository">Step 3: Set Up a GitHub Repository</h2>
+<h3 id="step-3-set-up-a-github-repository">Step 3: Set Up a GitHub Repository</h3>
 <p>This is handy using GitHub API.</p>
-<h2 id="step-4-deploy-to-heroku-optional">Step 4: Deploy to Heroku (Optional)</h2>
-<h4 id="sign-up-from-httpswwwherokucom">Sign up from https://www.heroku.com/</h4>
-<h4 id="install-heroku-cli-httpsdevcenterherokucomarticlesheroku-cli">Install Heroku CLI, https://devcenter.heroku.com/articles/heroku-cli</h4>
-<h4 id="login-to-heroku-heroku-login">Login to Heroku, <code>heroku login</code></h4>
-<h4 id="prepare-your-application-having-a-packagejson-for-nodejs">Prepare Your Application, having a package.json for Node.js</h4>
-<h4 id="create-a-procfile-web-node-indexjs">Create a Procfile: <code>web: node index.js</code></h4>
-<h4 id="initialize-a-git-repository-git-initgit-add-git-commit-m-initial-commit">Initialize a Git Repository, <code>git init;git add .;git commit -m "Initial commit"</code></h4>
-<h4 id="create-a-heroku-app-heroku-create">Create a Heroku App, <code>heroku create</code></h4>
-<h4 id="deploy-application-git-push-heroku-master">Deploy Application, 'git push heroku master'</h4>
-<h4 id="open-application-heroku-open">Open Application, <code>heroku open</code></h4>
-<h4 id="check-additional-information-httpsdevcenterherokucom">Check additional information, https://devcenter.heroku.com/</h4></div>
+<h3 id="step-4-deploy-to-heroku-optional">Step 4: Deploy to Heroku (Optional)</h3>
+<ul>
+<li>Sign up from https://www.heroku.com/</li>
+<li>Install Heroku CLI, https://devcenter.heroku.com/articles/heroku-cli</li>
+<li>Login to Heroku, <code>heroku login</code></li>
+<li>Prepare Your Application, having a package.json for Node.js</li>
+<li>Create a Procfile: <code>web: node index.js</code></li>
+<li>Initialize a Git Repository, <code>git init;git add .;git commit -m "Initial commit"</code></li>
+<li>Create a Heroku App, <code>heroku create</code></li>
+<li>Deploy Application, 'git push heroku master'</li>
+<li>Open Application, <code>heroku open</code></li>
+<li>Check additional information, https://devcenter.heroku.com/</li>
+</ul></div>
             </div>
         </div>
 
