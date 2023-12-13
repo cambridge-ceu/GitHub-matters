@@ -1,4 +1,4 @@
-## via Flask
+## Flask
 
 ### app.py
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-so we start[^venv] with `python app.py`.
+so we start[^1] with `python app.py`.
 
 ### Test
 
@@ -134,7 +134,7 @@ which is called with `python github_api.py`.
 
 ---
 
-[^venv]: This is achieved with
+[^1]: This is achieved with
 
     ```bash
     module load python/3.8

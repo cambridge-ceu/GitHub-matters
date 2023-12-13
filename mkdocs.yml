@@ -4,7 +4,7 @@ edit_uri: ""
 nav:
     - "   ": README.md
     - Notes: Notes.md
-    - REST-API: REST-API.md
+    - Flask: Flask.md
 theme:
     name: mkdocs
     nav_style: dark
