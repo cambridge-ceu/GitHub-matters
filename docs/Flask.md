@@ -189,6 +189,9 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+## Links
+
+- Deploy Django on Render, <https://render.com/docs/deploy-django>
 
 [^1]: This is achieved with
     
