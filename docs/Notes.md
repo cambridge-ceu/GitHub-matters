@@ -669,6 +669,8 @@ GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statist
 
 ## GraphQL API
 
+Hasura, <https://cloud.hasura.io/>
+
 Open Targets Platform: <https://platform.opentargets.org/api> ([Download datasets](https://platform-docs.opentargets.org/data-access/datasets)).
 
 ## Updates on a forked repository
