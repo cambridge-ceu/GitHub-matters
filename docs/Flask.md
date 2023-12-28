@@ -194,6 +194,7 @@ if __name__ == '__main__':
 ## Links
 
 - Deploy Django on Render, <https://render.com/docs/deploy-django>
+- MobiDetails, <https://github.com/vidboda/MobiDetails> (REST API, <https://github.com/mobidic/spliceai>)
 
 [^1]: This is achieved with
     
