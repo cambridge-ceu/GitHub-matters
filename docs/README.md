@@ -21,6 +21,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * Baidu, <https://github.com/baidu>
   * Cambridge University, <https://github.com/cambridgeuniversity> ([SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/))
   * Facebook, <https://github.com/facebook>
+  * FinnGen, <https://github.com/FINNGEN>
   * Google, <https://github.com/google>
   * HDR UK, <https://github.com/hdruk>
   * Huawei, <https://github.com/huawei>
