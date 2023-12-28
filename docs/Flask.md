@@ -1,6 +1,6 @@
 ## Flask
 
-In the following, it assumes that `source ~/rds/public_databases/software/py38/bin/activate` is called under CSD3.
+In the following, it assumes that `source venv/bina/ctivate`[^1] is called under CSD3.
 
 ### app.py
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-so we start with `python app.py`[^1].
+so we start with `python app.py`.
 
 ### Test
 
