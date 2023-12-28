@@ -1,6 +1,6 @@
 ## Flask
 
-In the following, it assumes that `source venv/bina/ctivate`[^1] is called under CSD3.
+In the following, it assumes that `source venv/bin/activate`[^1] is called under CSD3.
 
 ### app.py
 
