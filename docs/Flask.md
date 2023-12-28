@@ -1,5 +1,7 @@
 ## Flask
 
+In the following, it assumes that `source ~/rds/public_databases/software/py38/bin/activate` is called under CSD3.
+
 ### app.py
 
 ```python
