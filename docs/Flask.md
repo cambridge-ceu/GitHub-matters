@@ -194,7 +194,7 @@ if __name__ == '__main__':
 ## Links
 
 - Deploy Django on Render, <https://render.com/docs/deploy-django>
-- flask-blog, <https://github.com/adyouri/flask_blog> (as in [do-community](https://github.com/do-community/flask_blog) and [exposition](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3))
+- flask-blog, <https://github.com/adyouri/flask_blog> (as [exposition](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3) by [do-community](https://github.com/do-community/flask_blog))
 - MobiDetails, <https://github.com/vidboda/MobiDetails> (REST API, <https://github.com/mobidic/spliceai>)
 
 [^1]: This is achieved with
