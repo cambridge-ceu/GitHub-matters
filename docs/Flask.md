@@ -1,5 +1,7 @@
 ## Flask
 
+Web: <https://flask.palletsprojects.com/>
+
 In the following, it assumes that `source venv/bin/activate`[^1] is called under CSD3.
 
 ### app.py
