@@ -198,7 +198,7 @@ if __name__ == '__main__':
 - flask-blog, <https://github.com/adyouri/flask_blog> (as [exposition](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3) by [do-community](https://github.com/do-community/flask_blog))
 - MobiDetails, <https://github.com/vidboda/MobiDetails> (REST API, <https://github.com/mobidic/spliceai>)
 - OpenTechSchool, <https://learn.opentechschool.org/>
-- Web design playground, <https://webdesignplayground.io/>
+- Web design playground, <https://webdesignplayground.io/> & Webdev workshop, <https://webdevworkshop.io/>
 
 [^1]: This is achieved with
     
