@@ -22,7 +22,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * Cambridge University, <https://github.com/cambridgeuniversity> ([SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/))
   * Facebook, <https://github.com/facebook>
   * FinnGen, <https://github.com/FINNGEN>
-  * Google, <https://github.com/google>
+  * Google, <https://github.com/google> (<https://github.com/google-deepmind>)
   * HDR UK, <https://github.com/hdruk>
   * Huawei, <https://github.com/huawei>
   * MicroSoft, <https://github.com/microsoft>
