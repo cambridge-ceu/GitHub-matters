@@ -45,6 +45,22 @@ One can turn if off with `git config core.filemode false`.
 
 It could be the appropriate way to download directory from a GitHub repository, e.g., `git clone https://github.com/statgen/locuszoom.git` for `https://github.com/statgen/locuszoom/tree/develop/examples/data`.
 
+## GitHub recovery
+
+We resort to GitKraken to identify the hash which was incidentally deleted, also available from `git log`. We create a new branch, cherry-pick and commit to the branch.
+
+```bash
+git checkout -b recover
+git cherry-pick a36d0974e9feec813e06620ccb9ba8ebc4e01ebf
+git add .
+git cherry-pick --continue
+git push --set-upstream origin recover
+git checkout master
+git status
+```
+
+A pull request can be made from `https://github.com/jinghuazhao/R/pull/new/recover`
+
 ## GitHub actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
