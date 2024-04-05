@@ -201,7 +201,7 @@ new mode 100755
 <p>One can turn it off with <code>git config core.filemode false</code>.</p>
 <p>It could be the appropriate way to download directory from a GitHub repository, e.g., <code>git clone https://github.com/statgen/locuszoom.git</code> for <a href="https://github.com/statgen/locuszoom/tree/develop/examples/data">https://github.com/statgen/locuszoom/tree/develop/examples/data</a>.</p>
 <h2 id="github-recovery">GitHub recovery</h2>
-<p>We resort to GitKraken to identify the date when the commit was made as with the associate hash from <code>git log</code> -- our example is based on repository jinghuazhao/R.</p>
+<p>We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from <code>git log</code> -- our example is based on repository jinghuazhao/R.</p>
 <p>We now create a new branch, cherry-pick and commit to the branch.</p>
 <pre><code class="language-bash">git checkout -b recover
 git cherry-pick a36d0974e9feec813e06620ccb9ba8ebc4e01ebf
@@ -729,6 +729,7 @@ cd bin
 echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
 chmod +x gitkraken
 </code></pre>
+<p>A CSD3 module has been made which can be loaded with <code>module load ceuadmin/GitKraken</code>.</p>
 <h2 id="ssh">ssh</h2>
 <p>The use of ssh involves several steps,</p>
 <ol>
