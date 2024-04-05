@@ -47,7 +47,7 @@ It could be the appropriate way to download directory from a GitHub repository, 
 
 ## GitHub recovery
 
-We resort to GitKraken to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
+We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
 
 We now create a new branch, cherry-pick and commit to the branch.
 
@@ -726,6 +726,8 @@ cd bin
 echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ > gitkraken
 chmod +x gitkraken
 ```
+
+A CSD3 module has been made which can be loaded with `module load ceuadmin/GitKraken`.
 
 ## ssh
 
