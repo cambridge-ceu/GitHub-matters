@@ -47,7 +47,9 @@ It could be the appropriate way to download directory from a GitHub repository, 
 
 ## GitHub recovery
 
-We resort to GitKraken to identify the date when the commit was made as with the associate hash from `git log`. We now create a new branch, cherry-pick and commit to the branch.
+We resort to GitKraken to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
+
+We now create a new branch, cherry-pick and commit to the branch.
 
 ```bash
 git checkout -b recover
