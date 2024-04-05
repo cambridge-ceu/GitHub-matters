@@ -23,6 +23,7 @@ mkdocs build
 mkdocs gh-deploy
 
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
+   echo icelake
    module load ceuadmin/openssh/9.7p1-icelake
 fi
 
