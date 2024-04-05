@@ -102,6 +102,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#github-recovery" class="nav-link">GitHub recovery</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-actions" class="nav-link">GitHub actions</a>
               <ul class="nav flex-column">
               </ul>
@@ -195,6 +200,17 @@ new mode 100755
 </code></pre>
 <p>One can turn if off with <code>git config core.filemode false</code>.</p>
 <p>It could be the appropriate way to download directory from a GitHub repository, e.g., <code>git clone https://github.com/statgen/locuszoom.git</code> for <code>https://github.com/statgen/locuszoom/tree/develop/examples/data</code>.</p>
+<h2 id="github-recovery">GitHub recovery</h2>
+<p>We resort to GitKraken to identify the date when the commit was made as with the associate hash from <code>git log</code>. We now create a new branch, cherry-pick and commit to the branch.</p>
+<pre><code class="language-bash">git checkout -b recover
+git cherry-pick a36d0974e9feec813e06620ccb9ba8ebc4e01ebf
+git add .
+git cherry-pick --continue
+git push --set-upstream origin recover
+git checkout master
+git status
+</code></pre>
+<p>A pull request can be made from <code>https://github.com/jinghuazhao/R/pull/new/recover</code></p>
 <h2 id="github-actions">GitHub actions</h2>
 <p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
 <pre><code class="language-bash">Rscript -e '
