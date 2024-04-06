@@ -24,7 +24,7 @@ mkdocs gh-deploy
 
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
    echo icelake
-   module load ceuadmin/openssl/3.2.1-icelake
+   module load ceuadmin/openssh/9.7b1-icelake
 fi
 
 git add .gitignore
