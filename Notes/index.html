@@ -186,7 +186,14 @@ wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
 cd git-2.38.1
 module load zlib/1.2.11
 export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+# 2.44.0
+wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | x
+tar xvfz -
+cd git-2.44.0
+make configure
+configure --prefix=${CEUADMIN}/git/2.44.0-icelake
 make
+make install
 </code></pre>
 <p>and by default the executables will be put to ~/bin.</p>
 <h2 id="git-clone">Git clone</h2>
