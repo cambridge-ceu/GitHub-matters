@@ -25,7 +25,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * Google, <https://github.com/google> (<https://github.com/google-deepmind>)
   * HDR UK, <https://github.com/hdruk>
   * Huawei, <https://github.com/huawei>
-  * MicroSoft, <https://github.com/microsoft>
+  * MicroSoft, <https://github.com/microsoft> and .NET platform, <https://github.com/dotnet>
   * Mozilla, <https://github.com/mozilla>
   * Oracle, <https://github.com/oracle>
   * Sanger, <https://github.com/sanger>
