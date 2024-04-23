@@ -42,7 +42,7 @@ git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 git clone https://github.com/PMBio/peer PMBio
 ```
 
-which download a repository, its wiki pages, and a new directory, respectively. Use `git pull` to pull updates, which can be checked with `git diff`. When it shows following message
+which download a repository, its wiki pages, and into a new directory, respectively. Use `git pull` to pull updates, which can be checked with `git diff`. When it shows following message
 
 ```
 old mode 100644
