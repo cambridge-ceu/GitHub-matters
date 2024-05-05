@@ -53,6 +53,14 @@ One can turn it off with `git config core.filemode false`.
 
 It could be the appropriate way to download directory from a GitHub repository, e.g., `git clone https://github.com/statgen/locuszoom.git` for <https://github.com/statgen/locuszoom/tree/develop/examples/data>.
 
+To show the origin of a cloned repository, try
+
+```bash
+git ls-remote --get-url origin
+git remote -v
+git remote show origin
+```
+
 ## GitHub recovery
 
 We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
