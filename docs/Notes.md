@@ -121,6 +121,10 @@ which gives,
 
 Note .github/workflows would contains actions which can be removed manually.
 
+## GitHub discussions
+
+See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
+
 ## GitHub pages
 
 This section involves `npm` which is described below.
