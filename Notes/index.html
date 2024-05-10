@@ -112,6 +112,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#github-discussions" class="nav-link">GitHub discussions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
@@ -208,6 +213,11 @@ new mode 100755
 </code></pre>
 <p>One can turn it off with <code>git config core.filemode false</code>.</p>
 <p>It could be the appropriate way to download directory from a GitHub repository, e.g., <code>git clone https://github.com/statgen/locuszoom.git</code> for <a href="https://github.com/statgen/locuszoom/tree/develop/examples/data">https://github.com/statgen/locuszoom/tree/develop/examples/data</a>.</p>
+<p>To show the origin of a cloned repository, try</p>
+<pre><code class="language-bash">git ls-remote --get-url origin
+git remote -v
+git remote show origin
+</code></pre>
 <h2 id="github-recovery">GitHub recovery</h2>
 <p>We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from <code>git log</code> -- our example is based on repository jinghuazhao/R.</p>
 <p>We now create a new branch, cherry-pick and commit to the branch.</p>
@@ -253,6 +263,8 @@ git status
 <!-- badges: end -->
 
 <p>Note .github/workflows would contains actions which can be removed manually.</p>
+<h2 id="github-discussions">GitHub discussions</h2>
+<p>See <a href="https://docs.github.com/en/discussions/quickstart">https://docs.github.com/en/discussions/quickstart</a> and also <a href="https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/">https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/</a>.</p>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
