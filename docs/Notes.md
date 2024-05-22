@@ -705,6 +705,8 @@ curl -fsSG "http://bejerano.stanford.edu/great/public/cgi-bin/greatStart.php" \
 
 GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statistics/docs/](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
 
+Finally, constructing of an API can be done with R/plumber, <https://www.rplumber.io/>.
+
 ## GraphQL API
 
 Hasura, <https://cloud.hasura.io/>
