@@ -22,6 +22,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * BBC, <https://github.com/bbc>
   * Broad Institute, <https://github.com/broadinstitute>
   * Cambridge University, <https://github.com/cambridgeuniversity> ([SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/))
+  * Center for Statistical Genetics, <https://github.com/statgen>
   * Facebook, <https://github.com/facebook>
   * FinnGen, <https://github.com/FINNGEN>
   * Google, <https://github.com/google> (<https://github.com/google-deepmind>)
