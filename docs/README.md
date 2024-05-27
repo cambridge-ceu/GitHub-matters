@@ -30,9 +30,16 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * MicroSoft, <https://github.com/microsoft> and .NET platform, <https://github.com/dotnet>
   * Mozilla, <https://github.com/mozilla>
   * Oracle, <https://github.com/oracle>
+  * Publishers
+    - **Apress**, <https://github.com/Apress>
+    - Cambridge University Press, <https://github.com/CambridgeUniversityPress>
+    - McGraw-Hill, <https://github.com/MHEducation>
+    - Oxford University Press, <https://github.com/OUP>
+    - **Packt**, <https://github.com/PacktPublishing>
+    - Springer Nature, <https://github.com/springernature>
+    - Wiley, <https://github.com/wiley>
   * Sanger, <https://github.com/sanger>
   * Tencent, <https://github.com/tencent>
-  * Wiley, <https://github.com/wiley>
 
 ## Technical guides and enhancements
 
