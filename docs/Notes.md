@@ -79,6 +79,8 @@ git status
 
 A pull request can be made from `https://github.com/jinghuazhao/R/pull/new/recover`
 
+This is an example to remove a remote tage: `git push origin --delete 0`.
+
 ## GitHub actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
