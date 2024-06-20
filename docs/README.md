@@ -23,7 +23,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * Broad Institute, <https://github.com/broadinstitute>
   * Cambridge University, <https://github.com/cambridgeuniversity>
     - Accelerate Science, <https://github.com/acceleratescience>
-    - ([SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/))
+    - [SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/)
   * Center for Statistical Genetics, <https://github.com/statgen>
   * Facebook, <https://github.com/facebook>
   * FinnGen, <https://github.com/FINNGEN>
