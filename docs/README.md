@@ -33,6 +33,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * IBM, <https://github.com/IBM>
   * MicroSoft, <https://github.com/microsoft> and .NET platform, <https://github.com/dotnet>
   * Mozilla, <https://github.com/mozilla>
+  * OpenAI, <https://github.com/openai>
   * Oracle, <https://github.com/oracle>
   * Publishers
     - **Apress**, <https://github.com/Apress>
