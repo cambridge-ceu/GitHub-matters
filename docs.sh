@@ -18,12 +18,6 @@ function my_api()
   git submodule add my_api
 }
 
-if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
-   echo icelake
-   module load ceuadmin/libssh/0.10.6-icelake
-   module load ceuadmin/openssh/9.7p1-icelake
-fi
-
 github_pages
 mkdocs build
 mkdocs gh-deploy
