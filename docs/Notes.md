@@ -151,6 +151,7 @@ gem install jekyll bundler
 bundle install
 # gem install jekyll-commonmark-ghpages
 # gem install jekyll -v '4.3.3'
+# bundle update jekyll
 # unzip rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip
 # mv rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694 docs
 # cd docs
