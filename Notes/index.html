@@ -345,6 +345,13 @@ cd ruby-install-0.8.3/
 PREFIX=${HPC_WORK} make install
 ruby-install --latest --no-install-deps ruby
 </code></pre>
+<p>We have seen such error message,</p>
+<pre><code>...
+/rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi.rb:5:in `require': libffi.so.7: cannot open shared object file: No such file or directory - /rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi_c.so (LoadError)
+</code></pre>
+<p>which is resolved with rebuilding the ffi Gem,</p>
+<pre><code class="language-bash">gem pristine ffi --version 1.15.5
+</code></pre>
 <h3 id="rvm">rvm</h3>
 <p>Web: <a href="https://rvm.io/">https://rvm.io/</a>.</p>
 <p>Ruby Version Manager (RVM) <code>is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems</code>.</p>
