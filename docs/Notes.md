@@ -238,10 +238,11 @@ We have seen such error message,
 /rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi.rb:5:in `require': libffi.so.7: cannot open shared object file: No such file or directory - /rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi_c.so (LoadError)
 ```
 
-which is resolved with rebuilding the ffi Gem,
+which is resolved with rebuilding the ffi/all Gem,
 
 ```bash
 gem pristine ffi --version 1.15.5
+gem pristine --all
 ```
 
 ### rvm
