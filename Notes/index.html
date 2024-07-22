@@ -349,8 +349,9 @@ ruby-install --latest --no-install-deps ruby
 <pre><code>...
 /rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi.rb:5:in `require': libffi.so.7: cannot open shared object file: No such file or directory - /rds/user/jhz22/hpc-work/lib/ruby/gems/2.7.0/gems/ffi-1.15.5/lib/ffi_c.so (LoadError)
 </code></pre>
-<p>which is resolved with rebuilding the ffi Gem,</p>
+<p>which is resolved with rebuilding the ffi/all Gem,</p>
 <pre><code class="language-bash">gem pristine ffi --version 1.15.5
+gem pristine --all
 </code></pre>
 <h3 id="rvm">rvm</h3>
 <p>Web: <a href="https://rvm.io/">https://rvm.io/</a>.</p>
