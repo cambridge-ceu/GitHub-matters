@@ -31,6 +31,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * HDR UK, <https://github.com/hdruk>
   * Huawei, <https://github.com/huawei>
   * IBM, <https://github.com/IBM>
+  * LMSYS, <https://github.com/lm-sys>
   * MicroSoft, <https://github.com/microsoft> and .NET platform, <https://github.com/dotnet>
   * Mozilla, <https://github.com/mozilla>
   * OpenAI, <https://github.com/openai>
