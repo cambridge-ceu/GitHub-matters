@@ -46,6 +46,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
     - Wiley, <https://github.com/wiley>
   * Sanger, <https://github.com/sanger>
   * Tencent, <https://github.com/tencent>
+  * Twitter / X, <https://github.com/twitter>
 
 ## Technical guides and enhancements
 
