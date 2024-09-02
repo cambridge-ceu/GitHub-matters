@@ -35,6 +35,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * MicroSoft, <https://github.com/microsoft> and .NET platform, <https://github.com/dotnet>
   * Mozilla, <https://github.com/mozilla>
   * OpenAI, <https://github.com/openai>
+  * OpenXiangshan, <https://github.com/OpenXiangShan>
   * Oracle, <https://github.com/oracle>
   * Publishers
     - **Apress**, <https://github.com/Apress>
