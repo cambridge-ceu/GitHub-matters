@@ -231,6 +231,17 @@ git status
 </code></pre>
 <p>A pull request can be made from <code>https://github.com/jinghuazhao/R/pull/new/recover</code></p>
 <p>This is an example to remove a remote tage: <code>git push origin --delete 0</code>.</p>
+<p>When we issue <code>git push origin master</code> with error messages</p>
+<pre><code>X11 forwarding request failed on channel 0
+To github.com:jinghuazhao/pQTLtools.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'github.com:jinghuazhao/pQTLtools.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
+<p>We enforce our push with <code>git push --force origin master</code>.</p>
 <h2 id="github-actions">GitHub actions</h2>
 <p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
 <pre><code class="language-bash">Rscript -e '
