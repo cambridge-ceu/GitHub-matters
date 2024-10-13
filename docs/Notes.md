@@ -81,6 +81,21 @@ A pull request can be made from `https://github.com/jinghuazhao/R/pull/new/recov
 
 This is an example to remove a remote tage: `git push origin --delete 0`.
 
+When we issue `git push origin master` with error messages
+
+```
+X11 forwarding request failed on channel 0
+To github.com:jinghuazhao/pQTLtools.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:jinghuazhao/pQTLtools.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+We enforce our push with `git push --force origin master`.
+
 ## GitHub actions
 
 Suppose our R packages are inside `R` folder, where we start some of the following script,
