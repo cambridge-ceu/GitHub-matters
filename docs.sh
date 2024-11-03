@@ -18,6 +18,9 @@ function my_api()
   git submodule add my_api
 }
 
+module load ceuadmin/libssh/0.10.6-icelake
+module load ceuadmin/openssh/9.7p1-icelake
+
 github_pages
 mkdocs build
 mkdocs gh-deploy
