@@ -20,9 +20,6 @@ function my_api()
 
 module load ceuadmin/libssh/0.10.6-icelake
 module load ceuadmin/openssh/9.7p1-icelake
-module load gettext/0.21/gcc/qnrcglqo
-module load ceuadmin/krb5
-module load libiconv/1.16/gcc/4miyzf3w
 
 github_pages
 mkdocs build
