@@ -37,6 +37,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
   * OpenAI, <https://github.com/openai>
   * OpenXiangshan, <https://github.com/OpenXiangShan>
   * Oracle, <https://github.com/oracle>
+  * posit-dev, <https://github.com/posit-dev>
   * Publishers
     - **Apress**, <https://github.com/Apress>
     - Cambridge University Press, <https://github.com/CambridgeUniversityPress>
