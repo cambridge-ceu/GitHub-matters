@@ -6,7 +6,7 @@ function setup()
 {
   module load python/3.8
   source ~/rds/public_databases/software/py38/bin/activate
-  pip install mkdocs-mermaid2-plugin
+# pip install mkdocs-mermaid2-plugin
 # pip install pymdown-extensions
 }
 
