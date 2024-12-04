@@ -44,6 +44,7 @@ An example is given in [Notes.md](Notes.md). More generally, it would be similar
     - McGraw-Hill, <https://github.com/MHEducation>
     - Oxford University Press, <https://github.com/OUP>
     - **Packt**, <https://github.com/PacktPublishing>
+    - **OReilly Media, Inc**. <https://github.com/oreillymedia>
     - Springer Nature, <https://github.com/springernature>
     - Wiley, <https://github.com/wiley>
   * Sanger, <https://github.com/sanger>
