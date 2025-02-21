@@ -3,6 +3,7 @@ repo_url: https://github.com/cambridge-ceu/GitHub-matters
 edit_uri: ""
 nav:
     - "   ": README.md
+    - Contributors: contributors.md
     - Notes: Notes.md
     - Flask: Flask.md
 theme:
