@@ -132,7 +132,14 @@
 <li>Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.</li>
 <li>Submit a pull request from your_initials_or_description.</li>
 </ol>
-<p>An example is given in <a href="Notes/">Notes.md</a>. More generally, it would be similar to <a href="https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md">these instructions to GDAL</a>.</p>
+<p>The following explemplifies branch <code>jhz</code> of the <code>TwoSampleMR</code> package,</p>
+<pre><code class="language-bash">git clone https://github.com/MRCIEU/TwoSampleMR
+git checkout -b jhz
+# make changes
+git remote set-url origin https://github.com/cambridge-ceu/TwoSampleMR.git
+git push --set-upstream origin jhz
+</code></pre>
+<p>Additional information is given in <a href="Notes/">Notes.md</a>. More generally, it would be similar to <a href="https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md">these instructions to GDAL</a>.</p>
 <h2 id="corporateorganisational-contributors">Corporate/organisational contributors</h2>
 <ul>
 <li>Alibaba, <a href="https://github.com/alibaba">https://github.com/alibaba</a></li>
@@ -280,5 +287,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-12-04 21:45:36.801491+00:00
+Build Date UTC : 2025-02-21 12:44:57.643611+00:00
 -->
