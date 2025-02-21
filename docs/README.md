@@ -1,5 +1,27 @@
 <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right">
 
+## Policies
+
+This is in line with or somewhat mirrors [University's policies for HPC](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html).
+
+## Technical guides and enhancements
+
+   * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [learning branching](https://learngitbranching.js.org/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
+   * [Git(Kraken) tutorials](https://www.gitkraken.com/learn/git/tutorials).
+   * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
+   * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE/), [HelloGitHub](https://hellogithub.com/), [awesome-GitHub](https://github.com/Kikobeats/awesome-github), [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
+   * [git-extras](https://github.com/tj/git-extras).
+   * [github-mermaid-extension](https://github.com/BackMarket/github-mermaid-extension)
+   * [git recall](https://github.com/Fakerr/git-recall.git).
+   * [GitHub token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and [Connection with ssh](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
+   * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/) ([A hooking example for NodeInject](https://github.com/DiamondHunters/NodeInject_Hook_example)).
+   * quarto Guide, <https://quarto.org/docs/guide/>
+   * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
+
+CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
+
+<a href="https://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="760" height="860" align="center"></a>
+
 ## Corporate/organisational contributors
 
   * Alibaba, <https://github.com/alibaba>
@@ -36,28 +58,6 @@
   * Sanger, <https://github.com/sanger>
   * Tencent, <https://github.com/tencent>
   * Twitter / X, <https://github.com/twitter>
-
-## Technical guides and enhancements
-
-   * [GitHub Guides](https://guides.github.com/) including [Hello world!](https://guides.github.com/activities/hello-world/), [learning branching](https://learngitbranching.js.org/), [git-scm documentation](https://git-scm.com/doc) including [Reference](https://git-scm.com/docs/).
-   * [Git(Kraken) tutorials](https://www.gitkraken.com/learn/git/tutorials).
-   * [Enhanced GitHub](https://github.com/softvar/enhanced-github), [GitHub Dark Theme](https://github.com/poychang/github-dark-theme), [Octotree](https://github.com/ovity/octotree), [sourcegraph](https://github.com/sourcegraph/sourcegraph) and [Widescreen for GitHub](https://github.com/sqren/github-widescreen) for Google Chrome.
-   * [GUI / IDE](https://jinghuazhao.github.io/physalia/IDE/), [HelloGitHub](https://hellogithub.com/), [awesome-GitHub](https://github.com/Kikobeats/awesome-github), [Run your blog on GitHub Pages with Python](https://opensource.com/article/19/5/run-your-blog-github-pages-python).
-   * [git-extras](https://github.com/tj/git-extras).
-   * [github-mermaid-extension](https://github.com/BackMarket/github-mermaid-extension)
-   * [git recall](https://github.com/Fakerr/git-recall.git).
-   * [GitHub token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and [Connection with ssh](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
-   * [Markdown Guide](https://www.markdownguide.org/), [Markdown reference](https://support.typora.io/Markdown-Reference/) by [Typora](https://typora.io/) ([A hooking example for NodeInject](https://github.com/DiamondHunters/NodeInject_Hook_example)).
-   * quarto Guide, <https://quarto.org/docs/guide/>
-   * [Read the Docs Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/) and [jekyll-rtd-theme](http://jekyllthemes.org/themes/jekyll-rtd-theme/) ([web](https://jekyll-rtd-theme.rundocs.io/))
-
-CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
-
-<a href="https://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="760" height="860" align="center"></a>
-
-## Policies
-
-This is in line with or somewhat mirrors [University's policies for HPC](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html).
 
 ## How to contribute to [cambridge-ceu](https://github.com/cambridge-ceu)
 
