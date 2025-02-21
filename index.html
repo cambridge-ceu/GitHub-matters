@@ -87,11 +87,6 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#how-to-contribute-to-cambridge-ceu" class="nav-link">How to contribute to cambridge-ceu</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#corporateorganisational-contributors" class="nav-link">Corporate/organisational contributors</a>
               <ul class="nav flex-column">
               </ul>
@@ -103,6 +98,11 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#policies" class="nav-link">Policies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#how-to-contribute-to-cambridge-ceu" class="nav-link">How to contribute to cambridge-ceu</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -122,24 +122,6 @@
                     <div class="col-md-9" role="main">
 
 <p><img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-logo-png-transparent.png" width="200" height="200" align="right"></p>
-<h2 id="how-to-contribute-to-cambridge-ceu">How to contribute to <a href="https://github.com/cambridge-ceu">cambridge-ceu</a></h2>
-<p>Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.</p>
-<p>As adapted from <a href="https://github.com/apress">Apress</a>, a more general approach involves the following steps:</p>
-<ol>
-<li>Make sure you have a GitHub account.</li>
-<li>Fork a repository.</li>
-<li>Create a new branch on which to make your change, e.g. <code>git checkout -b your_initials_or_description</code></li>
-<li>Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.</li>
-<li>Submit a pull request from your_initials_or_description.</li>
-</ol>
-<p>The following explemplifies branch <code>jhz</code> of the <code>TwoSampleMR</code> package,</p>
-<pre><code class="language-bash">git clone https://github.com/MRCIEU/TwoSampleMR
-git checkout -b jhz
-# make changes
-git remote set-url origin https://github.com/cambridge-ceu/TwoSampleMR.git
-git push --set-upstream origin jhz
-</code></pre>
-<p>Additional information is given in <a href="Notes/">Notes.md</a>. More generally, it would be similar to <a href="https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md">these instructions to GDAL</a>.</p>
 <h2 id="corporateorganisational-contributors">Corporate/organisational contributors</h2>
 <ul>
 <li>Alibaba, <a href="https://github.com/alibaba">https://github.com/alibaba</a></li>
@@ -199,6 +181,63 @@ git push --set-upstream origin jhz
 <p><a href="https://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="760" height="860" align="center"></a></p>
 <h2 id="policies">Policies</h2>
 <p>This is in line with or somewhat mirrors <a href="https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html">University's policies for HPC</a>.</p>
+<h2 id="how-to-contribute-to-cambridge-ceu">How to contribute to <a href="https://github.com/cambridge-ceu">cambridge-ceu</a></h2>
+<p>Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.</p>
+<p>As adapted from <a href="https://github.com/apress">Apress</a>, a more general approach involves the following steps:</p>
+<ol>
+<li>Make sure you have a GitHub account.</li>
+<li>Fork a repository.</li>
+<li>Create a new branch on which to make your change, e.g. <code>git checkout -b your_initials_or_description</code></li>
+<li>Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.</li>
+<li>Submit a pull request from your_initials_or_description.</li>
+</ol>
+<p>An example is given for a branch <code>jhz</code> in the <code>TwoSampleMR</code> package[^jhz].</p>
+<p>Additional information is given in <a href="Notes/">Notes.md</a>. More generally, it would be similar to <a href="https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md">these instructions to GDAL</a>.</p>
+<p>The following is <strong>TwoSampleMR/jhz</strong> example. Several steps are necessary,</p>
+<ol>
+<li>Fork TwoSampleMR from <a href="https://github.com/MRCIEU/TwoSampleMR">https://github.com/MRCIEU/TwoSampleMR</a>.</li>
+<li>
+<p>Clone the package locally, add a fork, add branch, modify files, build the web files,</p>
+<p><code>bash
+git clone https://github.com/MRCIEU/TwoSampleMR
+cd TwoSampleMR
+git remote -v
+git remote add myfork https://github.com/cambridge-ceu/TwoSampleMR.git
+git remote -v
+git checkout -b jhz
+git branch
+git status
+cp -r ../tests/man/figures man
+cp ../tests/pkgdown/* pkgdown
+cp ../tests/README.Rmd .
+rm index.md
+Rscript -e 'knitr::knit("README.Rmd");library(pkgdown);build_site()'</code>
+3. Add files</p>
+<p><code>bash
+for f in .github .gitignore .Rbuildignore $(ls)# .Rinstignore
+do
+  echo adding ${f}
+  git add ${f}
+  git commit -m "${f}"
+done
+git add --force docs
+git commit -m "docs"
+git push myfork jhz
+du -h --exclude .git --exclude docs
+git log --oneline</code></p>
+</li>
+<li>
+<p>Pull request</p>
+<p>We go to <a href="https://github.com/cambridge-ceu/TwoSampleMR">https://github.com/cambridge-ceu/TwoSampleMR</a>, Click <code>Compare &amp; pull request</code> which takes us to 
+<a href="https://github.com/MRCIEU/TwoSampleMR/pulls">https://github.com/MRCIEU/TwoSampleMR/pulls</a>, with the following parameters,</p>
+<ul>
+<li>Base repository: MRCIEU/TwoSampleMR</li>
+<li>Base branch: main (or the target branch, e.g., master)</li>
+<li>Head repository: cambridge-ceu/TwoSampleMR</li>
+<li>Head branch: jhz</li>
+</ul>
+</li>
+</ol>
 <h2 id="references">References</h2>
 <p>Blischak JD, Davenport ER, Wilson G. A Quick Introduction to Version Control with Git and GitHub. <em>PLoS Comput Biol</em> 2016, <a href="https://doi.org/10.1371/journal.pcbi.1004668">https://doi.org/10.1371/journal.pcbi.1004668</a>.</p>
 <p>Chacon S, Straub B. Pro Git, 2e. Apress, 2014, <a href="https://link.springer.com/book/10.1007%2F978-1-4842-0076-6">https://link.springer.com/book/10.1007%2F978-1-4842-0076-6</a>.</p>
@@ -287,5 +326,5 @@ git push --set-upstream origin jhz
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2025-02-21 12:44:57.643611+00:00
+Build Date UTC : 2025-02-21 21:11:58.229816+00:00
 -->
