@@ -34,8 +34,6 @@ As adapted from [Apress](https://github.com/apress), a more general approach inv
 4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
 5. Submit a pull request from your_initials_or_description.
 
-An example is given for a branch `jhz` in the `TwoSampleMR` package[^jhz].
-
 Additional information is given in [Notes.md](Notes.md). More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
 
 The following is **TwoSampleMR/jhz** example. Several steps are necessary,
