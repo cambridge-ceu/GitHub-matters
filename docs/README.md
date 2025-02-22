@@ -28,59 +28,9 @@ Assuming you have registered a GitHub account, simply contact owner of a reposit
 
 As adapted from [Apress](https://github.com/apress), a more general approach involves the following steps:
 
-1. Make sure you have a GitHub account.
-2. Fork a repository.
-3. Create a new branch on which to make your change, e.g. `git checkout -b your_initials_or_description`
-4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
-5. Submit a pull request from your_initials_or_description.
+## How to contribute
 
-Additional information is given in [Notes.md](Notes.md). More generally, it would be similar to [these instructions to GDAL](https://github.com/OSGeo/gdal/blob/master/CONTRIBUTING.md).
-
-The following is **TwoSampleMR/jhz** example. Several steps are necessary,
-
-1. Fork TwoSampleMR from <https://github.com/MRCIEU/TwoSampleMR>.
-2. Clone the package locally, add a fork, add branch, modify files, build the web files,
-
-    ```bash
-    git clone https://github.com/MRCIEU/TwoSampleMR
-    cd TwoSampleMR
-    git remote -v
-    git remote add myfork https://github.com/cambridge-ceu/TwoSampleMR.git
-    git remote -v
-    git checkout -b jhz
-    git branch
-    git status
-    cp -r ../tests/man/figures man
-    cp ../tests/pkgdown/* pkgdown
-    cp ../tests/README.Rmd .
-    rm index.md
-    Rscript -e 'knitr::knit("README.Rmd");library(pkgdown);build_site()'
-    ```
-3. Add files
-
-    ```bash
-    for f in .github .gitignore .Rbuildignore $(ls)# .Rinstignore
-    do
-      echo adding ${f}
-      git add ${f}
-      git commit -m "${f}"
-    done
-    git add --force docs
-    git commit -m "docs"
-    git push myfork jhz
-    du -h --exclude .git --exclude docs
-    git log --oneline
-    ```
-
-4. Pull request
-
-    We go to <https://github.com/cambridge-ceu/TwoSampleMR>, Click `Compare & pull request` which takes us to 
-    <https://github.com/MRCIEU/TwoSampleMR/pulls>, with the following parameters,
-
-    * Base repository: MRCIEU/TwoSampleMR
-    * Base branch: main (or the target branch, e.g., master)
-    * Head repository: cambridge-ceu/TwoSampleMR
-    * Head branch: jhz
+See <https://jinghuazhao.github.io/physalia/>.
 
 ## References
 
