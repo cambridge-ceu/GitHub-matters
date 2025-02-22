@@ -25,12 +25,7 @@ CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so i
 ## How to contribute to [cambridge-ceu](https://github.com/cambridge-ceu)
 
 Assuming you have registered a GitHub account, simply contact owner of a repository to add yourself as a contributor.
-
-As adapted from [Apress](https://github.com/apress), a more general approach involves the following steps:
-
-## How to contribute
-
-See <https://jinghuazhao.github.io/physalia/>.
+More generally, see <https://jinghuazhao.github.io/physalia/>.
 
 ## References
 
