@@ -94,7 +94,11 @@ hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-We enforce our push with `git push --force origin master`.
+We enforce our push with `git push --force origin master`. An analogy is made with gh-pages, e.g., 
+
+```bash
+git push --force origin gh-pages
+```
 
 ## GitHub actions
 
