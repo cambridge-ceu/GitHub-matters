@@ -244,7 +244,9 @@ hint: counterpart. If you want to integrate the remote changes, use 'git pull'
 hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </code></pre>
-<p>We enforce our push with <code>git push --force origin master</code>.</p>
+<p>We enforce our push with <code>git push --force origin master</code>. An analogy is made with gh-pages, e.g., </p>
+<pre><code class="language-bash">git push --force origin gh-pages
+</code></pre>
 <h2 id="github-actions">GitHub actions</h2>
 <p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
 <pre><code class="language-bash">Rscript -e '
