@@ -7,6 +7,7 @@
   * Broad Institute, <https://github.com/broadinstitute>
   * Cambridge University, <https://github.com/cambridgeuniversity>
     - Accelerate Science, <https://github.com/acceleratescience>
+    - GitLab: UIS at GitLab, <https://gitlab.developers.cam.ac.uk/uis/>, explore group, <https://gitlab.developers.cam.ac.uk/explore/groups>
     - [SRCF](https://github.com/SRCF/) [mod_ucam_webauth](https://docs.srcf.net/reference/web-hosting/raven-authentication/)
   * Center for Statistical Genetics, <https://github.com/statgen>
   * Facebook, <https://github.com/facebook>
