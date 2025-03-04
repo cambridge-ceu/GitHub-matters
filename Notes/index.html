@@ -115,6 +115,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#git-branches" class="nav-link">Git branches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-discussions" class="nav-link">GitHub discussions</a>
               <ul class="nav flex-column">
               </ul>
@@ -281,6 +286,13 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 <p>Note .github/workflows would contains actions which can be removed manually.</p>
 <p>See also <a href="https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc">CI/CD</a></p>
+<h2 id="git-branches">Git branches</h2>
+<p>The following script lists all branches, remove the remote branch <code>gh-pages</code> and references from the local to branches that no longer 
+exist on the remote.</p>
+<pre><code class="language-bash">git branch -a
+git push origin --delete gh-pages
+git fetch --all --prune
+</code></pre>
 <h2 id="github-discussions">GitHub discussions</h2>
 <p>See <a href="https://docs.github.com/en/discussions/quickstart">https://docs.github.com/en/discussions/quickstart</a> and also <a href="https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/">https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/</a>.</p>
 <h2 id="github-pages">GitHub pages</h2>
