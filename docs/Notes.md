@@ -144,6 +144,17 @@ Note .github/workflows would contains actions which can be removed manually.
 
 See also [CI/CD](https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc)
 
+## Git branches
+
+The following script lists all branches, remove the remote branch `gh-pages` and references from the local to branches that no longer 
+exist on the remote.
+
+```bash
+git branch -a
+git push origin --delete gh-pages
+git fetch --all --prune
+```
+
 ## GitHub discussions
 
 See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
