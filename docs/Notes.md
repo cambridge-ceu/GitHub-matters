@@ -61,6 +61,14 @@ git remote -v
 git remote show origin
 ```
 
+The clone of a Hugging Face repository is also simiar, though it uses the large file facility,
+
+```bash
+module load ceuadmin/git-lfs
+git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
+cd PeptideCLM-12M-smol/
+```
+
 ## GitHub recovery
 
 We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
