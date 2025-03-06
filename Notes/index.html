@@ -226,6 +226,11 @@ new mode 100755
 git remote -v
 git remote show origin
 </code></pre>
+<p>The clone of a Hugging Face repository is also simiar, though it uses the large file facility,</p>
+<pre><code class="language-bash">module load ceuadmin/git-lfs
+git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
+cd PeptideCLM-12M-smol/
+</code></pre>
 <h2 id="github-recovery">GitHub recovery</h2>
 <p>We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from <code>git log</code> -- our example is based on repository jinghuazhao/R.</p>
 <p>We now create a new branch, cherry-pick and commit to the branch.</p>
