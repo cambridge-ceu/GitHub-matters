@@ -167,6 +167,19 @@ git fetch --all --prune
 
 See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
 
+## GitHub submodules
+
+The following script removes a submodule named `Recipe-Chatbot`:
+
+```bash
+git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
+git config -f .git/config --remove-section submodule.Recipe-Chatbot
+git rm -r Recipe-Chatbot
+git add .
+git commit -m "submodules"
+git push
+```
+
 ## GitHub pages
 
 This section involves `npm` which is described below.
