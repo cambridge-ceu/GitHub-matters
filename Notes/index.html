@@ -125,6 +125,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#github-submodules" class="nav-link">GitHub submodules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
@@ -300,6 +305,15 @@ git fetch --all --prune
 </code></pre>
 <h2 id="github-discussions">GitHub discussions</h2>
 <p>See <a href="https://docs.github.com/en/discussions/quickstart">https://docs.github.com/en/discussions/quickstart</a> and also <a href="https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/">https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/</a>.</p>
+<h2 id="github-submodules">GitHub submodules</h2>
+<p>The following script removes a submodule named <code>Recipe-Chatbot</code>:</p>
+<pre><code class="language-bash">git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
+git config -f .git/config --remove-section submodule.Recipe-Chatbot
+git rm -r Recipe-Chatbot
+git add .
+git commit -m &quot;submodules&quot;
+git push
+</code></pre>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
