@@ -34,7 +34,7 @@ and by default the executables will be put to ~/bin.
 
 ## Git clone
 
-Perhaps it is the most common use, e.g.,
+### Common use
 
 ```bash
 git clone https://github.com/gkichaev/PAINTOR_V3.0.git
@@ -61,7 +61,21 @@ git remote -v
 git remote show origin
 ```
 
-The clone of a Hugging Face repository is also simiar, though it uses the large file facility,
+### SSH
+
+The usual `git clone https://github.com/mozilla-firefox/firefox` gives error message:
+
+>  fatal: fetch-pack: invalid index-pack output
+
+and we use SSH instead.
+
+```bash
+git clone git@github.com:mozilla/firefox.git
+```
+
+### Hugging Face repository
+
+It uses the large file facility,
 
 ```bash
 module load ceuadmin/git-lfs
