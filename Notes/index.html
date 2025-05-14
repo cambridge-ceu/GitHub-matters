@@ -238,7 +238,9 @@ git remote show origin
 </blockquote>
 <p>and we use SSH instead.</p>
 <pre><code class="language-bash">git clone git@github.com:mozilla/firefox.git
+git clone --depth 1 git@github.com:mozilla/firefox.git
 </code></pre>
+<p>As a compromise, a shallow clone is done by the second statement for the latest commits.</p>
 <h3 id="hugging-face-repository">Hugging Face repository</h3>
 <p>It uses the large file facility,</p>
 <pre><code class="language-bash">module load ceuadmin/git-lfs
