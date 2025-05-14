@@ -26,6 +26,8 @@ setup
 mkdocs build
 mkdocs gh-deploy
 
+git add README.md
+git commit -m "README"
 git add .gitignore
 git commit -m ".gitignore"
 git add docs my_api
