@@ -180,7 +180,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#ssh" class="nav-link">ssh</a>
+            <li class="nav-item" data-level="2"><a href="#ssh_1" class="nav-link">ssh</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -215,7 +215,7 @@ make install
 </code></pre>
 <p>and by default the executables will be put to ~/bin.</p>
 <h2 id="git-clone">Git clone</h2>
-<p>Perhaps it is the most common use, e.g.,</p>
+<h3 id="common-use">Common use</h3>
 <pre><code class="language-bash">git clone https://github.com/gkichaev/PAINTOR_V3.0.git
 git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
 git clone https://github.com/PMBio/peer PMBio
@@ -231,7 +231,16 @@ new mode 100755
 git remote -v
 git remote show origin
 </code></pre>
-<p>The clone of a Hugging Face repository is also simiar, though it uses the large file facility,</p>
+<h3 id="ssh">SSH</h3>
+<p>The usual <code>git clone https://github.com/mozilla-firefox/firefox</code> gives error message:</p>
+<blockquote>
+<p>fatal: fetch-pack: invalid index-pack output</p>
+</blockquote>
+<p>and we use SSH instead.</p>
+<pre><code class="language-bash">git clone git@github.com:mozilla/firefox.git
+</code></pre>
+<h3 id="hugging-face-repository">Hugging Face repository</h3>
+<p>It uses the large file facility,</p>
 <pre><code class="language-bash">module load ceuadmin/git-lfs
 git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
 cd PeptideCLM-12M-smol/
@@ -812,7 +821,7 @@ echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
 chmod +x gitkraken
 </code></pre>
 <p>A CSD3 module has been made which can be loaded with <code>module load ceuadmin/GitKraken</code>.</p>
-<h2 id="ssh">ssh</h2>
+<h2 id="ssh_1">ssh</h2>
 <p>The use of ssh involves several steps,</p>
 <ol>
 <li>Generate private and public keys via ssh-keygen.</li>
