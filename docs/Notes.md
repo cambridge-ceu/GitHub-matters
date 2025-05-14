@@ -71,7 +71,10 @@ and we use SSH instead.
 
 ```bash
 git clone git@github.com:mozilla/firefox.git
+git clone --depth 1 git@github.com:mozilla/firefox.git
 ```
+
+As a compromise, a shallow clone is done by the second statement for the latest commits.
 
 ### Hugging Face repository
 
