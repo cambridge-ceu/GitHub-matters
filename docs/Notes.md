@@ -180,6 +180,14 @@ git push origin --delete gh-pages
 git fetch --all --prune
 ```
 
+## Git garbage collection
+
+This is done by
+
+```bash
+git gc
+```
+
 ## GitHub discussions
 
 See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
