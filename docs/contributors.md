@@ -25,6 +25,7 @@
   * posit-dev, <https://github.com/posit-dev>
   * Publishers
     - **Apress**, <https://github.com/Apress>
+    - AVA, <https://github.com/OrangeAVA/>
     - Cambridge University Press, <https://github.com/CambridgeUniversityPress>
     - McGraw-Hill, <https://github.com/MHEducation>
     - Oxford University Press, <https://github.com/OUP>
@@ -35,4 +36,3 @@
   * Sanger, <https://github.com/sanger>
   * Tencent, <https://github.com/tencent>
   * Twitter / X, <https://github.com/twitter>
-
