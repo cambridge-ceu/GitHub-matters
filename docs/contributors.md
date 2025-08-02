@@ -24,13 +24,13 @@
   * Oracle, <https://github.com/oracle>
   * posit-dev, <https://github.com/posit-dev>
   * Publishers
-    - **Apress**, <https://github.com/Apress>
+    - Apress, <https://github.com/Apress>
     - AVA, <https://github.com/OrangeAVA/>
     - Cambridge University Press, <https://github.com/CambridgeUniversityPress>
     - McGraw-Hill, <https://github.com/MHEducation>
     - Oxford University Press, <https://github.com/OUP>
-    - **Packt**, <https://github.com/PacktPublishing>
-    - **OReilly Media, Inc**. <https://github.com/oreillymedia>
+    - Packt, <https://github.com/PacktPublishing>
+    - OReilly Media, Inc. <https://github.com/oreillymedia>
     - Springer Nature, <https://github.com/springernature>
     - Wiley, <https://github.com/wiley>
   * Sanger, <https://github.com/sanger>
