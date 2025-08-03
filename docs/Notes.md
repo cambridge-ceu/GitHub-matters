@@ -32,6 +32,14 @@ make install
 ```
 and by default the executables will be put to ~/bin.
 
+## GitHub CLI
+
+Web: <https://cli.github.com/>
+
+This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account.
+
+An instance is given here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
+
 ## Git clone
 
 ### Common use
