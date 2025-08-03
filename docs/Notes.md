@@ -36,7 +36,7 @@ and by default the executables will be put to ~/bin.
 
 Web: <https://cli.github.com/>
 
-This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account.
+This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account, which may be very clumsy.
 
 An instance is given here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
 
