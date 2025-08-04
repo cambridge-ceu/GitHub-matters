@@ -38,7 +38,22 @@ Web: <https://cli.github.com/>
 
 This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account, which may be very clumsy.
 
-An instance is given here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
+The setup and fork are described here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
+
+```bash
+# create a repo
+mkdir my-awesome-project && cd my-awesome-project
+echo my-awesome-project > README.md
+git init && git add . && git commit -m "Initial commit"
+gh repo create my-awesome-project \
+  --private \
+  --description "My cool repo" \
+  --source=. \
+  --remote=origin \
+  --push
+# delete it
+gh repo delete
+```
 
 ## Git clone
 
