@@ -20,7 +20,7 @@ This is in line with or somewhat mirrors [University's policies for HPC](https:/
 
 CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
 
-## A great way to reproducible research
+## A gateway to reproducible research
 
 Besides the references below, here is a diagram showing the process of tracking changes.
 
