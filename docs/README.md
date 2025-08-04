@@ -20,6 +20,10 @@ This is in line with or somewhat mirrors [University's policies for HPC](https:/
 
 CAUTION (legacy) -- there are issues under cardio on GitHub synchronisation so it is appropriate to use `git pull` but not `git push` which can replace files on the server with empty ones for no reasons. Sometimes it is necessary to disable the pop-up window as described in [Notes.md](Notes.md).
 
+## A great way to reproducible research
+
+Besides the references below, here is a diagram showing the process of tracking changes.
+
 <a href="https://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="760" height="860" align="center"></a>
 
 ## How to contribute to [cambridge-ceu](https://github.com/cambridge-ceu)
