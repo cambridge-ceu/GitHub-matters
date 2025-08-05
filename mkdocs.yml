@@ -5,7 +5,7 @@ nav:
     - "   ": README.md
     - Contributors: contributors.md
     - Notes: Notes.md
-    - Flask: Flask.md
+    - "Web building": Flask.md
 theme:
     name: mkdocs
     nav_style: dark
