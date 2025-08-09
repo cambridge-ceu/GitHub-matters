@@ -30,7 +30,7 @@ configure --prefix=${CEUADMIN}/git/2.44.0-icelake
 make
 make install
 ```
-and by default the executables will be put to ~/bin. Additional notes regarding recent version is available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
+and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
 ## GitHub CLI
 
