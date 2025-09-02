@@ -111,6 +111,15 @@ cd PeptideCLM-12M-smol/
 
 ## GitHub recovery
 
+We can reverse changes just made;
+
+```bash
+# discard all changes
+git reset --hard
+# restore version before last commit
+git checkout HEAD -- docs/source/_static/css/custom.css
+```
+
 We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
 
 We now create a new branch, cherry-pick and commit to the branch.
