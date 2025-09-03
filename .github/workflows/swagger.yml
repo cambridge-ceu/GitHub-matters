@@ -2,40 +2,42 @@ name: Swagger Documentation
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate HTML documentation via OpenAPITools Generator Action
-        uses: openapi-generators/openapitools-generator-action@v1
+      - name: Generate HTML documentation via OpenAPITools Generator
+        uses: openapi-generators/openapitools-generator-action@v1.5.0
         with:
           openapi-file: 'docs/openapi.yml'
           generator: 'html2'
           output-dir: 'swagger-html'
 
-      - name: Upload generated docs as artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: **Debug: Show generated files**
+        run: |
+          echo "=== Directory listing ==="
+          ls -R .
+
+      - name: Upload generated docs as GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: swagger-html
+          path: 'swagger-html'
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.upload.outputs.page_url }}
