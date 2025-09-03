@@ -2,8 +2,8 @@ name: Swagger Documentation
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build:
@@ -17,10 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate HTML documentation via OpenAPI Generator
-        uses: diegoara96/openapi-generator-action@v1
+      - name: Generate HTML documentation via OpenAPITools Generator Action
+        uses: openapi-generators/openapitools-generator-action@v1
         with:
-          spec-file: 'docs/openapi.yml'
+          openapi-file: 'docs/openapi.yml'
           generator: 'html2'
           output-dir: 'swagger-html'
 
