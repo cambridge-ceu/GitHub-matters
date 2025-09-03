@@ -2,28 +2,30 @@ name: Swagger Documentation
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate Swagger Documentation
-        run: |
-          docker run --rm \
-            -v "${PWD}:/local" \
-            swaggerapi/swagger-codegen-cli generate \
-            -i /local/docs/openapi.yml \
-            -l html2 \
-            -o /local/swagger-html
+      - name: Generate HTML documentation via OpenAPI Generator
+        uses: diegoara96/openapi-generator-action@v1
+        with:
+          spec-file: 'docs/openapi.yml'
+          generator: 'html2'
+          output-dir: 'swagger-html'
 
-      - name: Upload static docs as artifact
-        id: upload
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload generated docs as artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: swagger-html
 
@@ -36,7 +38,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.upload.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
