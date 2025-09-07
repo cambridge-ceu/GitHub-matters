@@ -55,6 +55,17 @@ gh repo create my-awesome-project \
 gh repo delete
 ```
 
+At times message is seen on unadded file(s), e.g.,
+
+```
+The following paths are ignored by one of your .gitignore files:
+_site
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+```
+
+simply apply `git config set advice.addIgnoredFile false`, for we are pretty sure about skip them with .gitignore.
+
 ## Git clone
 
 ### Common use
