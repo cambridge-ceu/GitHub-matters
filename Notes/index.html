@@ -241,6 +241,13 @@ gh repo create my-awesome-project \
 # delete it
 gh repo delete
 </code></pre>
+<p>At times message is seen on unadded file(s), e.g.,</p>
+<pre><code>The following paths are ignored by one of your .gitignore files:
+_site
+hint: Use -f if you really want to add them.
+hint: Disable this message with &quot;git config set advice.addIgnoredFile false&quot;
+</code></pre>
+<p>simply apply <code>git config set advice.addIgnoredFile false</code>, for we are pretty sure about skip them with .gitignore.</p>
 <h2 id="git-clone">Git clone</h2>
 <h3 id="common-use">Common use</h3>
 <pre><code class="language-bash">git clone https://github.com/gkichaev/PAINTOR_V3.0.git
