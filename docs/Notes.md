@@ -165,8 +165,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 We enforce our push with `git push --force origin master`. An analogy is made with gh-pages, e.g., 
 
 ```bash
+export GIT_SSH_COMMAND="ssh -x"
 git push --force origin gh-pages
 ```
+
+where the export command silences the error message: "X11 forwarding request failed on channel 0".
 
 ## GitHub actions
 
