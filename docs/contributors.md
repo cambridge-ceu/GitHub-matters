@@ -26,6 +26,7 @@
   * Publishers
     - Apress, <https://github.com/Apress>
     - AVA, <https://github.com/OrangeAVA/>
+    - BPB publications, <https://github.com/bpbpublications>
     - Cambridge University Press, <https://github.com/CambridgeUniversityPress>
     - McGraw-Hill, <https://github.com/MHEducation>
     - Oxford University Press, <https://github.com/OUP>
