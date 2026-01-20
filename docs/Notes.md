@@ -73,8 +73,8 @@ simply apply `git config set advice.addIgnoredFile false`, for we are pretty sur
     - Open VS Code
     - Extensions → search “GitHub Copilot”
     - Install:
-       - GitHub Copilot
-       - GitHub Copilot Chat (optional but recommended)
+        - GitHub Copilot
+        - GitHub Copilot Chat (optional but recommended)
     - Sign in with GitHub when prompted
 
 ## Git clone
