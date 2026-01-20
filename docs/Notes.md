@@ -69,7 +69,7 @@ simply apply `git config set advice.addIgnoredFile false`, for we are pretty sur
 ## GitHub Copilot
 
 1. Enable from <https://github.com/settings/copilot/features>.
-2. VS Cpde
+2. VS Code
 
    - Open VS Code
    - Extensions → search “GitHub Copilot”
