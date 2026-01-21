@@ -90,12 +90,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#2-factor-authentication-2fa" class="nav-link">2-factor authentication (2FA)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#git-installation" class="nav-link">Git installation</a>
+            <li class="nav-item" data-level="2"><a href="#git-2-factor-authentication-2fa" class="nav-link">Git 2-factor authentication (2FA)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -111,6 +106,11 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#git-garbage-collection" class="nav-link">Git garbage collection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#git-installation" class="nav-link">Git installation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -140,6 +140,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#github-pull-request" class="nav-link">GitHub pull request</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-recovery" class="nav-link">GitHub recovery</a>
               <ul class="nav flex-column">
               </ul>
@@ -161,11 +166,6 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#pop-up-windows" class="nav-link">Pop-up windows</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#pull-request" class="nav-link">Pull request</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -204,31 +204,11 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="2-factor-authentication-2fa">2-factor authentication (2FA)</h2>
+<h2 id="git-2-factor-authentication-2fa">Git 2-factor authentication (2FA)</h2>
 <p>This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.</p>
 <p>See also <a href="https://github.com/settings/security">https://github.com/settings/security</a> and <a href="https://docs.github.com/articles/about-two-factor-authentication">https://docs.github.com/articles/about-two-factor-authentication</a> for more information.</p>
 <p>To save recovery code, visit <a href="https://github.com/settings/auth/recovery-codes">https://github.com/settings/auth/recovery-codes</a>.</p>
 <p>For questions, visit <a href="https://support.github.com">https://support.github.com</a>; for support, contact support via visiting <a href="https://github.com/contact">The GitHub support page</a>.</p>
-<h2 id="git-installation">Git installation</h2>
-<p>Two instances are given below,</p>
-<pre><code class="language-bash">wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
-cd git-2.30.0
-make NO_GETTEXT=YesPlease install
-# 2.38.1
-wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
-cd git-2.38.1
-module load zlib/1.2.11
-export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
-# 2.44.0
-wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | x
-tar xvfz -
-cd git-2.44.0
-make configure
-configure --prefix=${CEUADMIN}/git/2.44.0-icelake
-make
-make install
-</code></pre>
-<p>and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <a href="https://cambridge-ceu.github.io/csd3/applications/git.html">https://cambridge-ceu.github.io/csd3/applications/git.html</a>.</p>
 <h2 id="git-branches">Git branches</h2>
 <p>The following script lists all branches, remove the remote branch <code>gh-pages</code> and references from the local to branches that no longer
 exist on the remote.</p>
@@ -273,6 +253,26 @@ cd PeptideCLM-12M-smol/
 <p>This is done by</p>
 <pre><code class="language-bash">git gc
 </code></pre>
+<h2 id="git-installation">Git installation</h2>
+<p>Two instances are given below,</p>
+<pre><code class="language-bash">wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
+cd git-2.30.0
+make NO_GETTEXT=YesPlease install
+# 2.38.1
+wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
+cd git-2.38.1
+module load zlib/1.2.11
+export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+# 2.44.0
+wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | x
+tar xvfz -
+cd git-2.44.0
+make configure
+configure --prefix=${CEUADMIN}/git/2.44.0-icelake
+make
+make install
+</code></pre>
+<p>and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <a href="https://cambridge-ceu.github.io/csd3/applications/git.html">https://cambridge-ceu.github.io/csd3/applications/git.html</a>.</p>
 <h2 id="github-actions">GitHub actions</h2>
 <p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
 <pre><code class="language-bash">Rscript -e '
@@ -591,6 +591,42 @@ module load ceuadmin/quarto
 <li>Read the Docs, <a href="https://docs.readthedocs.io/en/stable/">https://docs.readthedocs.io/en/stable/</a></li>
 </ol>
 <p>Note that there is a specific MkDocs-mermaid2, <a href="https://pypi.org/project/mkdocs-mermaid2-plugin/#files">https://pypi.org/project/mkdocs-mermaid2-plugin/#files</a>, to be installed with <code>python setup.py install</code>.</p>
+<h2 id="github-pull-request">GitHub pull request</h2>
+<p>This is exemplified with TwoSampleMR. First create a branch with</p>
+<pre><code class="language-bash">git checkout -b jhz
+</code></pre>
+<p>As it uses roxygen, to export <code>get_se</code> add</p>
+<pre><code>#' @export
+</code></pre>
+<p>ahead of <code>get_se</code> in <code>query.R</code> and do the following,</p>
+<pre><code class="language-r">devtools::install_dev_deps()
+devtools::document()
+</code></pre>
+<p>and commit the changes. A related change to <code>read_data.R</code> regards </p>
+<pre><code class="language-r">if ( log_pval )
+{
+       dat$pval &lt;- 10^-dat$pval
+}
+</code></pre>
+<p>which should have been</p>
+<pre><code class="language-r">if ( log_pval )
+{
+       dat$pval &lt;- 10^-dat[[pval]]
+}
+</code></pre>
+<pre><code class="language-bash">git add R/query.R
+git commit -m &quot;export get_se&quot;
+git add R/read_data.R
+git commit -m &quot;dat$pval &lt;- 10^-dat[[pval]]&quot;
+git add NAMESPACE
+git commit -m &quot;export get_se&quot;
+git push --set-upstream origin jhz
+</code></pre>
+<p>making sure send a pull request from branch <code>jhz</code>.</p>
+<p>Note also that to build TwoSampleMR on csd3, the following is necessary,</p>
+<pre><code>module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
+</code></pre>
+<p>One additional note concerns about automatic generation of documentation for R functions, through packages <code>sinew</code> and <code>Roxygen2</code>, respectively from CRAN.</p>
 <h2 id="github-recovery">GitHub recovery</h2>
 <p>We can reverse changes just made;</p>
 <pre><code class="language-bash"># discard all changes
@@ -692,42 +728,6 @@ git push -f
 <pre><code class="language-bash">DISPLAY=
 git push
 </code></pre>
-<h2 id="pull-request">Pull request</h2>
-<p>This is exemplified with TwoSampleMR. First create a branch with</p>
-<pre><code class="language-bash">git checkout -b jhz
-</code></pre>
-<p>As it uses roxygen, to export <code>get_se</code> add</p>
-<pre><code>#' @export
-</code></pre>
-<p>ahead of <code>get_se</code> in <code>query.R</code> and do the following,</p>
-<pre><code class="language-r">devtools::install_dev_deps()
-devtools::document()
-</code></pre>
-<p>and commit the changes. A related change to <code>read_data.R</code> regards </p>
-<pre><code class="language-r">if ( log_pval )
-{
-       dat$pval &lt;- 10^-dat$pval
-}
-</code></pre>
-<p>which should have been</p>
-<pre><code class="language-r">if ( log_pval )
-{
-       dat$pval &lt;- 10^-dat[[pval]]
-}
-</code></pre>
-<pre><code class="language-bash">git add R/query.R
-git commit -m &quot;export get_se&quot;
-git add R/read_data.R
-git commit -m &quot;dat$pval &lt;- 10^-dat[[pval]]&quot;
-git add NAMESPACE
-git commit -m &quot;export get_se&quot;
-git push --set-upstream origin jhz
-</code></pre>
-<p>making sure send a pull request from branch <code>jhz</code>.</p>
-<p>Note also that to build TwoSampleMR on csd3, the following is necessary,</p>
-<pre><code>module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
-</code></pre>
-<p>One additional note concerns about automatic generation of documentation for R functions, through packages <code>sinew</code> and <code>Roxygen2</code>, respectively from CRAN.</p>
 <h2 id="rest-api">REST API</h2>
 <p>Representational State Transfer (REST) (<a href="https://restfulapi.net/">https://restfulapi.net/</a>) allows for various operations on repositories, see <a href="https://docs.github.com/en/rest">https://docs.github.com/en/rest</a>.</p>
 <p>A shell application, curl, <a href="https://curl.se/">https://curl.se/</a> is used here.</p>
