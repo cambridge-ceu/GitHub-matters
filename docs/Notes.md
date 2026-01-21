@@ -32,50 +32,16 @@ make install
 ```
 and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
-## GitHub CLI
+## Git branches
 
-Web: <https://cli.github.com/>
-
-This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account, which may be very clumsy.
-
-The setup and fork are described here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
+The following script lists all branches, remove the remote branch `gh-pages` and references from the local to branches that no longer
+exist on the remote.
 
 ```bash
-# create a repo
-mkdir my-awesome-project && cd my-awesome-project
-echo my-awesome-project > README.md
-git init && git add . && git commit -m "Initial commit"
-gh repo create my-awesome-project \
-  --private \
-  --description "My cool repo" \
-  --source=. \
-  --remote=origin \
-  --push
-# delete it
-gh repo delete
+git branch -a
+git push origin --delete gh-pages
+git fetch --all --prune
 ```
-
-At times message is seen on unadded file(s), e.g.,
-
-```
-The following paths are ignored by one of your .gitignore files:
-_site
-hint: Use -f if you really want to add them.
-hint: Disable this message with "git config set advice.addIgnoredFile false"
-```
-
-simply apply `git config set advice.addIgnoredFile false`, for we are pretty sure about skip them with .gitignore.
-
-## GitHub Copilot
-
-1. Enable from <https://github.com/settings/copilot/features>.
-2. VS Code
-    - Open VS Code
-    - Extensions → search “GitHub Copilot”
-    - Install:
-        - GitHub Copilot
-        - GitHub Copilot Chat (optional but recommended)
-    - Sign in with GitHub when prompted
 
 ## Git clone
 
@@ -131,6 +97,103 @@ git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
 cd PeptideCLM-12M-smol/
 ```
 
+## Git garbage collection
+
+This is done by
+
+```bash
+git gc
+```
+
+## GitHub actions
+
+Suppose our R packages are inside `R` folder, where we start some of the following script,
+
+```bash
+Rscript -e '
+  library(usethis)
+# https://github.com/r-lib/actions/tree/v2/examples
+# https://www.tidyverse.org/blog/2022/06/actions-2-0-0/
+  use_github_action("check-standard")
+  use_github_action("test-coverage")
+  use_github_action("pkgdown")
+  use_github_action("bookdown")
+  use_github_actions()
+  use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
+  use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
+# https://remotes.r-lib.org/articles/dependencies.html
+'
+```
+
+The last line creates `.github/workflows/R-CMD-check.yaml`. We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.
+
+```
+ <!-- badges: start -->
+[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
+[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
+[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
+<!-- badges: end -->
+```
+
+which gives,
+
+ <!-- badges: start -->
+[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
+[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
+[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
+<!-- badges: end -->
+
+Note .github/workflows would contains actions which can be removed manually.
+
+See also [CI/CD](https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc)
+
+## GitHub CLI
+
+Web: <https://cli.github.com/>
+
+This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account, which may be very clumsy.
+
+The setup and fork are described here, <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:cli>.
+
+```bash
+# create a repo
+mkdir my-awesome-project && cd my-awesome-project
+echo my-awesome-project > README.md
+git init && git add . && git commit -m "Initial commit"
+gh repo create my-awesome-project \
+  --private \
+  --description "My cool repo" \
+  --source=. \
+  --remote=origin \
+  --push
+# delete it
+gh repo delete
+```
+
+At times message is seen on unadded file(s), e.g.,
+
+```
+The following paths are ignored by one of your .gitignore files:
+_site
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+```
+
+simply apply `git config set advice.addIgnoredFile false`, for we are pretty sure about skip them with .gitignore.
+
+## GitHub Copilot
+
+1. Enable from <https://github.com/settings/copilot/features>.
+2. VS Code
+    - Open VS Code
+    - Extensions → search “GitHub Copilot”
+    - Install:
+        - GitHub Copilot
+        - GitHub Copilot Chat (optional but recommended)
+    - Sign in with GitHub when prompted
+
 ## GitHub recovery
 
 We can reverse changes just made;
@@ -182,85 +245,9 @@ git push --force origin gh-pages
 
 where the export command silences the error message: "X11 forwarding request failed on channel 0".
 
-## GitHub actions
-
-Suppose our R packages are inside `R` folder, where we start some of the following script,
-
-```bash
-Rscript -e '
-  library(usethis)
-# https://github.com/r-lib/actions/tree/v2/examples
-# https://www.tidyverse.org/blog/2022/06/actions-2-0-0/
-  use_github_action("check-standard")
-  use_github_action("test-coverage")
-  use_github_action("pkgdown")
-  use_github_action("bookdown")
-  use_github_actions()
-  use_github_actions_badge(name = "R-CMD-check.yaml", repo_spec = NULL)
-  use_github_action_check_release(save_as = "R-CMD-check.yaml", ref = NULL, ignore = TRUE, open = FALSE)
-# https://remotes.r-lib.org/articles/dependencies.html
-'
-```
-
-The last line creates `.github/workflows/R-CMD-check.yaml`. We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.
-
-```
- <!-- badges: start -->
-[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
-[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
-[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
-[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
-<!-- badges: end -->
-```
-
-which gives,
-
- <!-- badges: start -->
-[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
-[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
-[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
-[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
-<!-- badges: end -->
-
-Note .github/workflows would contains actions which can be removed manually.
-
-See also [CI/CD](https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc)
-
-## Git branches
-
-The following script lists all branches, remove the remote branch `gh-pages` and references from the local to branches that no longer 
-exist on the remote.
-
-```bash
-git branch -a
-git push origin --delete gh-pages
-git fetch --all --prune
-```
-
-## Git garbage collection
-
-This is done by
-
-```bash
-git gc
-```
-
 ## GitHub discussions
 
 See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
-
-## GitHub submodules
-
-The following script removes a submodule named `Recipe-Chatbot`:
-
-```bash
-git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
-git config -f .git/config --remove-section submodule.Recipe-Chatbot
-git rm -r Recipe-Chatbot
-git add .
-git commit -m "submodules"
-git push
-```
 
 ## GitHub pages
 
@@ -561,6 +548,19 @@ Two popular themes are as follows,
 2. Read the Docs, <https://docs.readthedocs.io/en/stable/>
 
 Note that there is a specific MkDocs-mermaid2, <https://pypi.org/project/mkdocs-mermaid2-plugin/#files>, to be installed with `python setup.py install`.
+
+## GitHub submodules
+
+The following script removes a submodule named `Recipe-Chatbot`:
+
+```bash
+git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
+git config -f .git/config --remove-section submodule.Recipe-Chatbot
+git rm -r Recipe-Chatbot
+git add .
+git commit -m "submodules"
+git push
+```
 
 ## npm
 
