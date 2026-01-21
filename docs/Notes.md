@@ -1,13 +1,3 @@
-## Git 2-factor authentication (2FA)
-
-This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.
-
-See also <https://github.com/settings/security> and <https://docs.github.com/articles/about-two-factor-authentication> for more information.
-
-To save recovery code, visit <https://github.com/settings/auth/recovery-codes>.
-
-For questions, visit <https://support.github.com>; for support, contact support via visiting [The GitHub support page](https://github.com/contact).
-
 ## Git branches
 
 The following script lists all branches, remove the remote branch `gh-pages` and references from the local to branches that no longer
@@ -104,6 +94,16 @@ make
 make install
 ```
 and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
+
+## GitHub 2-factor authentication (2FA)
+
+This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.
+
+See also <https://github.com/settings/security> and <https://docs.github.com/articles/about-two-factor-authentication> for more information.
+
+To save recovery code, visit <https://github.com/settings/auth/recovery-codes>.
+
+For questions, visit <https://support.github.com>; for support, contact support via visiting [The GitHub support page](https://github.com/contact).
 
 ## GitHub actions
 
