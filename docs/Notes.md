@@ -194,57 +194,6 @@ simply apply `git config set advice.addIgnoredFile false`, for we are pretty sur
         - GitHub Copilot Chat (optional but recommended)
     - Sign in with GitHub when prompted
 
-## GitHub recovery
-
-We can reverse changes just made;
-
-```bash
-# discard all changes
-git reset --hard
-# restore version before last commit
-git checkout HEAD -- docs/source/_static/css/custom.css
-```
-
-We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
-
-We now create a new branch, cherry-pick and commit to the branch.
-
-```bash
-git checkout -b recover
-git cherry-pick a36d0974e9feec813e06620ccb9ba8ebc4e01ebf
-git add .
-git cherry-pick --continue
-git push --set-upstream origin recover
-git checkout master
-git status
-```
-
-A pull request can be made from `https://github.com/jinghuazhao/R/pull/new/recover`
-
-This is an example to remove a remote tage: `git push origin --delete 0`.
-
-When we issue `git push origin master` with error messages
-
-```
-X11 forwarding request failed on channel 0
-To github.com:jinghuazhao/pQTLtools.git
- ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'github.com:jinghuazhao/pQTLtools.git'
-hint: Updates were rejected because a pushed branch tip is behind its remote
-hint: counterpart. If you want to integrate the remote changes, use 'git pull'
-hint: before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-```
-
-We enforce our push with `git push --force origin master`. An analogy is made with gh-pages, e.g., 
-
-```bash
-export GIT_SSH_COMMAND="ssh -x"
-git push --force origin gh-pages
-```
-
-where the export command silences the error message: "X11 forwarding request failed on channel 0".
-
 ## GitHub discussions
 
 See <https://docs.github.com/en/discussions/quickstart> and also <https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/>.
@@ -548,6 +497,57 @@ Two popular themes are as follows,
 2. Read the Docs, <https://docs.readthedocs.io/en/stable/>
 
 Note that there is a specific MkDocs-mermaid2, <https://pypi.org/project/mkdocs-mermaid2-plugin/#files>, to be installed with `python setup.py install`.
+
+## GitHub recovery
+
+We can reverse changes just made;
+
+```bash
+# discard all changes
+git reset --hard
+# restore version before last commit
+git checkout HEAD -- docs/source/_static/css/custom.css
+```
+
+We resort to gitkraken (see below) to identify the date when the commit was made as with the associate hash from `git log` -- our example is based on repository jinghuazhao/R.
+
+We now create a new branch, cherry-pick and commit to the branch.
+
+```bash
+git checkout -b recover
+git cherry-pick a36d0974e9feec813e06620ccb9ba8ebc4e01ebf
+git add .
+git cherry-pick --continue
+git push --set-upstream origin recover
+git checkout master
+git status
+```
+
+A pull request can be made from `https://github.com/jinghuazhao/R/pull/new/recover`
+
+This is an example to remove a remote tage: `git push origin --delete 0`.
+
+When we issue `git push origin master` with error messages
+
+```
+X11 forwarding request failed on channel 0
+To github.com:jinghuazhao/pQTLtools.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:jinghuazhao/pQTLtools.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+We enforce our push with `git push --force origin master`. An analogy is made with gh-pages, e.g.,
+
+```bash
+export GIT_SSH_COMMAND="ssh -x"
+git push --force origin gh-pages
+```
+
+where the export command silences the error message: "X11 forwarding request failed on channel 0".
 
 ## GitHub submodules
 
