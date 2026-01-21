@@ -9,7 +9,7 @@ function setup()
 # pip install mkdocs-mermaid2-plugin
 # pip install pymdown-extensions
   git rm --cached my_api
-  git submodule add my_api
+  git submodule add ./my_api
 }
 
 module load ceuadmin/libssh/0.10.6-icelake
