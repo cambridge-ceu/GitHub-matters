@@ -100,6 +100,26 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#git-branches" class="nav-link">Git branches</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#git-clone" class="nav-link">Git clone</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#git-garbage-collection" class="nav-link">Git garbage collection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#github-actions" class="nav-link">GitHub actions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#github-cli" class="nav-link">GitHub CLI</a>
               <ul class="nav flex-column">
               </ul>
@@ -110,27 +130,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#git-clone" class="nav-link">Git clone</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-level="2"><a href="#github-recovery" class="nav-link">GitHub recovery</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#github-actions" class="nav-link">GitHub actions</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#git-branches" class="nav-link">Git branches</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#git-garbage-collection" class="nav-link">Git garbage collection</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -140,12 +140,12 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#github-submodules" class="nav-link">GitHub submodules</a>
+            <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#github-pages" class="nav-link">GitHub pages</a>
+            <li class="nav-item" data-level="2"><a href="#github-submodules" class="nav-link">GitHub submodules</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -229,6 +229,84 @@ make
 make install
 </code></pre>
 <p>and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <a href="https://cambridge-ceu.github.io/csd3/applications/git.html">https://cambridge-ceu.github.io/csd3/applications/git.html</a>.</p>
+<h2 id="git-branches">Git branches</h2>
+<p>The following script lists all branches, remove the remote branch <code>gh-pages</code> and references from the local to branches that no longer
+exist on the remote.</p>
+<pre><code class="language-bash">git branch -a
+git push origin --delete gh-pages
+git fetch --all --prune
+</code></pre>
+<h2 id="git-clone">Git clone</h2>
+<h3 id="common-use">Common use</h3>
+<pre><code class="language-bash">git clone https://github.com/gkichaev/PAINTOR_V3.0.git
+git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
+git clone https://github.com/PMBio/peer PMBio
+</code></pre>
+<p>which download a repository, its wiki pages, and into a new directory, respectively. Use <code>git pull</code> to pull updates, which can be checked with <code>git diff</code>. When it shows following message</p>
+<pre><code>old mode 100644
+new mode 100755
+</code></pre>
+<p>One can turn it off with <code>git config core.filemode false</code>.</p>
+<p>It could be the appropriate way to download directory from a GitHub repository, e.g., <code>git clone https://github.com/statgen/locuszoom.git</code> for <a href="https://github.com/statgen/locuszoom/tree/develop/examples/data">https://github.com/statgen/locuszoom/tree/develop/examples/data</a>.</p>
+<p>To show the origin of a cloned repository, try</p>
+<pre><code class="language-bash">git ls-remote --get-url origin
+git remote -v
+git remote show origin
+</code></pre>
+<h3 id="ssh">SSH</h3>
+<p>The usual <code>git clone https://github.com/mozilla-firefox/firefox</code> gives error message:</p>
+<blockquote>
+<p>fatal: fetch-pack: invalid index-pack output</p>
+</blockquote>
+<p>and we use SSH instead.</p>
+<pre><code class="language-bash">git clone git@github.com:mozilla/firefox.git
+git clone --depth 1 git@github.com:mozilla/firefox.git
+</code></pre>
+<p>As a compromise, a shallow clone is done by the second statement for the latest commits.</p>
+<h3 id="hugging-face-repository">Hugging Face repository</h3>
+<p>It uses the large file facility,</p>
+<pre><code class="language-bash">module load ceuadmin/git-lfs
+git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
+cd PeptideCLM-12M-smol/
+</code></pre>
+<h2 id="git-garbage-collection">Git garbage collection</h2>
+<p>This is done by</p>
+<pre><code class="language-bash">git gc
+</code></pre>
+<h2 id="github-actions">GitHub actions</h2>
+<p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
+<pre><code class="language-bash">Rscript -e '
+  library(usethis)
+# https://github.com/r-lib/actions/tree/v2/examples
+# https://www.tidyverse.org/blog/2022/06/actions-2-0-0/
+  use_github_action(&quot;check-standard&quot;)
+  use_github_action(&quot;test-coverage&quot;)
+  use_github_action(&quot;pkgdown&quot;)
+  use_github_action(&quot;bookdown&quot;)
+  use_github_actions()
+  use_github_actions_badge(name = &quot;R-CMD-check.yaml&quot;, repo_spec = NULL)
+  use_github_action_check_release(save_as = &quot;R-CMD-check.yaml&quot;, ref = NULL, ignore = TRUE, open = FALSE)
+# https://remotes.r-lib.org/articles/dependencies.html
+'
+</code></pre>
+<p>The last line creates <code>.github/workflows/R-CMD-check.yaml</code>. We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.</p>
+<pre><code> &lt;!-- badges: start --&gt;
+[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
+[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
+[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
+&lt;!-- badges: end --&gt;
+</code></pre>
+<p>which gives,</p>
+<!-- badges: start -->
+<p><a href="https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment"><img alt="pages-build-deployment" src="https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg" /></a>
+<a href="https://cran.r-project.org/package=gap"><img alt="CRAN Version" src="http://www.r-pkg.org/badges/version/gap" /></a>
+<a href="http://cranlogs.r-pkg.org/badges/gap"><img alt="Monthly Downloads" src="http://cranlogs.r-pkg.org/badges/gap" /></a>
+<a href="http://cranlogs.r-pkg.org/badges/grand-total/gap"><img alt="Total Downloads" src="http://cranlogs.r-pkg.org/badges/grand-total/gap" /></a></p>
+<!-- badges: end -->
+
+<p>Note .github/workflows would contains actions which can be removed manually.</p>
+<p>See also <a href="https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc">CI/CD</a></p>
 <h2 id="github-cli">GitHub CLI</h2>
 <p>Web: <a href="https://cli.github.com/">https://cli.github.com/</a></p>
 <p>This comes handy for numerous tasks, such as authentication, forking a repository to a personal / organizational account, which may be very clumsy.</p>
@@ -268,39 +346,6 @@ hint: Disable this message with &quot;git config set advice.addIgnoredFile false
 </ul>
 </li>
 </ol>
-<h2 id="git-clone">Git clone</h2>
-<h3 id="common-use">Common use</h3>
-<pre><code class="language-bash">git clone https://github.com/gkichaev/PAINTOR_V3.0.git
-git clone https://github.com/gkichaev/PAINTOR_V3.0.wiki.git
-git clone https://github.com/PMBio/peer PMBio
-</code></pre>
-<p>which download a repository, its wiki pages, and into a new directory, respectively. Use <code>git pull</code> to pull updates, which can be checked with <code>git diff</code>. When it shows following message</p>
-<pre><code>old mode 100644
-new mode 100755
-</code></pre>
-<p>One can turn it off with <code>git config core.filemode false</code>.</p>
-<p>It could be the appropriate way to download directory from a GitHub repository, e.g., <code>git clone https://github.com/statgen/locuszoom.git</code> for <a href="https://github.com/statgen/locuszoom/tree/develop/examples/data">https://github.com/statgen/locuszoom/tree/develop/examples/data</a>.</p>
-<p>To show the origin of a cloned repository, try</p>
-<pre><code class="language-bash">git ls-remote --get-url origin
-git remote -v
-git remote show origin
-</code></pre>
-<h3 id="ssh">SSH</h3>
-<p>The usual <code>git clone https://github.com/mozilla-firefox/firefox</code> gives error message:</p>
-<blockquote>
-<p>fatal: fetch-pack: invalid index-pack output</p>
-</blockquote>
-<p>and we use SSH instead.</p>
-<pre><code class="language-bash">git clone git@github.com:mozilla/firefox.git
-git clone --depth 1 git@github.com:mozilla/firefox.git
-</code></pre>
-<p>As a compromise, a shallow clone is done by the second statement for the latest commits.</p>
-<h3 id="hugging-face-repository">Hugging Face repository</h3>
-<p>It uses the large file facility,</p>
-<pre><code class="language-bash">module load ceuadmin/git-lfs
-git clone https://huggingface.co/aaronfeller/PeptideCLM-12M-smol/
-cd PeptideCLM-12M-smol/
-</code></pre>
 <h2 id="github-recovery">GitHub recovery</h2>
 <p>We can reverse changes just made;</p>
 <pre><code class="language-bash"># discard all changes
@@ -335,62 +380,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 git push --force origin gh-pages
 </code></pre>
 <p>where the export command silences the error message: "X11 forwarding request failed on channel 0".</p>
-<h2 id="github-actions">GitHub actions</h2>
-<p>Suppose our R packages are inside <code>R</code> folder, where we start some of the following script,</p>
-<pre><code class="language-bash">Rscript -e '
-  library(usethis)
-# https://github.com/r-lib/actions/tree/v2/examples
-# https://www.tidyverse.org/blog/2022/06/actions-2-0-0/
-  use_github_action(&quot;check-standard&quot;)
-  use_github_action(&quot;test-coverage&quot;)
-  use_github_action(&quot;pkgdown&quot;)
-  use_github_action(&quot;bookdown&quot;)
-  use_github_actions()
-  use_github_actions_badge(name = &quot;R-CMD-check.yaml&quot;, repo_spec = NULL)
-  use_github_action_check_release(save_as = &quot;R-CMD-check.yaml&quot;, ref = NULL, ignore = TRUE, open = FALSE)
-# https://remotes.r-lib.org/articles/dependencies.html
-'
-</code></pre>
-<p>The last line creates <code>.github/workflows/R-CMD-check.yaml</code>. We carry on adding a few other facilities from GitHub action, create workflow, create status badge, etc.</p>
-<pre><code> &lt;!-- badges: start --&gt;
-[![pages-build-deployment](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment)
-[![CRAN Version](http://www.r-pkg.org/badges/version/gap)](https://cran.r-project.org/package=gap)
-[![Monthly Downloads](http://cranlogs.r-pkg.org/badges/gap)](http://cranlogs.r-pkg.org/badges/gap)
-[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/gap)](http://cranlogs.r-pkg.org/badges/grand-total/gap)
-&lt;!-- badges: end --&gt;
-</code></pre>
-<p>which gives,</p>
-<!-- badges: start -->
-<p><a href="https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment"><img alt="pages-build-deployment" src="https://github.com/jinghuazhao/R/actions/workflows/pages/pages-build-deployment/badge.svg" /></a>
-<a href="https://cran.r-project.org/package=gap"><img alt="CRAN Version" src="http://www.r-pkg.org/badges/version/gap" /></a>
-<a href="http://cranlogs.r-pkg.org/badges/gap"><img alt="Monthly Downloads" src="http://cranlogs.r-pkg.org/badges/gap" /></a>
-<a href="http://cranlogs.r-pkg.org/badges/grand-total/gap"><img alt="Total Downloads" src="http://cranlogs.r-pkg.org/badges/grand-total/gap" /></a></p>
-<!-- badges: end -->
-
-<p>Note .github/workflows would contains actions which can be removed manually.</p>
-<p>See also <a href="https://dev.to/debtech/a-comprehensive-introduction-to-cicd-pipelines-4ijc">CI/CD</a></p>
-<h2 id="git-branches">Git branches</h2>
-<p>The following script lists all branches, remove the remote branch <code>gh-pages</code> and references from the local to branches that no longer 
-exist on the remote.</p>
-<pre><code class="language-bash">git branch -a
-git push origin --delete gh-pages
-git fetch --all --prune
-</code></pre>
-<h2 id="git-garbage-collection">Git garbage collection</h2>
-<p>This is done by</p>
-<pre><code class="language-bash">git gc
-</code></pre>
 <h2 id="github-discussions">GitHub discussions</h2>
 <p>See <a href="https://docs.github.com/en/discussions/quickstart">https://docs.github.com/en/discussions/quickstart</a> and also <a href="https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/">https://github.blog/2024-05-06-create-a-home-for-your-community-with-github-discussions/</a>.</p>
-<h2 id="github-submodules">GitHub submodules</h2>
-<p>The following script removes a submodule named <code>Recipe-Chatbot</code>:</p>
-<pre><code class="language-bash">git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
-git config -f .git/config --remove-section submodule.Recipe-Chatbot
-git rm -r Recipe-Chatbot
-git add .
-git commit -m &quot;submodules&quot;
-git push
-</code></pre>
 <h2 id="github-pages">GitHub pages</h2>
 <p>This section involves <code>npm</code> which is described below.</p>
 <p>Here we assume using of jekyll-rtd-theme, e.g., rundocs-jekyll-rtd-theme-v2.0.10-2-ge897694.zip.</p>
@@ -634,6 +625,15 @@ module load ceuadmin/quarto
 <li>Read the Docs, <a href="https://docs.readthedocs.io/en/stable/">https://docs.readthedocs.io/en/stable/</a></li>
 </ol>
 <p>Note that there is a specific MkDocs-mermaid2, <a href="https://pypi.org/project/mkdocs-mermaid2-plugin/#files">https://pypi.org/project/mkdocs-mermaid2-plugin/#files</a>, to be installed with <code>python setup.py install</code>.</p>
+<h2 id="github-submodules">GitHub submodules</h2>
+<p>The following script removes a submodule named <code>Recipe-Chatbot</code>:</p>
+<pre><code class="language-bash">git config -f .gitmodules --remove-section submodule.Recipe-Chatbot
+git config -f .git/config --remove-section submodule.Recipe-Chatbot
+git rm -r Recipe-Chatbot
+git add .
+git commit -m &quot;submodules&quot;
+git push
+</code></pre>
 <h2 id="npm">npm</h2>
 <p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
 <pre><code class="language-bash">cd ${HPC_WORK}
