@@ -155,47 +155,17 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#npm" class="nav-link">npm</a>
+            <li class="nav-item" data-level="2"><a href="#api" class="nav-link">API</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#permissions" class="nav-link">Permissions</a>
+            <li class="nav-item" data-level="2"><a href="#other-software" class="nav-link">Other software</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#pop-up-windows" class="nav-link">Pop-up windows</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#rest-api" class="nav-link">REST API</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#graphql-api" class="nav-link">GraphQL API</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#updates-on-a-forked-repository" class="nav-link">Updates on a forked repository</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#certification-authority-ca" class="nav-link">certification authority (CA)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#gitkraken" class="nav-link">gitkraken</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#ssh_1" class="nav-link">ssh</a>
+            <li class="nav-item" data-level="2"><a href="#usage-notes-under-bash" class="nav-link">Usage notes under Bash</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -670,65 +640,14 @@ git add .
 git commit -m &quot;submodules&quot;
 git push
 </code></pre>
-<h2 id="npm">npm</h2>
-<p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
-<pre><code class="language-bash">cd ${HPC_WORK}
-wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
-tar xJf -
-cd node-v16.14.0-linux-x64/
-npm
-npm install
-npm install npm
-npm install corepack
-</code></pre>
-<p>For intance, with <code>make build</code> for the jekyll-rtd-theme above we got error message,</p>
-<blockquote>
-<p>node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference</p>
-</blockquote>
-<p>we can issue <code>npm rebuild</code> to fix.</p>
-<p>When the $HOME/node_modules/ was removed, we have an error message</p>
-<blockquote>
-<p>npm ERR! could not determine executable to run</p>
-</blockquote>
-<p>we do <code>npm uninstall husky &amp;&amp; npm install --save-dev husky@4</code> and also add <code>--no-verify</code> to <code>git commit -m</code>. As for missing <code>package.json</code>, we use <code>npm init</code> followed by <code>npm install</code>.</p>
-<p>Note we have set <code>prefix=${HOME}/.npm</code> in <code>${HOME}/.npmrc</code>.</p>
-<p>When we receive message <code>Error: could not determine executable to run</code>, the following can be done.</p>
-<pre><code class="language-bash">rm -rf .git/hooks
-npm install
-</code></pre>
-<h2 id="permissions">Permissions</h2>
-<p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
-<pre><code class="language-bash">chmod u+rx,go-w v4
-</code></pre>
-<p>Equally, there might be problem to remove your own file, e.g., <code>rm: cannot remove 'urls.txt': Permission denied</code>, which can be resolved with resetting parent directory, i.e., <code>chmod -R 777 v4</code>.</p>
-<p>In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues</p>
-<pre><code class="language-bash">ssh -vT git@github.com
-ssh -T GitHub-username@github.com
-git remote -v
-git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
-...
-git push -f
-</code></pre>
-<p>For more details, see <a href="https://help.github.com/en/github/using-git/changing-a-remotes-url">here</a>.</p>
-<p>Closely related are web pages such as SRCF, <a href="https://www.srcf.net/">https://www.srcf.net/</a></p>
-<pre><code class="language-bash">chmod -R u+w,go-w,+rX /public/home/$USER/public_html
-</code></pre>
-<p>which applies four permissions changes:</p>
+<h3 id="github-updates-on-a-forked-repository">GitHub updates on a forked repository</h3>
+<p>Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,</p>
 <ul>
-<li>u+w (apply user-writable to all files)</li>
-<li>go-w (remove group/world-writable from all files)</li>
-<li>+r (make everything readable by everyone)</li>
-<li>+X (make directories executable i.e. openable)</li>
+<li><strong>Contribute</strong>. To send a pull request to the upstream repository.</li>
+<li><strong>Fetch upstream</strong>. To <code>git pull</code> from the upstream repository.</li>
 </ul>
-<h2 id="pop-up-windows">Pop-up windows</h2>
-<p>A window may pop up for password, which could cause problems with command-line interface but this can be disabled with</p>
-<pre><code class="language-bash"> unset SSH_ASKPASS
-</code></pre>
-<p>or <code>unset GIT_ASKPASS</code> which could be part of <code>.bashrc</code>. Alternatively, this could be achieved with disabling DISPLAY, i.e.,</p>
-<pre><code class="language-bash">DISPLAY=
-git push
-</code></pre>
-<h2 id="rest-api">REST API</h2>
+<h2 id="api">API</h2>
+<h3 id="rest-api">REST API</h3>
 <p>Representational State Transfer (REST) (<a href="https://restfulapi.net/">https://restfulapi.net/</a>) allows for various operations on repositories, see <a href="https://docs.github.com/en/rest">https://docs.github.com/en/rest</a>.</p>
 <p>A shell application, curl, <a href="https://curl.se/">https://curl.se/</a> is used here.</p>
 <pre><code class="language-bash">curl https://api.github.com/zen
@@ -860,27 +779,11 @@ curl -X GET https://www.ebi.ac.uk/gwas/summary-statistics/api/studies/GCST001729
 </code></pre>
 <p>GWAS catalog summary statistics API, <a href="https://www.ebi.ac.uk/gwas/summary-statistics/docs/">https://www.ebi.ac.uk/gwas/summary-statistics/docs/</a></p>
 <p>Finally, constructing of an API can be done with R/plumber, <a href="https://www.rplumber.io/">https://www.rplumber.io/</a>.</p>
-<h2 id="graphql-api">GraphQL API</h2>
+<h3 id="graphql-api">GraphQL API</h3>
 <p>Hasura, <a href="https://cloud.hasura.io/">https://cloud.hasura.io/</a></p>
 <p>Open Targets Platform: <a href="https://platform.opentargets.org/api">https://platform.opentargets.org/api</a> (<a href="https://platform-docs.opentargets.org/data-access/datasets">Download datasets</a>).</p>
-<h2 id="updates-on-a-forked-repository">Updates on a forked repository</h2>
-<p>Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,</p>
-<ul>
-<li><strong>Contribute</strong>. To send a pull request to the upstream repository.</li>
-<li><strong>Fetch upstream</strong>. To <code>git pull</code> from the upstream repository.</li>
-</ul>
-<h2 id="certification-authority-ca">certification authority (CA)</h2>
-<p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
-is as follows,</p>
-<pre><code class="language-bash">mkdir ~/certs
-curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
-git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
-</code></pre>
-<p>or from R</p>
-<pre><code class="language-r">library(httr)
-set_config(config(ssl_verifypeer = 0L))
-</code></pre>
-<h2 id="gitkraken">gitkraken</h2>
+<h2 id="other-software">Other software</h2>
+<h3 id="gitkraken">gitkraken</h3>
 <pre><code class="language-bash">cd ${HPC_WORK}
 wget -qO- https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz | \
 tar xvfz -
@@ -889,7 +792,33 @@ echo ${HPC_WORK}/gitkraken/gitkraken --no-sandbox $@ &gt; gitkraken
 chmod +x gitkraken
 </code></pre>
 <p>A CSD3 module has been made which can be loaded with <code>module load ceuadmin/GitKraken</code>.</p>
-<h2 id="ssh_1">ssh</h2>
+<h3 id="npm">npm</h3>
+<p>Web: <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
+<pre><code class="language-bash">cd ${HPC_WORK}
+wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
+tar xJf -
+cd node-v16.14.0-linux-x64/
+npm
+npm install
+npm install npm
+npm install corepack
+</code></pre>
+<p>For intance, with <code>make build</code> for the jekyll-rtd-theme above we got error message,</p>
+<blockquote>
+<p>node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference</p>
+</blockquote>
+<p>we can issue <code>npm rebuild</code> to fix.</p>
+<p>When the $HOME/node_modules/ was removed, we have an error message</p>
+<blockquote>
+<p>npm ERR! could not determine executable to run</p>
+</blockquote>
+<p>we do <code>npm uninstall husky &amp;&amp; npm install --save-dev husky@4</code> and also add <code>--no-verify</code> to <code>git commit -m</code>. As for missing <code>package.json</code>, we use <code>npm init</code> followed by <code>npm install</code>.</p>
+<p>Note we have set <code>prefix=${HOME}/.npm</code> in <code>${HOME}/.npmrc</code>.</p>
+<p>When we receive message <code>Error: could not determine executable to run</code>, the following can be done.</p>
+<pre><code class="language-bash">rm -rf .git/hooks
+npm install
+</code></pre>
+<h3 id="ssh_1">ssh</h3>
 <p>The use of ssh involves several steps,</p>
 <ol>
 <li>Generate private and public keys via ssh-keygen.</li>
@@ -902,6 +831,50 @@ chmod +x gitkraken
 </code></pre>
 <p>then issue</p>
 <pre><code class="language-bash">ssh-keygen -R 140.82.121.3
+</code></pre>
+<h2 id="usage-notes-under-bash">Usage notes under Bash</h2>
+<h3 id="permissions">Permissions</h3>
+<p>It may happen that you cannot enter your own directory: <code>cd: v4: Permission denied</code>, then it is fixed with</p>
+<pre><code class="language-bash">chmod u+rx,go-w v4
+</code></pre>
+<p>Equally, there might be problem to remove your own file, e.g., <code>rm: cannot remove 'urls.txt': Permission denied</code>, which can be resolved with resetting parent directory, i.e., <code>chmod -R 777 v4</code>.</p>
+<p>In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues</p>
+<pre><code class="language-bash">ssh -vT git@github.com
+ssh -T GitHub-username@github.com
+git remote -v
+git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
+...
+git push -f
+</code></pre>
+<p>For more details, see <a href="https://help.github.com/en/github/using-git/changing-a-remotes-url">here</a>.</p>
+<p>Closely related are web pages such as SRCF, <a href="https://www.srcf.net/">https://www.srcf.net/</a></p>
+<pre><code class="language-bash">chmod -R u+w,go-w,+rX /public/home/$USER/public_html
+</code></pre>
+<p>which applies four permissions changes:</p>
+<ul>
+<li>u+w (apply user-writable to all files)</li>
+<li>go-w (remove group/world-writable from all files)</li>
+<li>+r (make everything readable by everyone)</li>
+<li>+X (make directories executable i.e. openable)</li>
+</ul>
+<h3 id="pop-up-windows">Pop-up windows</h3>
+<p>A window may pop up for password, which could cause problems with command-line interface but this can be disabled with</p>
+<pre><code class="language-bash"> unset SSH_ASKPASS
+</code></pre>
+<p>or <code>unset GIT_ASKPASS</code> which could be part of <code>.bashrc</code>. Alternatively, this could be achieved with disabling DISPLAY, i.e.,</p>
+<pre><code class="language-bash">DISPLAY=
+git push
+</code></pre>
+<h3 id="certification-authority-ca">certification authority (CA)</h3>
+<p>An attempt to get away with the error message <code>Peer's Certificate issuer is not recognized.</code>
+is as follows,</p>
+<pre><code class="language-bash">mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo &quot;$HOME/certs/cacert.pem&quot;
+</code></pre>
+<p>or from R</p>
+<pre><code class="language-r">library(httr)
+set_config(config(ssl_verifypeer = 0L))
 </code></pre></div>
             </div>
         </div>
