@@ -609,89 +609,16 @@ git commit -m "submodules"
 git push
 ```
 
-## npm
+### GitHub updates on a forked repository
 
-Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,
 
-```bash
-cd ${HPC_WORK}
-wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
-tar xJf -
-cd node-v16.14.0-linux-x64/
-npm
-npm install
-npm install npm
-npm install corepack
-```
+- **Contribute**. To send a pull request to the upstream repository.
+- **Fetch upstream**. To `git pull` from the upstream repository.
 
-For intance, with `make build` for the jekyll-rtd-theme above we got error message,
+## API
 
-> node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference
-
-we can issue `npm rebuild` to fix.
-
-When the $HOME/node_modules/ was removed, we have an error message
-
-> npm ERR! could not determine executable to run
-
-we do `npm uninstall husky && npm install --save-dev husky@4` and also add `--no-verify` to `git commit -m`. As for missing `package.json`, we use `npm init` followed by `npm install`.
-
-Note we have set `prefix=${HOME}/.npm` in `${HOME}/.npmrc`.
-
-When we receive message `Error: could not determine executable to run`, the following can be done.
-
-```bash
-rm -rf .git/hooks
-npm install
-```
-
-## Permissions
-
-It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
-
-```bash
-chmod u+rx,go-w v4
-```
-
-Equally, there might be problem to remove your own file, e.g., `rm: cannot remove 'urls.txt': Permission denied`, which can be resolved with resetting parent directory, i.e., `chmod -R 777 v4`.
-
-In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues
-```bash
-ssh -vT git@github.com
-ssh -T GitHub-username@github.com
-git remote -v
-git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
-...
-git push -f
-```
-For more details, see [here](https://help.github.com/en/github/using-git/changing-a-remotes-url).
-
-Closely related are web pages such as SRCF, <https://www.srcf.net/>
-
-```bash
-chmod -R u+w,go-w,+rX /public/home/$USER/public_html
-```
-
-which applies four permissions changes:
-
-* u+w (apply user-writable to all files)
-* go-w (remove group/world-writable from all files)
-* +r (make everything readable by everyone)
-* +X (make directories executable i.e. openable)
-
-## Pop-up windows
-
-A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
-```bash
- unset SSH_ASKPASS
-```
-or `unset GIT_ASKPASS` which could be part of `.bashrc`. Alternatively, this could be achieved with disabling DISPLAY, i.e.,
-```bash
-DISPLAY=
-git push
-```
-
-## REST API
+### REST API
 
 Representational State Transfer (REST) ([https://restfulapi.net/](https://restfulapi.net/)) allows for various operations on repositories, see [https://docs.github.com/en/rest](https://docs.github.com/en/rest).
 
@@ -862,38 +789,15 @@ GWAS catalog summary statistics API, [https://www.ebi.ac.uk/gwas/summary-statist
 
 Finally, constructing of an API can be done with R/plumber, <https://www.rplumber.io/>.
 
-## GraphQL API
+### GraphQL API
 
 Hasura, <https://cloud.hasura.io/>
 
 Open Targets Platform: <https://platform.opentargets.org/api> ([Download datasets](https://platform-docs.opentargets.org/data-access/datasets)).
 
-## Updates on a forked repository
+## Other software
 
-Once login, this turns to be very handy from the GitHub page by navigating to the code view (default), and pressing the following buttons,
-
-- **Contribute**. To send a pull request to the upstream repository.
-- **Fetch upstream**. To `git pull` from the upstream repository.
-
-## certification authority (CA)
-
-An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
-is as follows,
-
-```bash
-mkdir ~/certs
-curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
-git config --global http.sslCAinfo "$HOME/certs/cacert.pem"
-```
-
-or from R
-
-```r
-library(httr)
-set_config(config(ssl_verifypeer = 0L))
-```
-
-## gitkraken
+### gitkraken
 
 ```bash
 cd ${HPC_WORK}
@@ -906,7 +810,43 @@ chmod +x gitkraken
 
 A CSD3 module has been made which can be loaded with `module load ceuadmin/GitKraken`.
 
-## ssh
+### npm
+
+Web: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+
+```bash
+cd ${HPC_WORK}
+wget -qO- https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.xz | \
+tar xJf -
+cd node-v16.14.0-linux-x64/
+npm
+npm install
+npm install npm
+npm install corepack
+```
+
+For intance, with `make build` for the jekyll-rtd-theme above we got error message,
+
+> node: relocation error: /usr/lib64/libnode.so.93: symbol FIPS_selftest, version OPENSSL_1_1_0g not defined in file libcrypto.so.1.1 with link time reference
+
+we can issue `npm rebuild` to fix.
+
+When the $HOME/node_modules/ was removed, we have an error message
+
+> npm ERR! could not determine executable to run
+
+we do `npm uninstall husky && npm install --save-dev husky@4` and also add `--no-verify` to `git commit -m`. As for missing `package.json`, we use `npm init` followed by `npm install`.
+
+Note we have set `prefix=${HOME}/.npm` in `${HOME}/.npmrc`.
+
+When we receive message `Error: could not determine executable to run`, the following can be done.
+
+```bash
+rm -rf .git/hooks
+npm install
+```
+
+### ssh
 
 The use of ssh involves several steps,
 
@@ -926,4 +866,70 @@ then issue
 
 ```bash
 ssh-keygen -R 140.82.121.3
+```
+
+## Usage notes under Bash
+
+### Permissions
+
+It may happen that you cannot enter your own directory: `cd: v4: Permission denied`, then it is fixed with
+
+```bash
+chmod u+rx,go-w v4
+```
+
+Equally, there might be problem to remove your own file, e.g., `rm: cannot remove 'urls.txt': Permission denied`, which can be resolved with resetting parent directory, i.e., `chmod -R 777 v4`.
+
+In case there is confusion between cambridge-ceu repositories and your own, try these for the permission issues
+```bash
+ssh -vT git@github.com
+ssh -T GitHub-username@github.com
+git remote -v
+git remote set-url origin https://github.com/cambridge-ceu/GitHub-matters.git
+...
+git push -f
+```
+For more details, see [here](https://help.github.com/en/github/using-git/changing-a-remotes-url).
+
+Closely related are web pages such as SRCF, <https://www.srcf.net/>
+
+```bash
+chmod -R u+w,go-w,+rX /public/home/$USER/public_html
+```
+
+which applies four permissions changes:
+
+* u+w (apply user-writable to all files)
+* go-w (remove group/world-writable from all files)
+* +r (make everything readable by everyone)
+* +X (make directories executable i.e. openable)
+
+### Pop-up windows
+
+A window may pop up for password, which could cause problems with command-line interface but this can be disabled with
+```bash
+ unset SSH_ASKPASS
+```
+or `unset GIT_ASKPASS` which could be part of `.bashrc`. Alternatively, this could be achieved with disabling DISPLAY, i.e.,
+```bash
+DISPLAY=
+git push
+```
+
+### certification authority (CA)
+
+An attempt to get away with the error message `Peer's Certificate issuer is not recognized.`
+is as follows,
+
+```bash
+mkdir ~/certs
+curl https://curl.haxx.se/ca/cacert.pem -o ~/certs/cacert.pem
+git config --global http.sslCAinfo "$HOME/certs/cacert.pem"
+```
+
+or from R
+
+```r
+library(httr)
+set_config(config(ssl_verifypeer = 0L))
 ```
