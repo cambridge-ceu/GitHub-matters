@@ -1,4 +1,4 @@
-## 2-factor authentication (2FA)
+## Git 2-factor authentication (2FA)
 
 This will become effective from 12 October 2023, for which MicroSoft authenticator app is required.
 
@@ -7,30 +7,6 @@ See also <https://github.com/settings/security> and <https://docs.github.com/art
 To save recovery code, visit <https://github.com/settings/auth/recovery-codes>.
 
 For questions, visit <https://support.github.com>; for support, contact support via visiting [The GitHub support page](https://github.com/contact).
-
-## Git installation
-
-Two instances are given below,
-
-```bash
-wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
-cd git-2.30.0
-make NO_GETTEXT=YesPlease install
-# 2.38.1
-wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
-cd git-2.38.1
-module load zlib/1.2.11
-export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
-# 2.44.0
-wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | x
-tar xvfz -
-cd git-2.44.0
-make configure
-configure --prefix=${CEUADMIN}/git/2.44.0-icelake
-make
-make install
-```
-and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
 ## Git branches
 
@@ -104,6 +80,30 @@ This is done by
 ```bash
 git gc
 ```
+
+## Git installation
+
+Two instances are given below,
+
+```bash
+wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
+cd git-2.30.0
+make NO_GETTEXT=YesPlease install
+# 2.38.1
+wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
+cd git-2.38.1
+module load zlib/1.2.11
+export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+# 2.44.0
+wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | x
+tar xvfz -
+cd git-2.44.0
+make configure
+configure --prefix=${CEUADMIN}/git/2.44.0-icelake
+make
+make install
+```
+and by default the executables will be put to ~/bin. Additional notes regarding a recent version are available from <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
 ## GitHub actions
 
@@ -498,6 +498,53 @@ Two popular themes are as follows,
 
 Note that there is a specific MkDocs-mermaid2, <https://pypi.org/project/mkdocs-mermaid2-plugin/#files>, to be installed with `python setup.py install`.
 
+## GitHub pull request
+
+This is exemplified with TwoSampleMR. First create a branch with
+```bash
+git checkout -b jhz
+```
+As it uses roxygen, to export `get_se` add
+```
+#' @export
+```
+ahead of `get_se` in `query.R` and do the following,
+```r
+devtools::install_dev_deps()
+devtools::document()
+```
+and commit the changes. A related change to `read_data.R` regards 
+```r
+if ( log_pval )
+{
+       dat$pval <- 10^-dat$pval
+}
+```
+which should have been
+```r
+if ( log_pval )
+{
+       dat$pval <- 10^-dat[[pval]]
+}
+```
+```bash
+git add R/query.R
+git commit -m "export get_se"
+git add R/read_data.R
+git commit -m "dat$pval <- 10^-dat[[pval]]"
+git add NAMESPACE
+git commit -m "export get_se"
+git push --set-upstream origin jhz
+```
+making sure send a pull request from branch `jhz`.
+
+Note also that to build TwoSampleMR on csd3, the following is necessary,
+```
+module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
+```
+
+One additional note concerns about automatic generation of documentation for R functions, through packages `sinew` and `Roxygen2`, respectively from CRAN.
+
 ## GitHub recovery
 
 We can reverse changes just made;
@@ -643,53 +690,6 @@ or `unset GIT_ASKPASS` which could be part of `.bashrc`. Alternatively, this cou
 DISPLAY=
 git push
 ```
-
-## Pull request
-
-This is exemplified with TwoSampleMR. First create a branch with
-```bash
-git checkout -b jhz
-```
-As it uses roxygen, to export `get_se` add
-```
-#' @export
-```
-ahead of `get_se` in `query.R` and do the following,
-```r
-devtools::install_dev_deps()
-devtools::document()
-```
-and commit the changes. A related change to `read_data.R` regards 
-```r
-if ( log_pval )
-{
-       dat$pval <- 10^-dat$pval
-}
-```
-which should have been
-```r
-if ( log_pval )
-{
-       dat$pval <- 10^-dat[[pval]]
-}
-```
-```bash
-git add R/query.R
-git commit -m "export get_se"
-git add R/read_data.R
-git commit -m "dat$pval <- 10^-dat[[pval]]"
-git add NAMESPACE
-git commit -m "export get_se"
-git push --set-upstream origin jhz
-```
-making sure send a pull request from branch `jhz`.
-
-Note also that to build TwoSampleMR on csd3, the following is necessary,
-```
-module load pandoc/2.0.6 pandoc-citeproc/0.12.2.2
-```
-
-One additional note concerns about automatic generation of documentation for R functions, through packages `sinew` and `Roxygen2`, respectively from CRAN.
 
 ## REST API
 
