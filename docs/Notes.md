@@ -462,6 +462,8 @@ make
 make install
 ```
 
+A local demonstration is enabled through `bundle exec jekyll serve`, tunneling to `http://127.0.0.1:4000` so browser can point there.
+
 ### GitHub landing pages
 
 This is possible for two cases:
