@@ -1,6 +1,7 @@
 ## Corporate/organisational contributors
 
   * Alibaba, <https://github.com/alibaba>
+  * Apache, <https://github.com/apache>
   * Apple, <https://github.com/apple>
   * Baidu, <https://github.com/baidu>
   * BBC, <https://github.com/bbc>
