@@ -172,7 +172,7 @@ gh repo create my-awesome-project \
   --push
 # delete it
 gh repo delete
-# previously delete repo
+# A deleted repo
 git remote -v
 git remote set-url origin https://github.com/jinghuazhao/GWAS-course-materials.git
 ## git push -u origin main
